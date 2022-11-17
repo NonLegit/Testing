@@ -1,4 +1,4 @@
-package constants;
+package web.constants;
 
 /**
  * this is the class which contains constant data related to tests

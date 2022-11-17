@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import static constants.TestConstants.*;
+import static web.constants.TestConstants.*;
 
 public class loginSignupValidation extends BaseTest{
 
