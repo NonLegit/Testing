@@ -4,8 +4,8 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
-import static constants.TestConstants.DOCUMENT_TITLE;
-import static constants.TestConstants.REPORT_NAME;
+import static web.constants.TestConstants.DOCUMENT_TITLE;
+import static web.constants.TestConstants.REPORT_NAME;
 
 
 /**

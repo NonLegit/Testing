@@ -1,4 +1,4 @@
-package constants;
+package web.constants;
 
 /**
  * this is a class which contains some constants used by All pageObjects

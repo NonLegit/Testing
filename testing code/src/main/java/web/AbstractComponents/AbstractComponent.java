@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static constants.PageConstants.*;
+import static web.constants.PageConstants.*;
 
 /**
  * the class which is used by most of pageObject classes (collecting common functionality between pages into one class)
