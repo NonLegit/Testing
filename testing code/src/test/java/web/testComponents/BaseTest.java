@@ -15,7 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 
-import static constants.TestConstants.*;
+import static web.constants.TestConstants.*;
 
 /**
  * this class contains methods which are common among all methods and used by many of them
