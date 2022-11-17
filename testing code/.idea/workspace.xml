@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44e4666c-a53c-4749-9b94-824781373a02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Web/AbstractComponents/AbstractComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Web/constants/PageConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Web/pageObjects/LandingPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Web/constants/TestConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Web/testComponents/BaseTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Web/testComponents/Listeners.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Web/tests/loginSignupValidation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/resources/ExtentReporterGen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/resources/GetData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/resources/GlobalData.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/resources/data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+    <list default="true" id="62d21152-2a9b-46bb-92d6-dd3174e76d6f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +22,7 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectId" id="2HgjwgQSuzQ2QCbr5dYjAaiTj1d" />
+  <component name="ProjectId" id="2HgsBSyFk4WHxQQQ5nO7T9ryJjm" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -41,31 +31,17 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/Web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\PROJECTS\third year\first term\software engineering\Notligit\Testing\testing code\src\main\java\Web" />
-      <recent name="D:\PROJECTS\third year\first term\software engineering\Notligit\Testing\testing code\src\test\java\Web" />
-      <recent name="D:\PROJECTS\third year\first term\software engineering\Notligit\Testing\testing code\src\Web" />
-      <recent name="D:\PROJECTS\third year\first term\software engineering\Notligit\Testing\testing code" />
-      <recent name="D:\PROJECTS\third year\first term\software engineering\Notligit\Testing\testing code\src\Web\test" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\PROJECTS\third year\first term\software engineering\Notligit\Testing\testing code\src\main\java" />
-      <recent name="D:\PROJECTS\third year\first term\software engineering\Notligit\Testing\testing code\src\test\java" />
-      <recent name="D:\PROJECTS\third year\first term\software engineering\Notligit\Testing\testing code\src" />
-      <recent name="D:\PROJECTS\third year\first term\software engineering\Notligit\Testing\testing code" />
-      <recent name="D:\PROJECTS\third year\first term\software engineering\Notligit\Testing\testing code\src\Web" />
-    </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
+      <recent name="D:\PROJECTS\third year\first term\software engineering\NonLegit-Code\Testing\testing code" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.D:/PROJECTS/third year/first term/software engineering/Notligit/Testing/testing code/testSuites/loginTest.xml">
-    <configuration name="D:/PROJECTS/third year/first term/software engineering/Notligit/Testing/testing code/testSuites/loginTest.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="NonLegitTesting" />
+  <component name="RunManager">
+    <configuration name="D:/PROJECTS/third year/first term/software engineering/NonLegit-Code/Testing/testing code/testSuites/loginTest.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="nonLegit" />
       <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/loginTest.xml" />
       <option name="TEST_OBJECT" value="SUITE" />
       <properties />
@@ -74,45 +50,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Unnamed" type="TestNG" nameIsGenerated="true">
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <option name="SUITE_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="PACKAGE" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="TestNG.Unnamed" />
-      <item itemvalue="TestNG.D:/PROJECTS/third year/first term/software engineering/Notligit/Testing/testing code/testSuites/loginTest.xml" />
-    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.D:/PROJECTS/third year/first term/software engineering/Notligit/Testing/testing code/testSuites/loginTest.xml" />
+        <item itemvalue="TestNG.D:/PROJECTS/third year/first term/software engineering/NonLegit-Code/Testing/testing code/testSuites/loginTest.xml" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="44e4666c-a53c-4749-9b94-824781373a02" name="Default Changelist" comment="" />
-      <created>1668713862245</created>
+      <changelist id="62d21152-2a9b-46bb-92d6-dd3174e76d6f" name="Default Changelist" comment="" />
+      <created>1668717927441</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1668713862245</updated>
+      <updated>1668717927441</updated>
     </task>
     <servers />
   </component>
