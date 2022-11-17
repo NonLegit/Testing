@@ -11,7 +11,7 @@ import resources.ExtentReporterGen;
 import java.io.IOException;
 import java.util.Arrays;
 
-import static constants.TestConstants.REPORT_PATH;
+import static web.constants.TestConstants.REPORT_PATH;
 
 
 /**

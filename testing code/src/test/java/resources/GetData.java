@@ -12,7 +12,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.*;
 
-import static constants.TestConstants.BROWSER;
+import static web.constants.TestConstants.BROWSER;
 
 /**
  * this is the class that's responsible for getting the data from anywhere
