@@ -25,6 +25,22 @@ public class PostsValidation extends BaseTest {
         Assert.assertEquals(resultComment, comment);
     }
 
+
+    /**
+     * this test is used to test replying to comment by a randomized comment on some random post in the home page
+     */
+    @Test(description = "replying to a random comment on some random post")
+    public void replyRandomComment(){
+        HomePage homePage = landingPage.login(VALID_USER_NAME, VALID_USER_PASS);
+        Assert.assertNotEquals(homePage, null);
+        PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(2);
+        String comment = getData.generateRandomString(15);
+        String userName = postDetails.getUserNameOfIndex(1);
+        postDetails.replyToComment(comment, userName);
+        String resultComment = postDetails.getCommentOfUser(userName);
+        Assert.assertEquals(resultComment, comment);
+    }
+
     /**
      * this test is used to test making a share a post and check if the original url is subset of the shared one
      */
@@ -38,10 +54,6 @@ public class PostsValidation extends BaseTest {
         Assert.assertTrue(driver.getCurrentUrl().contains(sharedURL));
     }
 
-
-
-
-    //////////////////////////TODO
     /**
      * this test is used to test making upvote to a post
      */
@@ -50,7 +62,65 @@ public class PostsValidation extends BaseTest {
         HomePage homePage = landingPage.login(VALID_USER_NAME, VALID_USER_PASS);
         Assert.assertNotEquals(homePage, null);
         PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(3);
+        int postUpVotesOld = postDetails.getNumOfVotesPost();
+        postDetails.upVotePost();
+        int postUpVotesNew = postDetails.getNumOfVotesPost();
+        Assert.assertEquals(postUpVotesOld + 1, postUpVotesNew);
+    }
 
+    /**
+     * this test is used to test making downvote to a post
+     */
+    @Test(description = "downvoting some random post")
+    public void downVotePostTest(){
+        HomePage homePage = landingPage.login(VALID_USER_NAME, VALID_USER_PASS);
+        Assert.assertNotEquals(homePage, null);
+        PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(3);
+        int postUpVotesOld = postDetails.getNumOfVotesPost();
+        postDetails.downVotePost();
+        int postUpVotesNew = postDetails.getNumOfVotesPost();
+        Assert.assertEquals(postUpVotesOld - 1, postUpVotesNew);
+    }
+
+    /**
+     * this test is used to test making upvote to a comment
+     */
+    @Test(description = "upvoting some random comment")
+    public void upVoteCommentTest(){
+        HomePage homePage = landingPage.login(VALID_USER_NAME, VALID_USER_PASS);
+        Assert.assertNotEquals(homePage, null);
+        PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(3);
+        String username = postDetails.getUserNameOfIndex(1);
+        int commentUpVotesOld = postDetails.getNumOfVotesComment(username);
+        postDetails.upVoteComment(username);
+        int commentUpVotesNew = postDetails.getNumOfVotesComment(username);
+        Assert.assertEquals(commentUpVotesOld + 1, commentUpVotesNew);
+    }
+
+
+    /**
+     * this test is used to test making downvote to a comment
+     */
+    @Test(description = "downvoting some random comment")
+    public void downVoteCommentTest(){
+        HomePage homePage = landingPage.login(VALID_USER_NAME, VALID_USER_PASS);
+        Assert.assertNotEquals(homePage, null);
+        PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(3);
+        String username = postDetails.getUserNameOfIndex(1);
+        int commentUpVotesOld = postDetails.getNumOfVotesComment(username);
+        postDetails.downVoteComment(username);
+        int commentUpVotesNew = postDetails.getNumOfVotesComment(username);
+        Assert.assertEquals(commentUpVotesOld - 1, commentUpVotesNew);
+    }
+
+    /**
+     * this test is used to test posting in your profile
+     */
+    @Test(description = "posting some random post")
+    public void testPosting(){
+        HomePage homePage = landingPage.login(VALID_USER_NAME, VALID_USER_PASS);
+        Assert.assertNotEquals(homePage, null);
+        
     }
 
 }

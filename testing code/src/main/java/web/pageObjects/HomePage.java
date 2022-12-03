@@ -16,11 +16,23 @@ public class HomePage extends AbstractComponent {
      */
     WebDriver driver;
 
+    /**
+     * these are the list of posts that are showing the home page
+     */
     @FindBy(id = PageConstants.NULL_LOCATOR)
     List<WebElement> posts;
 
+    /**
+     * this is the selector of comment button on a post
+     */
     @FindBy(id = PageConstants.NULL_LOCATOR)
     By commentButton;
+
+    /**
+     * this is the create post input in the home page
+     */
+    @FindBy(id = PageConstants.NULL_LOCATOR)
+    WebElement createPost;
 
     /**
      * this is the constructor of the class and it initializes all of its members using PageFactory class
@@ -61,4 +73,6 @@ public class HomePage extends AbstractComponent {
         }
         return null;
     }
+
+
 }

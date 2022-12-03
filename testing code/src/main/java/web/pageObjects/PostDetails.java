@@ -31,10 +31,10 @@ public class PostDetails extends AbstractComponent {
     WebElement commentButton;
 
     /**
-     * these are comments Texts in the post comments
+     * these is the comment text in the post comments
      */
     @FindBy(id = PageConstants.NULL_LOCATOR)
-    List<WebElement> comments;
+    By comment;
 
     /**
      * these are people who made comments on a post
@@ -70,13 +70,13 @@ public class PostDetails extends AbstractComponent {
      * this is the list of buttons that's used to downvote a specific comment
      */
     @FindBy(id = PageConstants.NULL_LOCATOR)
-    List<WebElement> downVotesCommentsBtn;
+    By downVotesCommentsBtn;
 
     /**
      * this is the list of buttons that's used to upvote a specific comment
      */
     @FindBy(id = PageConstants.NULL_LOCATOR)
-    List<WebElement> upVotesCommentsBtn;
+    By upVotesCommentsBtn;
 
     /**
      * this is the text that holds the number of upvotes for a specific comment
@@ -89,6 +89,24 @@ public class PostDetails extends AbstractComponent {
      */
     @FindBy(id = PageConstants.NULL_LOCATOR)
     By downVotesCommentText;
+
+    /**
+     * this is the button that we will have to click when we want to reply to someone
+     */
+    @FindBy(id = PageConstants.NULL_LOCATOR)
+    By replyButton;
+
+    /**
+     * this is the text input through which we will write our reply to someone
+     */
+    @FindBy(id = PageConstants.NULL_LOCATOR)
+    By replyTextInput;
+
+    /**
+     * this is the button through which we will post our reply
+     */
+    @FindBy(id = PageConstants.NULL_LOCATOR)
+    By replyTextButton;
 
     /**
      * this is the constructor of the class and it initializes all of its members using PageFactory class
@@ -110,6 +128,19 @@ public class PostDetails extends AbstractComponent {
     }
 
     /**
+     * this method is used to reply to a random user on some random post
+     * @param comment: this is the comment that we will reply as a reply
+     * @param userName: this is the name of user whom we will reply to
+     */
+    public void replyToComment(String comment, String userName){
+        int index = commentPeople.indexOf(userName);
+        commentPeople.get(index).findElement(replyButton).click();
+        commentPeople.get(index).findElement(replyTextInput).sendKeys(comment);
+        commentPeople.get(index).findElement(replyTextButton).click();
+        driver.navigate().refresh();
+    }
+
+    /**
      * this method gets the comment made by a specific user
      * @param userName: this is the name of the user who made this comment
      * @return String: the comment made by the user given as input
@@ -117,7 +148,7 @@ public class PostDetails extends AbstractComponent {
     public String getCommentOfUser(String userName){
         int index = commentPeople.indexOf(userName);
         if(index != -1)
-            return comments.get(index).getText();
+            return commentPeople.get(index).findElement(comment).getText();
         else
             return "";
     }
@@ -168,7 +199,7 @@ public class PostDetails extends AbstractComponent {
      */
     public void downVoteComment(String userName){
         int index = commentPeople.indexOf(userName);
-        downVotesCommentsBtn.get(index).click();
+        commentPeople.get(index).findElement(downVotesCommentsBtn).click();
         driver.navigate().refresh();
     }
 
@@ -177,7 +208,7 @@ public class PostDetails extends AbstractComponent {
      */
     public void upVoteComment(String userName){
         int index = commentPeople.indexOf(userName);
-        upVotesCommentsBtn.get(index).click();
+        commentPeople.get(index).findElement(upVotesCommentText).click();
         driver.navigate().refresh();
     }
 
@@ -185,16 +216,7 @@ public class PostDetails extends AbstractComponent {
      * this methods the number of upvotes on a post
      * @return int: the number of upvotes on a post
      */
-    public int getNumOfUpvotePost(){
-        return Integer.parseInt(upVotePostBtn.getText());
-    }
-
-
-    /**
-     * this methods the number of downvotes on a post
-     * @return int: the number of downvotes on a post
-     */
-    public int getNumOfDownvotePost(){
+    public int getNumOfVotesPost(){
         return Integer.parseInt(upVotePostBtn.getText());
     }
 
@@ -202,18 +224,10 @@ public class PostDetails extends AbstractComponent {
      * this methods the number of upvotes on a comment
      * @return int: the number of upvotes on a comment
      */
-    public int getNumOfUpvoteComment(String userName){
+    public int getNumOfVotesComment(String userName){
         int index = commentPeople.indexOf(userName);
         return Integer.parseInt(commentPeople.get(index).findElement(upVotesCommentText).getText());
     }
 
-    /**
-     * this methods the number of upvotes on a comment
-     * @return int: the number of upvotes on a comment
-     */
-    public int getNumOfDownvoteComment(String userName){
-        int index = commentPeople.indexOf(userName);
-        return Integer.parseInt(commentPeople.get(index).findElement(downVotesCommentText).getText());
-    }
 
 }
