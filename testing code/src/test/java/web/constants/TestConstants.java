@@ -98,4 +98,13 @@ public class TestConstants {
      */
     public static final String EXPECTED_RES_TAG_EXCEL = "expectedResult";
 
+    /**
+     * this a valid username to sign in with to automate other tests
+     */
+    public static final String VALID_USER_NAME = "null";
+
+    /**
+     * this is a valid user password to sign in with to automate the other tests with
+     */
+    public static final String VALID_USER_PASS = "null";
 }
