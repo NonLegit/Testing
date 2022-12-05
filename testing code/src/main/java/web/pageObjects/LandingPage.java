@@ -105,8 +105,9 @@ public class LandingPage extends AbstractComponent {
 
     /**
      * this is a function used to login and return the next page if success
+     * @return
      */
-    public String login(String username, String password){
+    public HomePage login(String username, String password){
         loginButton.click();
         waitForFrameToBeAvailable(loginPopupIframe, EXPLICIT_TIMEOUT_SECONDS);
         //driver.switchTo().frame(LOGIN_FRAME_INDEX);
@@ -114,7 +115,7 @@ public class LandingPage extends AbstractComponent {
         passwordInputText.sendKeys(password);
         loginIntoAccButton.click();
         /*TODO: edit this return value of the function*/
-        return "";
+        return new HomePage(driver);
     }
 
     /**
