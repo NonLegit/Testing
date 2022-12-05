@@ -12,6 +12,9 @@ public class PageConstants {
     public static final String EXCEL_PATH = System.getProperty("user.dir") + "\\src\\test\\java\\resources\\data.xlsx";
 
 
+    public static final String NULL_LOCATOR = "";
+
+
     /**
      * this is the sheetName that contains login data
      */

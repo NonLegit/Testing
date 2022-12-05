@@ -22,6 +22,7 @@ import static web.constants.TestConstants.*;
  */
 public class BaseTest {
 
+
     /**
      * this is the driver which is used to run test scripts
      */
@@ -35,7 +36,7 @@ public class BaseTest {
     /**
      * this is the object through which we can extract data that will be input to the text
      */
-    GetData getData = new GetData();
+    protected GetData getData = new GetData();
 
     /**
      * this function is used to initialize and configure the driver for you

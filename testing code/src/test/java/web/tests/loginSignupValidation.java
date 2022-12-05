@@ -39,7 +39,6 @@ public class loginSignupValidation extends BaseTest{
     @Test(description = "sign up with some random generate username and password")
     public void signupTest(){
         /*this should be */
-        GetData getData = new GetData();
         String randomEmail = getData.generateRandomString(10) + "@gmail.com";
         String randomUsername = getData.generateRandomString(15);
         String randomPassword = getData.generateRandomString(10);
