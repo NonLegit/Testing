@@ -6,14 +6,16 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import web.pageObjects.LandingPage;
 import resources.GetData;
+import web.pageObjects.LandingPage;
 
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
+import java.util.Collections;
 
 import static web.constants.TestConstants.*;
 
@@ -49,8 +51,12 @@ public class BaseTest {
 
         String browserName = getData.getBrowserName(path);
 
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("useAutomationExtension", false);
+        options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
+
         if (browserName.equalsIgnoreCase(BROWSER_CHROME)){
-            driver = WebDriverManager.chromedriver().arch64().enableRecording().create();
+            driver = WebDriverManager.chromedriver().arch64().enableRecording().capabilities(options).create();
         }
         else if (browserName.equalsIgnoreCase(BROWSER_FIREFOX)){
             driver = WebDriverManager.firefoxdriver().arch64().enableRecording().create();
@@ -60,7 +66,7 @@ public class BaseTest {
         }
         else{
             /*default one is chrome*/
-            driver = WebDriverManager.chromedriver().arch64().enableRecording().create();
+            driver = WebDriverManager.chromedriver().arch64().enableRecording().capabilities(options).create();
         }
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitTimeOutInSeconds));

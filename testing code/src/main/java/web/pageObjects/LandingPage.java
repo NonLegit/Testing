@@ -1,11 +1,14 @@
 package web.pageObjects;
 
 
-import web.AbstractComponents.AbstractComponent;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import web.AbstractComponents.AbstractComponent;
+
+import java.util.Iterator;
+import java.util.Set;
 
 import static web.constants.PageConstants.*;
 
@@ -23,19 +26,128 @@ public class LandingPage extends AbstractComponent {
     /**
      * this is the username input text
      */
-    @FindBy(id = LOGIN_USERNAME_ID)
+    @FindBy(id = ":r5:")
     WebElement usernameInputText;
+
+    /**
+     * this is the continue with google account button
+     */
+    @FindBy(xpath = "//button[.='continue with google']")
+    WebElement continueWithGoogleBtn;
+
+    /**
+     * this is the continue with facebook account button
+     */
+    @FindBy(xpath = "//button[.='continue with facebook']")
+    WebElement continueWithFacebookBtn;
+
+    /**
+     * this is a button to click on forget username
+     */
+    @FindBy(xpath = "//a[@data-testid='login-forgetuser']")
+    WebElement forgetUserNameBtn;
+
+    /**
+     * this is the input text through which we will enter the email address
+     */
+    @FindBy(id = ":r8:")
+    WebElement  EmailAddrForget;
+
+    /**
+     * this is the input text through which we will enter user email in forget user pass
+     */
+    @FindBy(id = ":r9:")
+    WebElement emailAddrForget;
+
+    /**
+     * this is the captcha in the forget username
+     */
+    @FindBy(id = "rc-anchor-container")
+    WebElement forgetUsernameCaptcha;
+
+    /**
+     * this is the captcha related to forget username
+     */
+    @FindBy(xpath = "//iframe[@title='reCAPTCHA']")
+    WebElement RecaptchaIframe;
+
+    /**
+     * this is the email me button
+     */
+    @FindBy(xpath = "//button[text()='Email Me']")
+    WebElement emailMeBtn;
+
+    /**
+     * this is the reset password button
+     */
+    @FindBy(xpath = "//button[text()='Reset Password']")
+    WebElement resetPassBtn;
+
+    /**
+     * this is a button to click on forget userpassword
+     */
+    @FindBy(xpath = "//a[@data-testid='login-forgetpass']")
+    WebElement forgetUserPasswordBtn;
+
+
+    /**
+     * this is the google login email input text
+     */
+    @FindBy(name = "identifier")
+    WebElement googleLoginEmail;
+
+    /**
+     * this is the facebook login email input text
+     */
+    @FindBy(id = "email")
+    WebElement facebookLoginEmail;
+
+    /**
+     * this is the facebook login password input text
+     */
+    @FindBy(id = "pass")
+    WebElement facebookLoginPassword;
+
+    /**
+     * this is the facebook login in button
+     */
+    @FindBy(name = "login")
+    WebElement facebookLoginBtn;
+
+    /**
+     * this is the continue as button
+     */
+    @FindBy(css = "div[aria-label*='Continue as']")
+    WebElement facebookContinueAs;
+
+    /**
+     * this is the button that switch to next page to continue login in with google
+     */
+    @FindBy(xpath = "(//span[@class='VfPpkd-vQzf8d'])[2]")
+    WebElement googleNextBtn1;
+
+    /**
+     * this is the google login input password text
+     */
+    @FindBy(name = "password")
+    WebElement googleLoginPassword;
+
+    /**
+     * just a small web element from the home page to test the login in success
+     */
+    @FindBy(css = "p[class='MuiTypography-root MuiTypography-body1 css-9fpt74-MuiTypography-root']")
+    WebElement userNameIconProfileText;
 
     /**
      * this is the user password input text
      */
-    @FindBy(id = LOGIN_PASSWORD_ID)
+    @FindBy(id = ":r6:")
     WebElement passwordInputText;
 
     /**
      * this is the login into account button
      */
-    @FindBy(xpath = LOGIN_INTO_ACC_BUTTON_XPATH)
+    @FindBy(id = ":r7:")
     WebElement loginIntoAccButton;
 
     /**
@@ -47,7 +159,7 @@ public class LandingPage extends AbstractComponent {
     /**
      * this is the label web element that's the error state of the login
      */
-    @FindBy(css = ERROR_LOGIN_CSS)
+    @FindBy(xpath = "//p[text()='Incorrect username or password' or text() = 'Username must be between 3 and 20 characters']")
     WebElement loginErrorMessageLabel;
 
     /**
@@ -83,7 +195,7 @@ public class LandingPage extends AbstractComponent {
     /**
      * this the signup error message
      */
-    @FindBy(xpath = SIGNUP_ERROR_MESSAGE_XPATH)
+    @FindBy(id = ":r5:-helper-text")
     WebElement errorMessageSignUpText;
 
     /**
@@ -105,17 +217,140 @@ public class LandingPage extends AbstractComponent {
 
     /**
      * this is a function used to login and return the next page if success
-     * @return
+     * @return HomePage: object of the home page after login in
      */
-    public HomePage login(String username, String password){
+    public HomePage NormalLogin(String username, String password){
         loginButton.click();
-        waitForFrameToBeAvailable(loginPopupIframe, EXPLICIT_TIMEOUT_SECONDS);
+        //waitForFrameToBeAvailable(loginPopupIframe, EXPLICIT_TIMEOUT_SECONDS);
+        waitForWebElementToAppear(usernameInputText, EXPLICIT_TIMEOUT_SECONDS);
         //driver.switchTo().frame(LOGIN_FRAME_INDEX);
         usernameInputText.sendKeys(username);
         passwordInputText.sendKeys(password);
         loginIntoAccButton.click();
-        /*TODO: edit this return value of the function*/
-        return new HomePage(driver);
+
+        try {
+            waitForWebElementToAppear(loginErrorMessageLabel, EXPLICIT_TIMEOUT_SECONDS);
+        }catch (Exception e){
+            return new HomePage(driver);
+        }
+
+        if(loginErrorMessageLabel!= null && loginErrorMessageLabel.isDisplayed())
+            return null;
+        else
+            return new HomePage(driver);
+    }
+
+    /**
+     * this is a function used to login using google and return the next page if success
+     * @return HomePage: the home page in case of success
+     */
+    public HomePage googleLogin(String email, String password) throws InterruptedException {
+        loginButton.click();
+        waitForWebElementToAppear(continueWithGoogleBtn, EXPLICIT_TIMEOUT_SECONDS);
+        Thread.sleep(3000);
+        continueWithGoogleBtn.click();
+
+        Set<String>windows = driver.getWindowHandles();
+        Iterator<String> it = windows.iterator();
+        String parent = it.next();
+        String child = it.next();
+        driver.switchTo().window(child);
+        googleLoginEmail.sendKeys(email);
+        googleNextBtn1.click();
+
+        waitForWebElementToAppear(googleLoginPassword, EXPLICIT_TIMEOUT_SECONDS);
+        googleLoginPassword.sendKeys(password);
+        threadSleep(2);
+        googleNextBtn1.click();
+        threadSleep(1);
+        driver.switchTo().window(parent);
+
+        try {
+            waitForWebElementToAppear(userNameIconProfileText, 10);
+        }catch (Exception e){
+            return null;
+        }
+
+        if(userNameIconProfileText!= null && userNameIconProfileText.isDisplayed())
+            return new HomePage(driver);
+        else
+            return null;
+    }
+
+
+    /**
+     * this is a function used to login using facebook and return the next page if success
+     * @return HomePage: the home page in case of success
+     */
+    public HomePage facebookLogin(String email, String password) throws InterruptedException {
+        loginButton.click();
+        waitForWebElementToAppear(continueWithFacebookBtn, EXPLICIT_TIMEOUT_SECONDS);
+        Thread.sleep(3000);
+        continueWithFacebookBtn.click();
+
+        Set<String>windows = driver.getWindowHandles();
+        Iterator<String> it = windows.iterator();
+        String parent = it.next();
+        String child = it.next();
+        driver.switchTo().window(child);
+
+        waitForWebElementToAppear(facebookLoginEmail, EXPLICIT_TIMEOUT_SECONDS);
+        facebookLoginEmail.sendKeys(email);
+        facebookLoginPassword.sendKeys(password);
+        facebookLoginBtn.click();
+
+        waitForWebElementToAppear(facebookContinueAs, EXPLICIT_TIMEOUT_SECONDS);
+        facebookContinueAs.click();
+
+        driver.switchTo().window(parent);
+
+        try {
+            waitForWebElementToAppear(userNameIconProfileText, 10);
+        }catch (Exception e){
+            return null;
+        }
+
+        if(userNameIconProfileText!= null && userNameIconProfileText.isDisplayed())
+            return new HomePage(driver);
+        else
+            return null;
+    }
+
+    /**
+     * this is a function used to forget the username
+     */
+    public void forgetUserName(String email) throws InterruptedException {
+        loginButton.click();
+
+        waitForWebElementToAppear(forgetUserNameBtn, EXPLICIT_TIMEOUT_SECONDS);
+        forgetUserNameBtn.click();
+
+        waitForWebElementToAppear(EmailAddrForget, EXPLICIT_TIMEOUT_SECONDS);
+        EmailAddrForget.sendKeys(email);
+
+        waitForFrameToBeAvailable(RecaptchaIframe, 5);
+
+        forgetUsernameCaptcha.click();
+        driver.switchTo().parentFrame();
+        emailMeBtn.click();
+        waitForWebElementToDisappear(emailInputText, 6);
+    }
+
+    /**
+     * this is a function used to forget the user password
+     */
+    public void forgetUserPassword(String email, String username) throws InterruptedException {
+        loginButton.click();
+
+        waitForWebElementToAppear(forgetUserPasswordBtn, EXPLICIT_TIMEOUT_SECONDS);
+        forgetUserPasswordBtn.click();
+
+
+        waitForWebElementToAppear(EmailAddrForget, EXPLICIT_TIMEOUT_SECONDS);
+        EmailAddrForget.sendKeys(username);
+        emailAddrForget.sendKeys(email);
+        resetPassBtn.click();
+        waitForWebElementToDisappear(resetPassBtn, 6);
     }
 
     /**
@@ -134,7 +369,6 @@ public class LandingPage extends AbstractComponent {
         waitForFrameToBeAvailable(captchaCheckBox, EXPLICIT_TIMEOUT_SECONDS);
         driver.switchTo().frame(captchaCheckBox);
         captchaCheckBox.click();
-
         /*TODO: edit this return value of the function*/
         return "";
 

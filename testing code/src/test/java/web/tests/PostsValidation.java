@@ -16,7 +16,7 @@ public class PostsValidation extends BaseTest {
      */
     @Test(description = "making a random comment on some random post")
     public void makeRandomComment(){
-        HomePage homePage = landingPage.login(VALID_USER_NAME, VALID_USER_PASS);
+        HomePage homePage = landingPage.NormalLogin(VALID_USER_NAME, VALID_USER_PASS);
         Assert.assertNotEquals(homePage, null);
         PostDetails postDetails = homePage.checkPost(2);
         String comment = getData.generateRandomString(15);
@@ -31,7 +31,7 @@ public class PostsValidation extends BaseTest {
      */
     @Test(description = "replying to a random comment on some random post")
     public void replyRandomComment(){
-        HomePage homePage = landingPage.login(VALID_USER_NAME, VALID_USER_PASS);
+        HomePage homePage = landingPage.NormalLogin(VALID_USER_NAME, VALID_USER_PASS);
         Assert.assertNotEquals(homePage, null);
         PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(2);
         String comment = getData.generateRandomString(15);
@@ -46,7 +46,7 @@ public class PostsValidation extends BaseTest {
      */
     @Test(description = "sharing some random post")
     public void sharePostTest(){
-        HomePage homePage = landingPage.login(VALID_USER_NAME, VALID_USER_PASS);
+        HomePage homePage = landingPage.NormalLogin(VALID_USER_NAME, VALID_USER_PASS);
         Assert.assertNotEquals(homePage, null);
         PostDetails postDetails = homePage.checkPost(2);
         String sharedURL = postDetails.shareLink();
@@ -59,7 +59,7 @@ public class PostsValidation extends BaseTest {
      */
     @Test(description = "upvoting some random post")
     public void upVotePostTest(){
-        HomePage homePage = landingPage.login(VALID_USER_NAME, VALID_USER_PASS);
+        HomePage homePage = landingPage.NormalLogin(VALID_USER_NAME, VALID_USER_PASS);
         Assert.assertNotEquals(homePage, null);
         PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(3);
         int postUpVotesOld = postDetails.getNumOfVotesPost();
@@ -73,7 +73,7 @@ public class PostsValidation extends BaseTest {
      */
     @Test(description = "downvoting some random post")
     public void downVotePostTest(){
-        HomePage homePage = landingPage.login(VALID_USER_NAME, VALID_USER_PASS);
+        HomePage homePage = landingPage.NormalLogin(VALID_USER_NAME, VALID_USER_PASS);
         Assert.assertNotEquals(homePage, null);
         PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(3);
         int postUpVotesOld = postDetails.getNumOfVotesPost();
@@ -87,7 +87,7 @@ public class PostsValidation extends BaseTest {
      */
     @Test(description = "upvoting some random comment")
     public void upVoteCommentTest(){
-        HomePage homePage = landingPage.login(VALID_USER_NAME, VALID_USER_PASS);
+        HomePage homePage = landingPage.NormalLogin(VALID_USER_NAME, VALID_USER_PASS);
         Assert.assertNotEquals(homePage, null);
         PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(3);
         String username = postDetails.getUserNameOfIndex(1);
@@ -103,7 +103,7 @@ public class PostsValidation extends BaseTest {
      */
     @Test(description = "downvoting some random comment")
     public void downVoteCommentTest(){
-        HomePage homePage = landingPage.login(VALID_USER_NAME, VALID_USER_PASS);
+        HomePage homePage = landingPage.NormalLogin(VALID_USER_NAME, VALID_USER_PASS);
         Assert.assertNotEquals(homePage, null);
         PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(3);
         String username = postDetails.getUserNameOfIndex(1);
@@ -114,13 +114,19 @@ public class PostsValidation extends BaseTest {
     }
 
     /**
-     * this test is used to test posting in your profile
+     * this test is used to test posting Text
      */
     @Test(description = "posting some random post")
-    public void testPosting(){
-        HomePage homePage = landingPage.login(VALID_USER_NAME, VALID_USER_PASS);
+    public void textPosting(){
+        HomePage homePage = landingPage.NormalLogin(VALID_USER_NAME, VALID_USER_PASS);
         Assert.assertNotEquals(homePage, null);
-        
+    }
+
+    /**
+     * this test is used to test editing a post in profile
+     */
+    public void editPostText(){
+
     }
 
 }

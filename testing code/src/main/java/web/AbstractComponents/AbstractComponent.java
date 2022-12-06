@@ -102,7 +102,7 @@ public class AbstractComponent {
     /**
      * this is the login in button through which you can login into your account
      */
-    @FindBy(xpath = LOGIN_BUTTON_XPATH)
+    @FindBy(xpath = "//button[text()='log in']")
     protected WebElement loginButton;
 
     /**
