@@ -6,9 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="62d21152-2a9b-46bb-92d6-dd3174e76d6f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/pageObjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/pageObjects/PostDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/PostDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/AbstractComponents/AbstractComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/AbstractComponents/AbstractComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/pageObjects/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/LandingPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resources/GetData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/GetData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resources/data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/constants/TestConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/constants/TestConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/testComponents/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/testComponents/BaseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/web/tests/PostsValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/tests/PostsValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/tests/ProfileValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/tests/ProfileValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/tests/loginSignupValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/tests/loginSignupValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/constants/PageConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/AbstractComponents/AbstractComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/AbstractComponents/AbstractComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/pageObjects/LandingPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/pageObjects/LandingPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/constants/TestConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/resources/ExtentReporterGen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/resources/ExtentReporterGen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/resources/GetData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/resources/GetData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/web/testComponents/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/testComponents/BaseTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/web/testComponents/Listeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/testComponents/Listeners.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/web/tests/loginSignupValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/tests/loginSignupValidation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testSuites/loginTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testSuites/loginTest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,11 +76,86 @@
       <recent name="D:\PROJECTS\third year\first term\software engineering\NonLegit-Code\Testing\testing code" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="D:/PROJECTS/third year/first term/software engineering/NonLegit-Code/Testing/testing code/testSuites/loginTest.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.loginSignupValidation.forgetUserPassword">
+    <configuration name="loginSignupValidation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="web.tests.loginSignupValidation" />
       <module name="nonLegit" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/loginTest.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="web.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="loginSignupValidation.forgetUserName" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="nonLegit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="web.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="web.tests" />
+      <option name="MAIN_CLASS_NAME" value="web.tests.loginSignupValidation" />
+      <option name="METHOD_NAME" value="forgetUserName" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="loginSignupValidation.forgetUserPassword" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="nonLegit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="web.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="web.tests" />
+      <option name="MAIN_CLASS_NAME" value="web.tests.loginSignupValidation" />
+      <option name="METHOD_NAME" value="forgetUserPassword" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="loginSignupValidation.loginUpWithFacebook" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="nonLegit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="web.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="web.tests" />
+      <option name="MAIN_CLASS_NAME" value="web.tests.loginSignupValidation" />
+      <option name="METHOD_NAME" value="loginUpWithFacebook" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="loginSignupValidation.loginUpWithGoogle" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="nonLegit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="web.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="web.tests" />
+      <option name="MAIN_CLASS_NAME" value="web.tests.loginSignupValidation" />
+      <option name="METHOD_NAME" value="loginUpWithGoogle" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -72,7 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.D:/PROJECTS/third year/first term/software engineering/NonLegit-Code/Testing/testing code/testSuites/loginTest.xml" />
+        <item itemvalue="TestNG.loginSignupValidation.forgetUserPassword" />
+        <item itemvalue="TestNG.loginSignupValidation.forgetUserName" />
+        <item itemvalue="TestNG.loginSignupValidation.loginUpWithGoogle" />
+        <item itemvalue="Application.loginSignupValidation" />
+        <item itemvalue="TestNG.loginSignupValidation.loginUpWithFacebook" />
       </list>
     </recent_temporary>
   </component>
