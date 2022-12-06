@@ -12,10 +12,16 @@ import org.testng.annotations.BeforeMethod;
 import resources.GetData;
 import web.pageObjects.LandingPage;
 
+import javax.mail.Folder;
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.mail.Store;
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Collections;
+import java.util.Properties;
+
 
 import static web.constants.TestConstants.*;
 
@@ -74,6 +80,9 @@ public class BaseTest {
 
         return driver;
     }
+
+
+
 
     /**
      * this method will launch the app and initialize the driver and do things that are required to do that
