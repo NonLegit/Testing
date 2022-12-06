@@ -9,6 +9,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resources/GetData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/GetData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/testComponents/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/testComponents/BaseTest.java" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/reports/generalReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports/generalReport.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/spark/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/reports/spark/font-awesome.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports/spark/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/reports/spark/fontawesome-webfont.svg" afterDir="false" />
@@ -25,6 +29,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/web/pageObjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/HomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/web/pageObjects/PostDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/PostDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/web/tests/PostsValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/tests/PostsValidation.java" afterDir="false" />
+
 
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,9 +59,11 @@
     </file-type-list>
   </component>
 
+
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+
 
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
