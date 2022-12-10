@@ -1,17 +1,17 @@
 package mobile.Pages;
 
-import io.appium.java_client.MobileElement;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class Post extends Pages{
     @FindBy(id="Post Title")
-    MobileElement PostTitle;
+    WebElement PostTitle;
 
     @FindBy(id="Community Name")
-    MobileElement CommunityName;
+    WebElement CommunityName;
 
     @FindBy(id="Post Body")
-    MobileElement PostBodyName;
+    WebElement PostBodyName;
 
     public String seePost(String Title,String Text,String Community){
         try {

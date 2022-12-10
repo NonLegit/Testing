@@ -76,7 +76,7 @@
     <dependency>
       <groupId>io.appium</groupId>
       <artifactId>java-client</artifactId>
-      <version>7.0.0</version>
+      <version>8.1.1</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->

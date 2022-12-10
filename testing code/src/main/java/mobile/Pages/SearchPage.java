@@ -1,14 +1,14 @@
 package mobile.Pages;
 
-import io.appium.java_client.MobileElement;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class SearchPage extends Pages{
     @FindBy(id = "SearchBar")
-    MobileElement SearchBar;
+    WebElement SearchBar;
 
     @FindBy(id="FirstCommunity")
-    MobileElement FirstCommunity;
+    WebElement FirstCommunity;
 
     public boolean searchForCommunity(String CommunityName) {
 
