@@ -8,17 +8,18 @@ import java.net.URL;
 
 
 public class Pages {
-    AppiumDriver<MobileElement> driver;
+   protected AppiumDriver<MobileElement> driver;
     public Pages()  {
 
         DesiredCapabilities cap=new DesiredCapabilities();
         cap.setCapability("deviceName","AOSP on IA Emulator");
         cap.setCapability("udid","emulator-5554");
         cap.setCapability("platformName","Android");
-        cap.setCapability("platformVersion","9");
+        cap.setCapability("platformVersion","13");
+        cap.setCapability("app","C:\\Users\\fathi\\Videos\\app.apk");
 
-        cap.setCapability("appPackage","com.reddit.frontpage");
-        cap.setCapability("appActivity","com.reddit.frontpage.StartActivity");
+//        cap.setCapability("appPackage","com.reddit.frontpage");
+//        cap.setCapability("appActivity","com.reddit.frontpage.StartActivity");
 
 
         try{

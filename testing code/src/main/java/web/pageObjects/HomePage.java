@@ -14,7 +14,7 @@ public class HomePage extends AbstractComponent {
     /**
      * this the driver that's used to to automate the tests
      */
-    WebDriver driver;
+    //WebDriver driver;
 
     /**
      * these are the list of posts that are showing the home page
@@ -41,9 +41,50 @@ public class HomePage extends AbstractComponent {
      */
     public HomePage(WebDriver driver) {
         super(driver);
-        this.driver = driver;
+        //this.driver = driver;
     }
 
+    /**
+     *
+     */
+    @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/ul/div[1]/div/div[2]/p")
+    WebElement MyNameButton;
+
+    @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/ul/div[2]/div/div/div/div[1]/div[2]/span")
+    WebElement MyStuff;
+
+    @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/ul/div[2]/div/div/div/div[3]/a/div/span")
+    WebElement Profile;
+
+    @FindBy(xpath = "")
+    WebElement FirstPost;
+
+    @FindBy(xpath = "/html/body/div/div/div/div[1]/div[3]/div[2]/div[1]/div[2]/a")
+    WebElement FirstPostOwner;
+
+    @FindBy(xpath = "/html/body/div/header/div/div[2]/ul/div[2]/div/div/div/div[5]/a/div/span")
+    WebElement SettingsButton;
+
+    public void gotoSettings(){
+
+        waitForWebElementToAppear(MyNameButton,1);
+        MyNameButton.click();
+        waitForWebElementToAppear(SettingsButton,1);
+        if(SettingsButton.isDisplayed()){
+            SettingsButton.click();
+        }
+    }
+
+
+
+    public void gotoMyProfile() {
+
+        waitForWebElementToAppear(MyNameButton, 1);
+        MyNameButton.click();
+        waitForWebElementToAppear(Profile, 1);
+        Profile.click();
+
+    }
 
     /**
      * this methods clicks on one of the post to enter into it
@@ -72,6 +113,18 @@ public class HomePage extends AbstractComponent {
             }
         }
         return null;
+    }
+
+    public String gotoFirstPostOwner(){
+    waitForWebElementToAppear(FirstPostOwner,1);
+        if(FirstPostOwner.isDisplayed()){
+            String Name =FirstPostOwner.getText();
+            threadSleep(1);
+            FirstPostOwner.click();
+            return Name;
+        }else{
+            return null;
+        }
     }
 
 
