@@ -1,18 +1,18 @@
 package mobile.Pages;
 
-import io.appium.java_client.MobileElement;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class OtherUsersPage {
 
     @FindBy(id = "User Name")
-    MobileElement UserName;
+    WebElement UserName;
 
     @FindBy(id = "Follow")
-    MobileElement OtherUsersFollowButton;
+    WebElement OtherUsersFollowButton;
 
     @FindBy(id = "Home")
-    MobileElement Home;
+    WebElement Home;
 
     public String getUserName() {
         return UserName.getText();

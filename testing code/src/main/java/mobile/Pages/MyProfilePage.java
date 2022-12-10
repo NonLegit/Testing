@@ -1,7 +1,6 @@
 package mobile.Pages;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.MobileElement;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
@@ -12,14 +11,14 @@ public class MyProfilePage extends Pages{
     /**
      * declare driver which used to access elements
      */
-    AppiumDriver<MobileElement> driver;
+    //AppiumDriver<WebElement> driver;
 
 
     /**
      * Post Button In My Profile
      */
    @FindBy(xpath ="//android.view.View[@content-desc='Posts Tab 1 of 3']")
-   MobileElement MyProfilePostsButton;
+    WebElement MyProfilePostsButton;
 
     public void clickMyProfilePostsButton(){
         MyProfilePostsButton.click();
@@ -29,7 +28,7 @@ public class MyProfilePage extends Pages{
      * NoNlegit App : Comments Button In My Profile
      */
     @FindBy(xpath ="//android.view.View[@content-desc='Comments Tab 2 of 3'")
-    MobileElement MyProfileCommentsButton;
+    WebElement MyProfileCommentsButton;
 
     public void clickMyProfileCommentsButton(){
         MyProfileCommentsButton.click();
@@ -39,7 +38,7 @@ public class MyProfilePage extends Pages{
      * NoNlegit App : About Button In My Profile
      */
     @FindBy(xpath =	"//android.view.View[@content-desc='About Tab 3 of 3']")
-    MobileElement MyProfileAboutButton;
+    WebElement MyProfileAboutButton;
 
     public void clickMyProfileAboutButton(){
         MyProfileAboutButton.click();
@@ -49,7 +48,7 @@ public class MyProfilePage extends Pages{
      * NoNlegit App : Edit Button In My Profile
      */
     @FindBy(xpath ="//android.widget.Button[@content-desc='Edit']")
-    MobileElement MyProfileEditButton;
+    WebElement MyProfileEditButton;
 
     public void clickMyProfileEditButton(){
         MyProfileCommentsButton.click();
@@ -61,7 +60,7 @@ public class MyProfilePage extends Pages{
      * NoNlegit App : User Name In My Profile
      */
     @FindBy(xpath ="(//android.view.View)[13]")
-    MobileElement MyProfileUserName;
+    WebElement MyProfileUserName;
 
     /**
      *
@@ -77,7 +76,7 @@ public class MyProfilePage extends Pages{
      * NoNlegit App : Number Of Followers In My Profile
      */
     @FindBy(xpath ="(//android.widget.Button)[3]")
-    MobileElement MyProfileFollowers;
+    WebElement MyProfileFollowers;
 
     /**
      *
@@ -99,7 +98,7 @@ public class MyProfilePage extends Pages{
      * NoNlegit App : Sort By tab In My Profile
      */
     @FindBy(xpath ="(//android.widget.Button)[4]")
-    MobileElement MyProfileSortBy;
+    WebElement MyProfileSortBy;
 
     /**
      * This Function Click The Drop-Down Menu Of the Sort By
@@ -112,7 +111,7 @@ public class MyProfilePage extends Pages{
      * NoNlegit App : Sort By Window In My Profile
      */
     @FindBy(xpath ="//android.view.View[@content-desc='SORT POSTS BY']")
-    MobileElement MyProfileSortByWindow;
+    WebElement MyProfileSortByWindow;
 
 
 
@@ -129,7 +128,7 @@ public class MyProfilePage extends Pages{
      * NoNlegit App : Sort By Window : Hot Tab In My Profile
      */
     @FindBy(xpath ="//android.view.View[@content-desc='Hot']")
-    MobileElement MyProfileSortByWindowHot;
+    WebElement MyProfileSortByWindowHot;
 
     /**
      * This Function chooses Hot Post
@@ -142,7 +141,7 @@ public class MyProfilePage extends Pages{
      * NoNlegit App : Sort By Window : New Button In My Profile
      */
     @FindBy(xpath ="//android.view.View[@content-desc='New']")
-    MobileElement MyProfileSortByWindowNew;
+    WebElement MyProfileSortByWindowNew;
 
     /**
      *
@@ -156,7 +155,7 @@ public class MyProfilePage extends Pages{
      * NoNlegit App : Sort By Window : Top In My Profile
      */
     @FindBy(xpath ="//android.view.View[@content-desc='Top']")
-    MobileElement MyProfileSortByWindowTop;
+    WebElement MyProfileSortByWindowTop;
 
     /**
      *
@@ -167,7 +166,7 @@ public class MyProfilePage extends Pages{
 
 
     @FindBy(id="First Post")
-    MobileElement MyProfileFirstPost;
+    WebElement MyProfileFirstPost;
 
     ///Make it general Post
     public String clickPost(){

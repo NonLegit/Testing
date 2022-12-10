@@ -11,6 +11,9 @@ import static web.constants.TestConstants.VALID_USER_PASS;
 
 public class PostsValidation extends BaseTest {
 
+
+
+
     /**
      * this test is used to test making a randomized comment on some random post in the home page
      */
