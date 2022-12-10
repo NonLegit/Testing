@@ -43,11 +43,29 @@ public class loginSignupValidation extends BaseTest{
     }
 
     /**
+     * tis function is used to test the signup functionality using google
+     */
+    @Test(description = "sign up with some suggested username and random password", dataProvider = "loginSignUpGoogleExcelDataProvider")
+    public void googleSignupUsingSuggestedNameTest(String email, String password) throws InterruptedException {
+        HomePage homePage = landingPage.googleSignUp(email, password);
+        Assert.assertNotNull(homePage);
+    }
+
+    /**
      * login in with facebook
      */
     @Test(description = "login in using facebook account", dataProvider = "loginSignUpGoogleExcelDataProvider")
     public void loginUpWithFacebook(String email, String password) throws InterruptedException{
         HomePage homePage = landingPage.facebookLogin(email, password);
+        Assert.assertNotNull(homePage);
+    }
+
+    /**
+     * tis function is used to test the signup functionality using facebook
+     */
+    @Test(description = "sign up with some suggested username and random password", dataProvider = "loginSignUpGoogleExcelDataProvider")
+    public void facebookSignupUsingSuggestedNameTest(String email, String password) throws InterruptedException {
+        HomePage homePage = landingPage.facebookSignUp(email, password);
         Assert.assertNotNull(homePage);
     }
 
@@ -114,26 +132,6 @@ public class loginSignupValidation extends BaseTest{
     }
 
     /**
-     * tis function is used to test the signup functionality
-     */
-    @Test(description = "sign up with some random generate username and password")
-    public void signupTest(){
-        /*this should be */
-        String randomEmail = getData.generateRandomString(10) + "@gmail.com";
-        String randomUsername = getData.generateRandomString(15);
-        String randomPassword = getData.generateRandomString(10);
-        List<String>data = new ArrayList<>();
-        data.add(randomUsername);
-        data.add(randomEmail);
-        data.add(randomUsername);
-        System.out.println(data);
-
-       // getData.insertRecordIntoExcelSheet(data, EXCEL_PATH, LOGIN_TEST_DATA);
-        landingPage.signup(randomUsername, randomEmail, randomPassword);
-        System.out.println(landingPage.getSignUpErrorMessage());
-    }
-
-    /**
      * this is the provider for our test function that provides it with any needed data to test it
      * @return Object[][]: array of test inputs to be tested
      * @throws IOException: throws an exception if the excel file through which we get our data isn't present
@@ -154,45 +152,47 @@ public class loginSignupValidation extends BaseTest{
         return data;
     }
 
-
-
-
     /**
-     * signing up with google
+     * tis function is used to test the normal signup functionality
      */
-    @Test
-    public void signUpWithGoogle(){
+    @Test(description = "sign up with some random generate username and password")
+    public void NormalSignupUsingRandomNameTest(){
 
+        String randomEmail = getData.generateRandomString(10) + "@gmail.com";
+        String randomUsername = getData.generateRandomString(15);
+        String randomPassword = getData.generateRandomString(10) + "*.";
+        List<String>data = new ArrayList<>();
+        data.add(randomUsername);
+        data.add(randomPassword);
+        data.add("success");
+
+        HomePage homePage = landingPage.RandomSignup(randomUsername, randomEmail, randomPassword);
+
+        Assert.assertNotNull(homePage);
+
+        getData.insertRecordIntoExcelSheet(data, EXCEL_PATH, LOGIN_TEST_DATA);
     }
 
     /**
-     * signing up with facebook
+     * tis function is used to test the signup functionality using suggested username
      */
-    @Test
-    public void signUpWithFacebook(){
+    @Test(description = "sign up with some suggested username and random password")
+    public void NormalSignupUsingSuggestedNameTest(){
 
-    }
+        String randomEmail = getData.generateRandomString(10) + "@gmail.com";
+        String randomPassword = getData.generateRandomString(10) + "*.";
 
+        String randomUsername = landingPage.suggestedSignup(randomEmail, randomPassword);
 
+        List<String>data = new ArrayList<>();
+        data.add(randomUsername);
+        data.add(randomPassword);
+        data.add("success");
+        System.out.println(data);
 
+        Assert.assertNotNull(randomUsername);
 
-
-
-    /**
-     * for forgetting username
-     */
-    @Test
-    public void forgetUserNameTest(){
-
-    }
-
-
-    /**
-     * for forgetting password
-     */
-    @Test
-    public void forgetPasswordTest(){
-
+        getData.insertRecordIntoExcelSheet(data, EXCEL_PATH, LOGIN_TEST_DATA);
     }
 
 }

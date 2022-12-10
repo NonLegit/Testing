@@ -1,6 +1,9 @@
 package web.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import web.pageObjects.CommunityPage;
+import web.pageObjects.HomePage;
 import web.testComponents.BaseTest;
 
 public class CommunityValidation extends BaseTest {
@@ -10,7 +13,13 @@ public class CommunityValidation extends BaseTest {
      */
     @Test(description = "this is a test used to create a community")
     public void createCommunity(){
-
+        HomePage page = landingPage.NormalLogin("Immediate_Rhubarb_75","Abdo@1357");
+        Assert.assertNotNull(page);
+        String communityRandomName = getData.generateRandomString(10);
+        CommunityPage communityPage = page.createCommunity(communityRandomName, false, 0);
+        System.out.println(communityPage.getCommunityName());
+        System.out.println(communityRandomName);
+        Assert.assertTrue(communityPage.getCommunityName().contains(communityRandomName));
     }
 
     /**

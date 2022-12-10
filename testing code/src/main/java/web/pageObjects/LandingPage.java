@@ -1,9 +1,7 @@
 package web.pageObjects;
 
 
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import web.AbstractComponents.AbstractComponent;
 
@@ -169,6 +167,48 @@ public class LandingPage extends AbstractComponent {
     WebElement emailInputText;
 
     /**
+     * complete signup button
+     */
+    @FindBy(xpath = "//button[.='Sign up']")
+    WebElement completeSignUp;
+
+    /**
+     * error message 1
+     */
+    By error1 = By.xpath("//p[text()='Username must be between 3 and 20 characters']");
+
+    /**
+     * error message 2
+     */
+    By error2 = By.xpath("//p[text()='Password must be at least 8 characters long']");
+
+    /**
+     * error message 3
+     */
+    By error3 = By.xpath("//*[local-name()='svg' and @data-testid='PriorityHighIcon']");
+
+    /**
+     * error message 4
+     */
+    By error4 = By.xpath("//p[text()='the user already exists']");
+
+    /**
+     * error message 5
+     */
+    By error5 = By.xpath("//p[.=\"This Password isn't acceptable\"]");
+
+    /**
+     * error message 6
+     */
+    By error6 = By.xpath("//p[text()='That user already exists.']");
+
+    /**
+     * to refresh and get the suggested username
+     */
+    @FindBy(xpath = "//*[local-name()='svg' and @data-testid='PublishedWithChangesIcon']")
+    WebElement refreshSuggestedName;
+
+    /**
      * this the continue button in sign up page
      */
     @FindBy(xpath = CONTINUE_SIGNUP_XPATH)
@@ -177,19 +217,19 @@ public class LandingPage extends AbstractComponent {
     /**
      * this is the user password input text in the sign up page
      */
-    @FindBy(id = PASSWORD_SIGNUP_ID)
+    @FindBy(xpath = "(//input[@type='password'])")
     WebElement passwordSignUpInputText;
 
     /**
      * this is the username input text in the sign up page
      */
-    @FindBy(id = USERNAME_SIGNUP_ID)
+    @FindBy(xpath = "(//input[@type='text'])[2]")
     WebElement usernameSignupInputText;
 
     /**
      * this is the I am not a robot box
      */
-    @FindBy(xpath = IAM_NOT_ROBOT_SIGNUP_IFRAME_XPATH)
+    @FindBy(id = "recaptcha-anchor")
     WebElement captchaCheckBox;
 
     /**
@@ -221,9 +261,7 @@ public class LandingPage extends AbstractComponent {
      */
     public HomePage NormalLogin(String username, String password){
         loginButton.click();
-        //waitForFrameToBeAvailable(loginPopupIframe, EXPLICIT_TIMEOUT_SECONDS);
         waitForWebElementToAppear(usernameInputText, EXPLICIT_TIMEOUT_SECONDS);
-        //driver.switchTo().frame(LOGIN_FRAME_INDEX);
         usernameInputText.sendKeys(username);
         passwordInputText.sendKeys(password);
         loginIntoAccButton.click();
@@ -277,6 +315,42 @@ public class LandingPage extends AbstractComponent {
             return null;
     }
 
+    /**
+     * this is a function used to login using google and return the next page if success
+     * @return HomePage: the home page in case of success
+     */
+    public HomePage googleSignUp(String email, String password) throws InterruptedException {
+        signupButton.click();
+        waitForWebElementToAppear(continueWithGoogleBtn, EXPLICIT_TIMEOUT_SECONDS);
+        Thread.sleep(3000);
+        continueWithGoogleBtn.click();
+
+        Set<String>windows = driver.getWindowHandles();
+        Iterator<String> it = windows.iterator();
+        String parent = it.next();
+        String child = it.next();
+        driver.switchTo().window(child);
+        googleLoginEmail.sendKeys(email);
+        googleNextBtn1.click();
+
+        waitForWebElementToAppear(googleLoginPassword, EXPLICIT_TIMEOUT_SECONDS);
+        googleLoginPassword.sendKeys(password);
+        threadSleep(2);
+        googleNextBtn1.click();
+        threadSleep(1);
+        driver.switchTo().window(parent);
+
+        try {
+            waitForWebElementToAppear(userNameIconProfileText, 10);
+        }catch (Exception e){
+            return null;
+        }
+
+        if(userNameIconProfileText!= null && userNameIconProfileText.isDisplayed())
+            return new HomePage(driver);
+        else
+            return null;
+    }
 
     /**
      * this is a function used to login using facebook and return the next page if success
@@ -284,6 +358,45 @@ public class LandingPage extends AbstractComponent {
      */
     public HomePage facebookLogin(String email, String password) throws InterruptedException {
         loginButton.click();
+        waitForWebElementToAppear(continueWithFacebookBtn, EXPLICIT_TIMEOUT_SECONDS);
+        Thread.sleep(3000);
+        continueWithFacebookBtn.click();
+
+        Set<String>windows = driver.getWindowHandles();
+        Iterator<String> it = windows.iterator();
+        String parent = it.next();
+        String child = it.next();
+        driver.switchTo().window(child);
+
+        waitForWebElementToAppear(facebookLoginEmail, EXPLICIT_TIMEOUT_SECONDS);
+        facebookLoginEmail.sendKeys(email);
+        facebookLoginPassword.sendKeys(password);
+        facebookLoginBtn.click();
+
+        waitForWebElementToAppear(facebookContinueAs, EXPLICIT_TIMEOUT_SECONDS);
+        facebookContinueAs.click();
+
+        driver.switchTo().window(parent);
+
+        try {
+            waitForWebElementToAppear(userNameIconProfileText, 10);
+        }catch (Exception e){
+            return null;
+        }
+
+        if(userNameIconProfileText!= null && userNameIconProfileText.isDisplayed())
+            return new HomePage(driver);
+        else
+            return null;
+    }
+
+
+    /**
+     * this is a function used to login using facebook and return the next page if success
+     * @return HomePage: the home page in case of success
+     */
+    public HomePage facebookSignUp(String email, String password) throws InterruptedException {
+        signupButton.click();
         waitForWebElementToAppear(continueWithFacebookBtn, EXPLICIT_TIMEOUT_SECONDS);
         Thread.sleep(3000);
         continueWithFacebookBtn.click();
@@ -354,26 +467,70 @@ public class LandingPage extends AbstractComponent {
     }
 
     /**
-     * this function tries to generate a randomized email and username to try and create a user
+     * this function tries to sig up a randomized email and username to try and create a user
      */
-    public String signup(String username,String email, String password){
+    public HomePage RandomSignup(String username,String email, String password){
         signupButton.click();
-        waitForFrameToBeAvailable(loginPopupIframe, EXPLICIT_TIMEOUT_SECONDS);
-        //driver.switchTo().frame(LOGIN_FRAME_INDEX);
+        waitForWebElementToAppear(emailInputText, 5);
         emailInputText.sendKeys(email);
+        threadSleep(1);
         continueSignupButton.click();
+        threadSleep(1);
         waitForWebElementToAppear(usernameSignupInputText, EXPLICIT_TIMEOUT_SECONDS);
-        usernameSignupInputText.clear();
+        usernameSignupInputText.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
         usernameSignupInputText.sendKeys(username);
+        threadSleep(1);
         passwordSignUpInputText.sendKeys(password);
-        waitForFrameToBeAvailable(captchaCheckBox, EXPLICIT_TIMEOUT_SECONDS);
-        driver.switchTo().frame(captchaCheckBox);
+        threadSleep(1);
+        waitForFrameToBeAvailable(RecaptchaIframe, EXPLICIT_TIMEOUT_SECONDS);
+        threadSleep(1);
         captchaCheckBox.click();
-        /*TODO: edit this return value of the function*/
-        return "";
+        driver.switchTo().parentFrame();
+        threadSleep(1);
+        completeSignUp.click();
 
-
+        if(driver.findElements(error1).size() > 0  || driver.findElements(error2).size() > 0  || driver.findElements(error3).size() > 0 ||
+        driver.findElements(error4).size() > 0 || driver.findElements(error5).size() > 0 || driver.findElements(error6).size() > 0)
+            return null;
+        else
+            return new HomePage(driver);
     }
+
+    /**
+     * this function tries to sig up a email and suggested username to try and create a user
+     */
+    public String suggestedSignup(String email, String password){
+        String suggestedUserName;
+        signupButton.click();
+        waitForWebElementToAppear(emailInputText, 5);
+        emailInputText.sendKeys(email);
+        threadSleep(1);
+        continueSignupButton.click();
+        threadSleep(1);
+        waitForWebElementToAppear(usernameSignupInputText, EXPLICIT_TIMEOUT_SECONDS);
+        refreshSuggestedName.click();
+        threadSleep(1);
+        suggestedUserName = usernameSignupInputText.getAttribute("value");
+        System.out.println(suggestedUserName);
+        threadSleep(1);
+        passwordSignUpInputText.sendKeys(password);
+        threadSleep(2);
+        waitForFrameToBeAvailable(RecaptchaIframe, EXPLICIT_TIMEOUT_SECONDS);
+        threadSleep(1);
+        captchaCheckBox.click();
+        driver.switchTo().parentFrame();
+        threadSleep(10);
+        completeSignUp.click();
+
+        if(driver.findElements(error1).size() > 0  || driver.findElements(error2).size() > 0  || driver.findElements(error3).size() > 0 ||
+                driver.findElements(error4).size() > 0 || driver.findElements(error5).size() > 0 || driver.findElements(error6).size() > 0)
+            return null;
+        else
+            return suggestedUserName;
+    }
+
+
+
 
     /**
      * this function gets the error string produced by the signup
