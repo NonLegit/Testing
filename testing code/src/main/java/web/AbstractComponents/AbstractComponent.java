@@ -18,7 +18,7 @@ public class AbstractComponent {
     /**
      * this is the driver which is used in interacting with the browser
      */
-    private WebDriver driver;
+    protected WebDriver driver;
 
 
     /**

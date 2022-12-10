@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62d21152-2a9b-46bb-92d6-dd3174e76d6f" name="Default Changelist" comment="">
+
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/CommunityPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/CommunityPage.java" afterDir="false" />
@@ -46,6 +47,7 @@
       <change beforePath="$PROJECT_DIR$/target/test-classes/web/testComponents/Listeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/testComponents/Listeners.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/web/tests/CommunityValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/tests/CommunityValidation.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/web/tests/PostsValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/tests/PostsValidation.class" afterDir="false" />
+
       <change beforePath="$PROJECT_DIR$/target/test-classes/web/tests/loginSignupValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/tests/loginSignupValidation.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +105,9 @@
       <recent name="D:\PROJECTS\third year\first term\software engineering\NonLegit-Code\Testing\testing code\src\test\java\resources" />
     </key>
   </component>
+
   <component name="RunManager" selected="TestNG.tests.EnterUserNameAndPass">
+
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -115,6 +119,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration name="tests.EnterUserNameAndPass" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nonLegit" />
       <extension name="coverage">
@@ -126,6 +131,7 @@
       <option name="PACKAGE_NAME" value="mobile.tests" />
       <option name="MAIN_CLASS_NAME" value="mobile.tests.tests" />
       <option name="METHOD_NAME" value="EnterUserNameAndPass" />
+
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -144,6 +150,7 @@
       <option name="PACKAGE_NAME" value="mobile.tests" />
       <option name="MAIN_CLASS_NAME" value="mobile.tests.tests" />
       <option name="METHOD_NAME" value="addToFavourite" />
+
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -162,6 +169,7 @@
       <option name="PACKAGE_NAME" value="mobile.tests" />
       <option name="MAIN_CLASS_NAME" value="mobile.tests.tests" />
       <option name="METHOD_NAME" value="createPostTest" />
+
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -180,6 +188,7 @@
       <option name="PACKAGE_NAME" value="mobile.tests" />
       <option name="MAIN_CLASS_NAME" value="mobile.tests.tests" />
       <option name="METHOD_NAME" value="visitCommunityTest" />
+
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -187,6 +196,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration name="tests.visitFromRecentlyVisited" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nonLegit" />
       <extension name="coverage">
@@ -199,6 +209,7 @@
       <option name="MAIN_CLASS_NAME" value="mobile.tests.tests" />
       <option name="METHOD_NAME" value="visitFromRecentlyVisited" />
       <option name="TEST_OBJECT" value="METHOD" />
+
       <properties />
       <listeners />
       <method v="2">
@@ -212,6 +223,7 @@
         <item itemvalue="TestNG.tests.visitCommunityTest" />
         <item itemvalue="TestNG.tests.createPostTest" />
         <item itemvalue="TestNG.tests.addToFavourite" />
+
       </list>
     </recent_temporary>
   </component>
@@ -236,6 +248,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
