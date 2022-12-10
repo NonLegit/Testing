@@ -1,6 +1,6 @@
 package mobile.Pages;
 
-import io.appium.java_client.MobileElement;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class CreatePost extends Pages {
@@ -9,19 +9,19 @@ public class CreatePost extends Pages {
      * This Is Crete Post Page Title
      */
     @FindBy(id = "Create Post")
-    MobileElement CreatePostPage;
+    WebElement CreatePostPage;
 
     /**
      * This is Cancel Button In Create Post Page
      */
     @FindBy(id = "Cancel")
-    MobileElement CreatePostCancelButton;
+    WebElement CreatePostCancelButton;
 
     /**
      * This Is Next Button In Create Post Page
      */
     @FindBy(id = "Next")
-    MobileElement CreatePostNextButton;
+    WebElement CreatePostNextButton;
 
     /**
      * This Is The Title Of  Your Post
@@ -29,7 +29,7 @@ public class CreatePost extends Pages {
 
     //Send "Enter" to end text
     @FindBy(id = "Title")
-    MobileElement CreatePostTitleText;
+    WebElement CreatePostTitleText;
 
     /**
      * This Is Add Image Button
@@ -37,82 +37,82 @@ public class CreatePost extends Pages {
 
 
     @FindBy(id = "Add Image")
-    MobileElement CreatePostAddImageButton;
+    WebElement CreatePostAddImageButton;
 
     /**
      * This Is First Image Added To The Post
      */
 
     @FindBy(id = "First Image")
-    MobileElement CreatePostFirstImage;
+    WebElement CreatePostFirstImage;
 
     /**
      * This Is Cancel Image Button To Delete Specific Image
      */
 
     @FindBy(id = "Delete This Image")
-    MobileElement CreatePostDeleteImageButton;
+    WebElement CreatePostDeleteImageButton;
 
     /**
      * This Is Add Another Image Button
      */
 
     @FindBy(id = "Add Another Image")
-    MobileElement CreatePostAddAnotherImageButton;
+    WebElement CreatePostAddAnotherImageButton;
 
 
     /**
      * This IS Add video Button
      */
     @FindBy(id = "Add Video")
-    MobileElement CreatePostAddVideoButton;
+    WebElement CreatePostAddVideoButton;
 
     /**
      * This IS Add Body Text Button
      */
     @FindBy(id = "Add Text")
-    MobileElement CreatePostAddTextButton;
+    WebElement CreatePostAddTextButton;
 
     /**
      * This IS  Body Text Button
      */
     @FindBy(id = "Add Text")
-    MobileElement CreatePostTextarea;
+    WebElement CreatePostTextarea;
 
     /**
      * This IS Add Link Button
      */
     @FindBy(id = "Add Link")
-    MobileElement CreatePostAddLinkButton;
+    WebElement CreatePostAddLinkButton;
 
     /**
      * This IS Add Poll Button
      */
     @FindBy(id = "Add Poll")
-    MobileElement CreatePostAddPollButton;
+    WebElement CreatePostAddPollButton;
 
     /**
      * This IS Add Talk Button
      */
     @FindBy(id = "Add Talk")
-    MobileElement CreatePostAddVoiceButton;
+    WebElement CreatePostAddVoiceButton;
 
 
     @FindBy(id = "Search For Cumm")
-    MobileElement CreatePostSearchCommunity;
+    WebElement CreatePostSearchCommunity;
 
     @FindBy(id = "First Community in Search")
-    MobileElement CreatePostFirstCommunity;
+    WebElement CreatePostFirstCommunity;
 
     @FindBy(id = "PostButton")
-    MobileElement PostButton;
+    WebElement PostButton;
 
 
     @FindBy(id="Discard Message")
-    MobileElement DiscardMessage;
+    WebElement DiscardMessage;
 
     @FindBy(id="Discard")
-    MobileElement DiscardButton;
+    WebElement DiscardButton;
 
 /////Will ADd Flare and post schedule after finishing them
 

@@ -1,24 +1,24 @@
 package mobile.Pages;
 
-import io.appium.java_client.MobileElement;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class CommunityPage extends Pages {
 
     @FindBy(id = "Community Name")
-    MobileElement CommunityName;
+    WebElement CommunityName;
 
     @FindBy(id="Home Button")
-    MobileElement CommunityHomeButton;
+    WebElement CommunityHomeButton;
 
     @FindBy(id="Community Type")
-    MobileElement CommunityType;
+    WebElement CommunityType;
 
     @FindBy(id="Community NSFW")
-    MobileElement CommunityNSFW;
+    WebElement CommunityNSFW;
 
     @FindBy(id="Join")
-    MobileElement JoinButton;
+    WebElement JoinButton;
 
     public void returnHome() throws Exception{
         CommunityHomeButton.click();

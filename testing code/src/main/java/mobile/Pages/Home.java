@@ -1,6 +1,6 @@
 package mobile.Pages;
 
-import io.appium.java_client.MobileElement;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class Home extends Pages{
@@ -10,91 +10,91 @@ public class Home extends Pages{
      */
 
     @FindBy(id = "Home Page")
-    MobileElement Home;
+    WebElement Home;
 
     /**
      *This Is Options Button In Home Pages
      */
 
     @FindBy(id = "Options")
-    MobileElement HomeOptionsButton;
+    WebElement HomeOptionsButton;
 
     /**
      *This Is Recently Visited Button In Home Page -> Options
      */
 
     @FindBy(id = "Recently Visited")
-    MobileElement HomeRecentlyVisitedButton;
+    WebElement HomeRecentlyVisitedButton;
 
     /**
      *This Is Recently Visited See All
      */
 
     @FindBy(id = "Recently Visited See All")
-    MobileElement HomeRecentlyVisitedSeeAll;
+    WebElement HomeRecentlyVisitedSeeAll;
 
     /**
      *This Is First Community In Recently Visited
      */
 
     @FindBy(id = "First Recently Visited")
-    MobileElement HomeFirstRecentlyVisited;
+    WebElement HomeFirstRecentlyVisited;
 
     /**
      *This Is Moderating Button In Home Page -> Options
      */
 
     @FindBy(id = "Moderating")
-    MobileElement HomeModeratingButton;
+    WebElement HomeModeratingButton;
 
     /**
      *This Is First Community In Moderating Section
      */
 
     @FindBy(id = "First Moderating")
-    MobileElement HomeFirstModerating;
+    WebElement HomeFirstModerating;
 
     /**
      *This Is Home -> Moderation -> Mod Feed Button
      */
 //ml8ya
     @FindBy(id = "Mod Feed")
-    MobileElement HomeModeratingModFeedButton;
+    WebElement HomeModeratingModFeedButton;
 
     /**
      *This Is Home -> Moderation -> Mod Queue Button
      */
 //ml8ya
     @FindBy(id = "Mod Queue")
-    MobileElement HomeModeratingModQueueButton;
+    WebElement HomeModeratingModQueueButton;
 
     /**
      *This Is Home -> Moderation -> Mod Mail Button
      */
 //ml8ya
     @FindBy(id = "Mod Mail")
-    MobileElement HomeModeratingModMailButton;
+    WebElement HomeModeratingModMailButton;
 
     /**
      *This Is Home -> Options -> Favourite Button
      */
 
     @FindBy(id = "Favourites")
-    MobileElement HomeFavouritesButton;
+    WebElement HomeFavouritesButton;
 
     /**
      *This Is First Community in Favourites
      */
 
     @FindBy(id = "First Favourite")
-    MobileElement HomeFirstFavourite;
+    WebElement HomeFirstFavourite;
 
     /**
      *This Is Home -> Options -> Add To Favourites Button
      */
 
     @FindBy(id = "Add To Favourites")
-    MobileElement HomeAddToFavourites;
+    WebElement HomeAddToFavourites;
 
 
     /**
@@ -102,7 +102,7 @@ public class Home extends Pages{
      */
 
     @FindBy(id = "Your Communities")
-    MobileElement HomeYourCommunitiesButton;
+    WebElement HomeYourCommunitiesButton;
 
     /**
      *This Is Home -> Options -> Your Communities -> Create Community Button
@@ -110,14 +110,14 @@ public class Home extends Pages{
      */
 
     @FindBy(id = "Create Community")
-    MobileElement HomeCreateCommunityButton;
+    WebElement HomeCreateCommunityButton;
 
     /**
      *This Is Home -> Options -> Your Communities -> First Community
      */
 
     @FindBy(id = "First In Your Community")
-    MobileElement HomeFirstInYourCommunities;
+    WebElement HomeFirstInYourCommunities;
 
 
     /**
@@ -125,7 +125,7 @@ public class Home extends Pages{
      */
 
     @FindBy(id = "Following")
-    MobileElement HomeFollowinButton;
+    WebElement HomeFollowinButton;
 
 
     /**
@@ -133,63 +133,63 @@ public class Home extends Pages{
      */
 
     @FindBy(id = "First In Following")
-    MobileElement HomeFirstFollowing;
+    WebElement HomeFirstFollowing;
 
     /**
      *This Is Home Drop-Down In The Top Of The Home Page
      */
 
     @FindBy(id = "First Home Button")
-    MobileElement HomeButtonUpper;
+    WebElement HomeButtonUpper;
 
     /**
      *This Is Home Button In The Bottom Of The Home Page
      */
 
     @FindBy(id = "Second Home Button")
-    MobileElement HomeButtonLower;
+    WebElement HomeButtonLower;
 
     /**
      *This Is Search Button In The Home Page
      */
 
     @FindBy(id = "Search")
-    MobileElement HomeSearchButton;
+    WebElement HomeSearchButton;
 
     /**
      *This Is Profile Icon Button In The Home Page
      */
 
     @FindBy(id = "Avatar")
-    MobileElement HomeAvatarButton;
+    WebElement HomeAvatarButton;
 
     /**
      *This Is Discover Button In The Home Page
      */
 
     @FindBy(id = "Discover")
-    MobileElement HomeDiscoverButton;
+    WebElement HomeDiscoverButton;
 
     /**
      *This Is Creates Post Button In The Home Page
      */
 
     @FindBy(id = "Create Post")
-    MobileElement HomeCreatePostButton;
+    WebElement HomeCreatePostButton;
 
     /**
      *This Is Chat Button In The Home Page
      */
 
     @FindBy(id = "Chat")
-    MobileElement HomeChatButton;
+    WebElement HomeChatButton;
 
     /**
      *This Is Notifications Button In The Home Page
      */
 
     @FindBy(id = "Notifications")
-    MobileElement HomeNotificationsButton;
+    WebElement HomeNotificationsButton;
 
 
     /**
@@ -197,21 +197,21 @@ public class Home extends Pages{
      */
 
     @FindBy(id = "Status")
-    MobileElement HomeStatusButton;
+    WebElement HomeStatusButton;
 
     /**
      *This Is My User-Name In The Home Page
      */
 
     @FindBy(id = "My Name")
-    MobileElement HomeUserName;
+    WebElement HomeUserName;
 
     /**
      *This Is My Profile Button In The Home Page
      */
 
     @FindBy(id = "My Profile")
-    MobileElement HomeMyProfileButton;
+    WebElement HomeMyProfileButton;
 
 
     /**
@@ -219,14 +219,14 @@ public class Home extends Pages{
      */
 
     @FindBy(id = "Second Create Community")
-    MobileElement HomeCreateCommunity2Button;
+    WebElement HomeCreateCommunity2Button;
 
     /**
      *This Is Saved Button In The Home Page
      */
 
     @FindBy(id = "Saved")
-    MobileElement HomeSavedButton;
+    WebElement HomeSavedButton;
 
 
     /**
@@ -234,7 +234,7 @@ public class Home extends Pages{
      */
 
     @FindBy(id = "History")
-    MobileElement HomeHistoryButton;
+    WebElement HomeHistoryButton;
 
 
     /**
@@ -242,7 +242,7 @@ public class Home extends Pages{
      */
 
     @FindBy(id = "Settings")
-    MobileElement HomeSettingButton;
+    WebElement HomeSettingButton;
 
 
 

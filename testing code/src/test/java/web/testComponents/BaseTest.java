@@ -22,7 +22,6 @@ import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
 
-
 import static web.constants.TestConstants.*;
 
 /**

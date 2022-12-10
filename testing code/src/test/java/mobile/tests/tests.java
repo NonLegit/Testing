@@ -1,11 +1,12 @@
-package Mobile.tests;
+package mobile.tests;
 
-import mobile.Pages.CreatePost;
 import mobile.Pages.*;
+import mobile.testComponents.BaseTest;
+import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class tests {
+public class tests extends BaseTest {
 
     CreatePost CreatePost;
     MyProfilePage MyProfilePage;
@@ -167,6 +168,18 @@ public class tests {
         }else{
             Assert.fail();
         }
+    }
+
+    @Test(description = "dummy test")
+    public void EnterUserNameAndPass() throws InterruptedException {
+        driver.findElement(By.xpath("//android.widget.EditText[1]")).click();
+        Thread.sleep(1000);
+        driver.findElement(By.xpath("//android.widget.EditText[1]")).sendKeys("test");
+        driver.hideKeyboard();
+        driver.findElement(By.xpath("//android.widget.EditText[2]")).click();
+        driver.findElement(By.xpath("//android.widget.EditText[2]")).sendKeys("test");
+        driver.hideKeyboard();
+        Thread.sleep(11000);
     }
 }
 
