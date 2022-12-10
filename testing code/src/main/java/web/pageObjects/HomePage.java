@@ -9,6 +9,8 @@ import web.constants.PageConstants;
 
 import java.util.List;
 
+import static web.constants.PageConstants.EXPLICIT_TIMEOUT_SECONDS;
+
 public class HomePage extends AbstractComponent {
 
     /**
@@ -33,6 +35,37 @@ public class HomePage extends AbstractComponent {
      */
     @FindBy(id = PageConstants.NULL_LOCATOR)
     WebElement createPost;
+
+    /**
+     * this is the create community button
+     */
+    @FindBy(xpath = "//button[text()='create community']")
+    WebElement createCommunityBtn;
+
+    /**
+     * this is the final create community button
+     */
+    @FindBy(xpath = "//button[text()='Create community']")
+    WebElement createCommunityBtn2;
+
+    /**
+     * this is the input text through which we will take the name of the community
+     */
+    @FindBy(id = "name")
+    WebElement communityNameInput;
+
+    /**
+     * this is the community type
+     */
+    @FindBy(xpath = "//input[@type='radio']")
+    List<WebElement> communityTypeList;
+
+    /**
+     * this is the check button for NSFW content
+     */
+    @FindBy(id = "myCheck")
+    WebElement isNSFWCheckButton;
+
 
     /**
      * this is the constructor of the class and it initializes all of its members using PageFactory class
@@ -85,6 +118,29 @@ public class HomePage extends AbstractComponent {
         Profile.click();
 
     }
+
+     * this function is used to create a community
+     * for community type:  - 0:public
+     *                      - 1:Restricted
+     *                      - 2:private
+     */
+    public CommunityPage createCommunity(String communityName, boolean isNSFW, int communityType){
+        waitForWebElementToAppear(createCommunityBtn, EXPLICIT_TIMEOUT_SECONDS);
+        createCommunityBtn.click();
+        waitForWebElementToAppear(communityNameInput, EXPLICIT_TIMEOUT_SECONDS);
+        communityNameInput.sendKeys(communityName);
+        communityTypeList.get(communityType).click();
+
+        if(isNSFW)
+            isNSFWCheckButton.click();
+
+        createCommunityBtn2.click();
+        threadSleep(2);
+
+        return new CommunityPage(driver);
+    }
+
+
 
     /**
      * this methods clicks on one of the post to enter into it

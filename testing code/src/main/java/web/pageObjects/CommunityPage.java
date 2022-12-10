@@ -1,3 +1,4 @@
+
 package web.pageObjects;
 
 import org.openqa.selenium.WebDriver;
@@ -35,3 +36,4 @@ public class CommunityPage extends AbstractComponent {
         return communityNameLabel.getText();
     }
 }
+
