@@ -197,4 +197,12 @@ public class AbstractComponent {
         return alert != null;
     }
 
+    /**
+     * this method is to scroll down inside a webElement where -ve values mean scroll up, positive values means scroll down
+     */
+    public void scroll(int scrollAmount){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0," + scrollAmount + ")", "");
+    }
+
 }

@@ -2,10 +2,7 @@ package web.testComponents;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -16,8 +13,6 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Collections;
-import java.util.Properties;
-
 
 import static web.constants.TestConstants.*;
 
@@ -132,5 +127,7 @@ public class BaseTest {
     public String getAlertText(){
         return driver.switchTo().alert().getText();
     }
+
+
 
 }

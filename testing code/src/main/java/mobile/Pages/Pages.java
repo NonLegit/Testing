@@ -16,7 +16,7 @@ public class Pages {
     /**
      * this is the driver which is used in interacting with the browser
      */
-    private AndroidDriver driver;
+    protected AndroidDriver driver;
 
     /**
      * this is the constructor of the class and it initializes all of its members using PageFactory class

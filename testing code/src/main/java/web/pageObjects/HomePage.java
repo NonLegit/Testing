@@ -80,13 +80,13 @@ public class HomePage extends AbstractComponent {
     /**
      *
      */
-    @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/ul/div[1]/div/div[2]/p")
+    @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/ul/div")
     WebElement MyNameButton;
 
     @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/ul/div[2]/div/div/div/div[1]/div[2]/span")
     WebElement MyStuff;
 
-    @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/ul/div[2]/div/div/div/div[3]/a/div/span")
+    @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/ul/div[2]/div/div/div/div[3]")
     WebElement Profile;
 
     @FindBy(xpath = "")
@@ -98,8 +98,35 @@ public class HomePage extends AbstractComponent {
     @FindBy(xpath = "/html/body/div/header/div/div[2]/ul/div[2]/div/div/div/div[5]/a/div/span")
     WebElement SettingsButton;
 
-    public void gotoSettings(){
+    @FindBy(xpath = "/html/body/div[1]/div/div/div[1]/div[1]/input")
+    WebElement CreatePostsButton;
 
+    @FindBy(xpath = "/html/body/div[1]/div/div/div[2]/div[3]/a[2]/button")
+    WebElement CreateCommunityButton;
+
+    @FindBy(xpath = "/html/body/div/header/div/div[1]/div/div[2]/input")
+    WebElement SearchBar;
+
+
+
+    public void setSearchBar (String Search){
+        waitForWebElementToAppear(SearchBar,5);
+        SearchBar.click();
+        SearchBar.sendKeys(Search);
+        SearchBar.sendKeys("Enter");
+    }
+
+    public void gotoCreateCommunity(){
+        waitForWebElementToAppear(CreateCommunityButton,5);
+        CreateCommunityButton.click();
+    }
+
+    public void gotoCreatePost(){
+        waitForWebElementToAppear(CreatePostsButton,5);
+        CreatePostsButton.click();
+    }
+    public void gotoSettings(){
+        threadSleep(5);
         waitForWebElementToAppear(MyNameButton,1);
         MyNameButton.click();
         waitForWebElementToAppear(SettingsButton,1);
@@ -112,13 +139,13 @@ public class HomePage extends AbstractComponent {
 
     public void gotoMyProfile() {
 
-        waitForWebElementToAppear(MyNameButton, 1);
+        waitForWebElementToAppear(MyNameButton, 5);
         MyNameButton.click();
-        waitForWebElementToAppear(Profile, 1);
+        waitForWebElementToAppear(Profile, 5);
         Profile.click();
 
     }
-
+    /**
      * this function is used to create a community
      * for community type:  - 0:public
      *                      - 1:Restricted
@@ -181,6 +208,24 @@ public class HomePage extends AbstractComponent {
         }else{
             return null;
         }
+    }
+
+    public void reLogin(String Username, String Password){
+        threadSleep(1);
+        waitForWebElementToAppear(MyNameButton,5);
+        MyNameButton.click();
+        threadSleep(2);
+        driver.findElement(By.xpath("/html/body/div[1]/header/div/div[2]/ul/div[2]/div/div/div/div[9]/div[2]/span")).click();
+        threadSleep(1);
+        driver.findElement(By.xpath("/html/body/div[1]/header/div/div[2]/div/button[2]")).click();
+        threadSleep(1);
+        //driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/form/div[1]/div/input")).click();
+        threadSleep(1);
+        driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/form/div[1]/div/input")).sendKeys(Username);
+        threadSleep(1);
+        driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/form/div[2]/div/input")).sendKeys(Password);
+        threadSleep(1);
+        driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div/form/button")).click();
     }
 
 

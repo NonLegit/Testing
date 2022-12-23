@@ -563,4 +563,19 @@ public class LandingPage extends AbstractComponent {
 
     }
 
+
+    /**
+     * this dummy login made temporary to be used in other tests
+     * @param UserName
+     * @param Password
+     */
+    public void dummyLogIn(String UserName,String Password){
+        threadSleep(1);
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/form/div[1]/div/input")).sendKeys(UserName);
+
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/form/div[2]/div/input")).sendKeys(Password);
+        threadSleep(1);
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/form/button")).click();
+    }
+
 }
