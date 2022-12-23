@@ -51,50 +51,26 @@ public class HomePage extends AbstractComponent {
      * this is the create community button
      */
     @FindBy(xpath = "//button[text()='create community']")
-    WebElement createCommunityBtn;
+    WebElement createCommunityBtn1;
 
     /**
      * this is the final create community button
      */
     @FindBy(xpath = "//button[text()='Create community']")
     WebElement createCommunityBtn2;
-
-    /**
-     * this is the input text through which we will take the name of the community
-     */
-    @FindBy(id = "name")
-    WebElement communityNameInput;
-
-    /**
-     * this is the community type
-     */
-    @FindBy(xpath = "//input[@type='radio']")
-    List<WebElement> communityTypeList;
-
-    /**
-     * this is the check button for NSFW content
-     */
-    @FindBy(id = "myCheck")
-    WebElement isNSFWCheckButton;
 
 
     /**
      * this is the create post input in the home page
      */
     @FindBy(id = PageConstants.NULL_LOCATOR)
-    WebElement createPost;
+    WebElement createPost1;
 
     /**
      * this is the create community button
      */
     @FindBy(xpath = "//button[text()='create community']")
     WebElement createCommunityBtn;
-
-    /**
-     * this is the final create community button
-     */
-    @FindBy(xpath = "//button[text()='Create community']")
-    WebElement createCommunityBtn2;
 
     /**
      * this is the input text through which we will take the name of the community
@@ -200,8 +176,8 @@ public class HomePage extends AbstractComponent {
      *                      - 2:private
      */
     public CommunityPage createCommunity(String communityName, boolean isNSFW, int communityType){
-        waitForWebElementToAppear(createCommunityBtn, EXPLICIT_TIMEOUT_SECONDS);
-        createCommunityBtn.click();
+        waitForWebElementToAppear(createCommunityBtn1, EXPLICIT_TIMEOUT_SECONDS);
+        createCommunityBtn1.click();
         waitForWebElementToAppear(communityNameInput, EXPLICIT_TIMEOUT_SECONDS);
         communityNameInput.sendKeys(communityName);
         communityTypeList.get(communityType).click();
@@ -214,72 +190,6 @@ public class HomePage extends AbstractComponent {
 
         return new CommunityPage(driver);
     }
-
-
-    /**
-     *
-     */
-    @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/ul/div[1]/div/div[2]/p")
-    WebElement MyNameButton;
-
-    @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/ul/div[2]/div/div/div/div[1]/div[2]/span")
-    WebElement MyStuff;
-
-    @FindBy(xpath = "/html/body/div[1]/header/div/div[2]/ul/div[2]/div/div/div/div[3]/a/div/span")
-    WebElement Profile;
-
-    @FindBy(xpath = "")
-    WebElement FirstPost;
-
-    @FindBy(xpath = "/html/body/div/div/div/div[1]/div[3]/div[2]/div[1]/div[2]/a")
-    WebElement FirstPostOwner;
-
-    @FindBy(xpath = "/html/body/div/header/div/div[2]/ul/div[2]/div/div/div/div[5]/a/div/span")
-    WebElement SettingsButton;
-
-    public void gotoSettings(){
-
-        waitForWebElementToAppear(MyNameButton,1);
-        MyNameButton.click();
-        waitForWebElementToAppear(SettingsButton,1);
-        if(SettingsButton.isDisplayed()){
-            SettingsButton.click();
-        }
-    }
-
-
-
-    public void gotoMyProfile() {
-
-        waitForWebElementToAppear(MyNameButton, 1);
-        MyNameButton.click();
-        waitForWebElementToAppear(Profile, 1);
-        Profile.click();
-
-    }
-
-    /**
-     * this function is used to create a community
-     * for community type:  - 0:public
-     *                      - 1:Restricted
-     *                      - 2:private
-     */
-    public CommunityPage createCommunity(String communityName, boolean isNSFW, int communityType){
-        waitForWebElementToAppear(createCommunityBtn, EXPLICIT_TIMEOUT_SECONDS);
-        createCommunityBtn.click();
-        waitForWebElementToAppear(communityNameInput, EXPLICIT_TIMEOUT_SECONDS);
-        communityNameInput.sendKeys(communityName);
-        communityTypeList.get(communityType).click();
-
-        if(isNSFW)
-            isNSFWCheckButton.click();
-
-        createCommunityBtn2.click();
-        threadSleep(2);
-
-        return new CommunityPage(driver);
-    }
-
 
 
     /**
@@ -289,6 +199,8 @@ public class HomePage extends AbstractComponent {
      */
     public PostDetails checkPost(int postIndex){
         try {
+            scroll(300);
+            threadSleep(2);
             posts.get(postIndex).click();
             waitForWebElementToAppear(whatIsYourThoughtsBtn, 5);
             threadSleep(1);

@@ -278,11 +278,11 @@ public class MyProfilePage extends Pages{
         waitForWebElementToAppear(EditButton,5);
         EditButton.click();
     }
-    public boolean  gotoFollowers(){
+    public boolean  gotoFollowers() {
         threadSleep(2);
         driver.findElement(By.xpath("(//android.widget.Button)[3]")).click();
         return true;
-
+    }
 
     ///Make it general Post
     public String clickPost(){

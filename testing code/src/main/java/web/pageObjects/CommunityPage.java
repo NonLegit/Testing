@@ -68,9 +68,3 @@ public class CommunityPage extends AbstractComponent {
         return false;
     }
 }
-
-
-
-
-}
-
