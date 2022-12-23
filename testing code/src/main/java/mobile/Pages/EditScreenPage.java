@@ -2,6 +2,11 @@ package mobile.Pages;
 
 import io.appium.java_client.android.AndroidDriver;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+
 public class EditScreenPage extends Pages {
 
     /**
@@ -12,4 +17,29 @@ public class EditScreenPage extends Pages {
     public EditScreenPage(AndroidDriver driver) {
         super(driver);
     }
+    @FindBy(xpath = "(//android.view.View)[6]")
+    WebElement EditScreen;
+
+    public boolean checkForEditScreen(){
+        threadSleep(2);
+        waitForWebElementToAppear(EditScreen,5);
+        if(EditScreen.getAttribute("content-desc").equals("EditScreen")){
+            return true;
+        }
+        return false;
+    }
+
+    public void changeNameDesc(String Name,String Desc){
+        threadSleep(2);
+        driver.findElement(By.xpath("(//android.widget.EditText)[1]")).click();
+        threadSleep(1);
+        driver.findElement(By.xpath("(//android.widget.EditText)[1]")).sendKeys(Name);
+        threadSleep(1);
+        driver.findElement(By.xpath("(//android.widget.EditText)[2]")).click();
+        threadSleep(1);
+        driver.findElement(By.xpath("(//android.widget.EditText)[2]")).sendKeys(Desc);
+        threadSleep(2);
+        driver.findElement(By.xpath("(//android.widget.Button)[1]")).click();
+    }
+
 }

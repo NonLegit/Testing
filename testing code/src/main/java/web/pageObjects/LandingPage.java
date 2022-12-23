@@ -145,6 +145,7 @@ public class LandingPage extends AbstractComponent {
     /**
      * this is the login into account button
      */
+
     @FindBy(id = ":r2:")
     WebElement loginIntoAccButton;
 
@@ -173,6 +174,7 @@ public class LandingPage extends AbstractComponent {
     WebElement completeSignUp;
 
     /**
+
      * this is the my name in the bar button
      */
     @FindBy(xpath = "//div[@class='MuiBox-root css-qwtxio']")
@@ -277,6 +279,7 @@ public class LandingPage extends AbstractComponent {
         loginIntoAccButton.click();
 
         try {
+
             //waitForWebElementToAppear(loginErrorMessageLabel, EXPLICIT_TIMEOUT_SECONDS);
             waitForWebElementToDisappear(loginIntoAccButton, EXPLICIT_TIMEOUT_SECONDS);
         }catch (Exception e){
@@ -326,6 +329,7 @@ public class LandingPage extends AbstractComponent {
             return new HomePage(driver);
         else
             return null;
+
     }
 
     /**
@@ -576,6 +580,20 @@ public class LandingPage extends AbstractComponent {
 
     }
 
+    /**
+     * this dummy login made temporary to be used in other tests
+     * @param UserName
+     * @param Password
+     */
+    public void dummyLogIn(String UserName,String Password) {
+        threadSleep(1);
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/form/div[1]/div/input")).sendKeys(UserName);
+
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/form/div[2]/div/input")).sendKeys(Password);
+        threadSleep(1);
+        driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/form/button")).click();
+    }
+    
     /**
      * this function is used to logout
      */

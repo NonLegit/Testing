@@ -46,7 +46,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -60,96 +60,10 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PROJECTS\third year\first term\software engineering\NonLegit-Code\Testing\testing code\src\test\java\resources" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="mobile.tests" />
-    </key>
   </component>
-  <component name="RunManager" selected="TestNG.PostsValidation.makeRandomComment">
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PostsValidation.downVoteCommentTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="nonLegit" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="web.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="web.tests" />
-      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
-      <option name="METHOD_NAME" value="downVoteCommentTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PostsValidation.downVotePostTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="nonLegit" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="web.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="web.tests" />
-      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
-      <option name="METHOD_NAME" value="downVotePostTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PostsValidation.insights" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="nonLegit" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="web.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="web.tests" />
-      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
-      <option name="METHOD_NAME" value="insights" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="PostsValidation.makeRandomComment" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="nonLegit" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mobile.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mobile.tests" />
-      <option name="MAIN_CLASS_NAME" value="mobile.tests.PostsValidation" />
-      <option name="METHOD_NAME" value="makeRandomComment" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PostsValidation.upVoteCommentTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="nonLegit" />
+      <module name="testing code" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="web.tests.*" />
@@ -158,7 +72,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="web.tests" />
       <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
-      <option name="METHOD_NAME" value="upVoteCommentTest" />
+      <option name="METHOD_NAME" value="makeRandomComment" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -169,10 +83,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.PostsValidation.makeRandomComment" />
-        <item itemvalue="TestNG.PostsValidation.downVoteCommentTest" />
-        <item itemvalue="TestNG.PostsValidation.upVoteCommentTest" />
-        <item itemvalue="TestNG.PostsValidation.insights" />
-        <item itemvalue="TestNG.PostsValidation.downVotePostTest" />
       </list>
     </recent_temporary>
   </component>
@@ -180,23 +90,11 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="62d21152-2a9b-46bb-92d6-dd3174e76d6f" name="Default Changelist" comment="" />
-      <created>1668717927441</created>
+      <created>1671826501422</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1668717927441</updated>
+      <updated>1671826501422</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

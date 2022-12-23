@@ -1,5 +1,5 @@
 
-package mobile.testComponents;
+package Mobile.testComponents;
 
 
 import com.aventstack.extentreports.ExtentReports;

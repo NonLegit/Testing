@@ -1,8 +1,11 @@
 package mobile.Pages;
 
 import io.appium.java_client.android.AndroidDriver;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
 
 import java.util.List;
 
@@ -153,7 +156,6 @@ public class Home extends Pages{
     /**
      *This Is Home Drop-Down In The Top Of The Home Page
      */
-
     @FindBy(xpath = "(//android.widget.Button)[1]")
     WebElement HomeButtonUpper;
 
@@ -168,14 +170,14 @@ public class Home extends Pages{
      *This Is Search Button In The Home Page
      */
 
-    @FindBy(id = "Search")
+    @FindBy(xpath = "(//android.widget.Button)[3]")
     WebElement HomeSearchButton;
 
     /**
      *This Is Profile Icon Button In The Home Page
      */
 
-    @FindBy(id = "Avatar")
+    @FindBy(xpath= "(//android.widget.Button)[4]")
     WebElement HomeAvatarButton;
 
     /**
@@ -218,14 +220,14 @@ public class Home extends Pages{
      *This Is My User-Name In The Home Page
      */
 
-    @FindBy(id = "My Name")
+    @FindBy(xpath= "")
     WebElement HomeUserName;
 
     /**
      *This Is My Profile Button In The Home Page
      */
 
-    @FindBy(id = "My Profile")
+    @FindBy(xpath = "//android.view.View[@content-desc='My profile']")
     WebElement HomeMyProfileButton;
 
 
@@ -259,6 +261,7 @@ public class Home extends Pages{
     WebElement HomeSettingButton;
 
     /**
+
      * this is the scroll bar
      */
     @FindBy(xpath = "//android.widget.ScrollView")
@@ -274,20 +277,20 @@ public class Home extends Pages{
     }
 
 
-    public String gotoMyProfile() {
-        try {
-            HomeAvatarButton.click();
-            HomeMyProfileButton.click();
-        }catch(Exception ignore){
-            return "fail";
-        }
-        return"success";
+    public void gotoMyProfile() {
+        threadSleep(10);
+        waitForWebElementToAppear(HomeAvatarButton,5);
+        HomeAvatarButton.click();
+        waitForWebElementToAppear(HomeMyProfileButton,5);
+        HomeMyProfileButton.click();
+
     }
     public void clickCreatePost(){
         HomeCreatePostButton.click();
     }
 
     public void openSearch() {
+        threadSleep(4);
         HomeSearchButton.click();
     }
 
@@ -325,7 +328,7 @@ public class Home extends Pages{
         }
         return true;
     }
-
+  
     public boolean gotoFollowing(String Name)
     {
         try{
@@ -372,17 +375,45 @@ public class Home extends Pages{
     }
 
 
+    public void dummylogin(String Name,String Pass){
+      //  waitForWebElementToAppear(driver.findElement(By.xpath("//android.widget.EditText[@text='Username']")),2);
+        threadSleep(2);
+        driver.findElement(By.xpath("//android.widget.EditText[@text='Username']")).click();
+        threadSleep(2);
+        driver.findElement(By.xpath("//android.widget.EditText[@text='Username']")).sendKeys(Name);
+
+        driver.findElement(By.xpath("(//android.widget.EditText)[2]")).click();
+        threadSleep(2);
+        driver.findElement(By.xpath("(//android.widget.EditText)[2]")).sendKeys(Pass);
+        driver.findElement(By.xpath("//android.widget.Button[@content-desc='Continue']")).click();
+
+
+    }
+
+    public void checkForHome(){
+        waitForWebElementToAppear(driver.findElement(By.xpath("(//android.view.View)[7]")),5);
+
+
+    }
+    public boolean checkNameDesc(String Name,String Desc){
+        return false;
+    }
+
     /**
      * this is the method used to go to the post details
      */
     public PostDetails checkPost(int postIndex){
-        posts.get(postIndex).click();
-        threadSleep(1);
-        if (errorScreen1 != null && errorScreen1.isDisplayed())
+        try {
+            posts.get(postIndex).click();
+            threadSleep(1);
+            if (errorScreen1 != null && errorScreen1.isDisplayed())
+                return null;
+            else
+                return new PostDetails(driver);
+        }catch (Exception e){
             return null;
-        else
-            return new PostDetails(driver);
-    }
+        }
 
+    }
 
 }

@@ -32,8 +32,39 @@ public class CommunityPage extends AbstractComponent {
     /**
      * this method is used to get the name of the current community page
      */
-    public String getCommunityName(){
+    public String getCommunityName() {
         return communityNameLabel.getText();
     }
-}
 
+    @FindBy(xpath = "/html/body/div[1]/div[3]/div/div[1]/div[3]/div/div[1]/div[2]/a/h3")
+    WebElement FirstPostTitle;
+
+
+    @FindBy(xpath = "/html/body/div[1]/div[3]/div/div[1]/div[3]/div/div[1]/div[2]/div[2]/p")
+    WebElement FirstPostBodyText;
+
+
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div/div[1]/div/div[1]/h1")
+    WebElement CommunityName;
+
+
+    public boolean checkForCommunityName(String CommName) {
+        waitForWebElementToAppear(CommunityName, 5);
+        if (CommunityName.getText().equals(CommName)) {
+            return true;
+        }
+        return false;
+    }
+
+
+
+    public boolean checkPostText(String Title,String Body,String Community){
+
+        waitForWebElementToAppear(FirstPostTitle,4);
+
+        if(Title.equals(FirstPostTitle.getText())&&Body.equals(FirstPostBodyText.getText())&&checkForCommunityName(Community)){
+            return true;
+        }
+        return false;
+    }
+}

@@ -1,8 +1,8 @@
-package mobile.tests;
+package Mobile.tests;
 
 import mobile.Pages.Home;
 import mobile.Pages.PostDetails;
-import mobile.testComponents.BaseTest;
+import Mobile.testComponents.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -15,7 +15,7 @@ public class PostsValidation extends BaseTest {
     public void makeRandomComment() {
         Home home = startingPage.NormalLogin("Fawzy", "Aa123456*.");
         Assert.assertNotNull(home);
-        PostDetails postDetails = home.checkPost(1);
+        PostDetails postDetails = home.checkPost(0);
         Assert.assertNotNull(postDetails);
     }
 
