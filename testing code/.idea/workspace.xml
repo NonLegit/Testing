@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62d21152-2a9b-46bb-92d6-dd3174e76d6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/PostDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/constants/PageConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/constants/PageConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/pageObjects/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/LandingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/web/constants/TestConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/constants/TestConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/web/testComponents/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/testComponents/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/web/tests/loginSignupValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/tests/loginSignupValidation.java" afterDir="false" />
-    </list>
+    <list default="true" id="62d21152-2a9b-46bb-92d6-dd3174e76d6f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +23,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
@@ -43,7 +46,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/resources" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -51,14 +54,112 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PROJECTS\third year\first term\software engineering\NonLegit-Code\Testing\testing code\src\test\java\resources" />
       <recent name="D:\PROJECTS\third year\first term\software engineering\NonLegit-Code\Testing\testing code" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\PROJECTS\third year\first term\software engineering\NonLegit-Code\Testing\testing code\src\test\java\resources" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mobile.tests" />
+    </key>
   </component>
-  <component name="RunManager">
-    <configuration name="D:/PROJECTS/third year/first term/software engineering/NonLegit-Code/Testing/testing code/testSuites/loginTest.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.PostsValidation.makeRandomComment">
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostsValidation.downVoteCommentTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nonLegit" />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testSuites/loginTest.xml" />
-      <option name="TEST_OBJECT" value="SUITE" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="web.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="web.tests" />
+      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
+      <option name="METHOD_NAME" value="downVoteCommentTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostsValidation.downVotePostTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="nonLegit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="web.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="web.tests" />
+      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
+      <option name="METHOD_NAME" value="downVotePostTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostsValidation.insights" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="nonLegit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="web.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="web.tests" />
+      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
+      <option name="METHOD_NAME" value="insights" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostsValidation.makeRandomComment" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="nonLegit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="mobile.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="mobile.tests" />
+      <option name="MAIN_CLASS_NAME" value="mobile.tests.PostsValidation" />
+      <option name="METHOD_NAME" value="makeRandomComment" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostsValidation.upVoteCommentTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="nonLegit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="web.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="web.tests" />
+      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
+      <option name="METHOD_NAME" value="upVoteCommentTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -67,7 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.D:/PROJECTS/third year/first term/software engineering/NonLegit-Code/Testing/testing code/testSuites/loginTest.xml" />
+        <item itemvalue="TestNG.PostsValidation.makeRandomComment" />
+        <item itemvalue="TestNG.PostsValidation.downVoteCommentTest" />
+        <item itemvalue="TestNG.PostsValidation.upVoteCommentTest" />
+        <item itemvalue="TestNG.PostsValidation.insights" />
+        <item itemvalue="TestNG.PostsValidation.downVotePostTest" />
       </list>
     </recent_temporary>
   </component>
