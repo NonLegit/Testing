@@ -10,6 +10,7 @@ import web.testComponents.BaseTest;
 public class SettingsTests extends BaseTest {
 
 
+
     @Test
     public void gotoSettings() {
         web_Profile Prof = new web_Profile(driver);

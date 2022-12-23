@@ -1,11 +1,14 @@
 package mobile.Pages;
 
 import io.appium.java_client.android.AndroidDriver;
+
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class SearchPage extends Pages{
+
     @FindBy(xpath= "//android.widget.EditText")
     WebElement SearchBar;
 

@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62d21152-2a9b-46bb-92d6-dd3174e76d6f" name="Default Changelist" comment="">
+
       <change afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/SettingPage.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/web_Community.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/web_CreateCommunity.java" afterDir="false" />
@@ -50,6 +51,7 @@
       <change beforePath="$PROJECT_DIR$/target/test-classes/web/testComponents/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/testComponents/BaseTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/web/testComponents/Listeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/testComponents/Listeners.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/web/tests/loginSignupValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/tests/loginSignupValidation.class" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +94,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/resources" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -100,13 +102,21 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PROJECTS\third year\first term\software engineering\NonLegit-Code\Testing\testing code\src\test\java\resources" />
       <recent name="D:\PROJECTS\third year\first term\software engineering\NonLegit-Code\Testing\testing code" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PROJECTS\third year\first term\software engineering\NonLegit-Code\Testing\testing code\src\test\java\resources" />
     </key>
+
   </component>
   <component name="RunManager" selected="TestNG.OtherUsers.followTest">
+
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mobile.tests" />
+    </key>
+  </component>
+
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -118,6 +128,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration name="EditTests.editDisplayAndDescription" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nonLegit" />
       <extension name="coverage">
@@ -129,6 +140,7 @@
       <option name="PACKAGE_NAME" value="Mobile.tests" />
       <option name="MAIN_CLASS_NAME" value="Mobile.tests.EditTests" />
       <option name="METHOD_NAME" value="editDisplayAndDescription" />
+
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -136,6 +148,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration name="OtherUsers" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nonLegit" />
       <extension name="coverage">
@@ -147,12 +160,15 @@
       <option name="PACKAGE_NAME" value="Mobile.tests" />
       <option name="MAIN_CLASS_NAME" value="Mobile.tests.OtherUsers" />
       <option name="TEST_OBJECT" value="CLASS" />
+
+
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration name="OtherUsers.followTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nonLegit" />
       <extension name="coverage">
@@ -164,6 +180,7 @@
       <option name="PACKAGE_NAME" value="Mobile.tests" />
       <option name="MAIN_CLASS_NAME" value="Mobile.tests.OtherUsers" />
       <option name="METHOD_NAME" value="followTest" />
+
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -171,6 +188,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration name="ProfileTest.testGoToEdit" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nonLegit" />
       <extension name="coverage">
@@ -182,6 +200,7 @@
       <option name="PACKAGE_NAME" value="Mobile.tests" />
       <option name="MAIN_CLASS_NAME" value="Mobile.tests.ProfileTest" />
       <option name="METHOD_NAME" value="testGoToEdit" />
+
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -189,7 +208,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+
     <configuration name="SettingsTests.makeProfileNSFW" type="TestNG" temporary="true" nameIsGenerated="true">
+
       <module name="nonLegit" />
       <extension name="coverage">
         <pattern>
@@ -198,8 +219,10 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="web.tests" />
+
       <option name="MAIN_CLASS_NAME" value="web.tests.SettingsTests" />
       <option name="METHOD_NAME" value="makeProfileNSFW" />
+
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -209,11 +232,13 @@
     </configuration>
     <recent_temporary>
       <list>
+
         <item itemvalue="TestNG.OtherUsers.followTest" />
         <item itemvalue="TestNG.OtherUsers" />
         <item itemvalue="TestNG.EditTests.editDisplayAndDescription" />
         <item itemvalue="TestNG.ProfileTest.testGoToEdit" />
         <item itemvalue="TestNG.SettingsTests.makeProfileNSFW" />
+
       </list>
     </recent_temporary>
   </component>

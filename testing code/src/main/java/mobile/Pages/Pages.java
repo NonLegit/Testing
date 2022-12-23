@@ -1,9 +1,14 @@
 package mobile.Pages;
 
+
+import com.google.common.collect.ImmutableMap;
+
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+
+import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -95,4 +100,15 @@ public class Pages {
             ));
         }
     }
+
+
+    public void swipeAction(WebElement ele, String direction) {
+        ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
+                "elementId", ((RemoteWebElement)ele).getId(),
+                "direction", direction,
+                "percent", 0.75
+        ));
+
+    }
+
 }

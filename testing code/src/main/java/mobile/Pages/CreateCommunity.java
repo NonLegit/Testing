@@ -30,17 +30,25 @@ public class CreateCommunity extends Pages{
     /**
      *
      */
-    @FindBy(xpath="//android.view.View[@content-desc='Community type'")
+    @FindBy(xpath="//android.view.View[@content-desc='Community type']")
+
     WebElement CreateCommunityTypeWindow;
 
+//@FindBy(xpath="//android.view.View[@content-desc='Public Anyone can view,post,and comment to this community']")
+    /**  
+     * this is the community type
+     */
+    @FindBy(xpath = "(//android.widget.Button)[3]")
+    WebElement communityType;
 
     /**
      *
      */
-    @FindBy(xpath="//android.view.View[@content-desc='Public Anyone can view,post,and comment to this community']")
+    @FindBy(xpath="(//android.view.View)[8]")
     WebElement CreateCommunityTypePublic;
 
-
+ //@FindBy(xpath="(//android.view.View)[9]")
+  
     /**
      *
      */
@@ -50,11 +58,25 @@ public class CreateCommunity extends Pages{
     /**
      *
      */
+
     @FindBy(xpath="//android.view.View[@content-desc='Private Only approved users can view and submit to this community']")
     WebElement CreateCommunityTypePrivate;
 
     @FindBy(id = "Create")
     WebElement CreateCommunityButton;
+
+    /**
+    @FindBy(xpath="(//android.view.View)[10]")
+    WebElement CreateCommunityTypePrivate;
+
+    @FindBy(xpath = "//android.widget.Button[@content-desc=\"Create Community\"]\n")
+    WebElement CreateCommunityButton;
+
+    /**
+     * this is the community created
+     */
+    @FindBy(xpath = "(//android.view.View)[14]")
+    WebElement communityTitleText;
 
     /**
      * this is the constructor of the class and it initializes all of its members using PageFactory class
@@ -65,6 +87,7 @@ public class CreateCommunity extends Pages{
         super(driver);
     }
 
+/*
     public boolean  createComm(String Comm,String Type,String NSFW) {
         try {
             CreateCommunityNameTextBox.sendKeys(Comm);
@@ -90,7 +113,38 @@ public class CreateCommunity extends Pages{
         } catch (Exception ex) {
             return false;
         }
-        return true;
+        return true;*/
+
+    public boolean createComm(String Comm,String Type,String NSFW) {
+
+        CreateCommunityNameTextBox.click();
+        threadSleep(1);
+        CreateCommunityNameTextBox.sendKeys(Comm);
+        driver.hideKeyboard();
+
+        communityType.click();
+        threadSleep(1);
+
+        if(Type.equalsIgnoreCase("private")) {
+            CreateCommunityTypePrivate.click();
+        }else if(Type.equalsIgnoreCase("public")){
+            CreateCommunityTypePublic.click();
+        }else {
+            CreateCommunityTypeRestricted.click();
+        }
+        threadSleep(1);
+        if(NSFW.equalsIgnoreCase("+18")){
+            CreateCommunityNSFWButton.click();
+        }
+
+        if(CreateCommunityButton.isEnabled()){
+            CreateCommunityButton.click();
+        }
+        else{
+            return false;
+        }
+
+        return communityTitleText.getAttribute("content-desc").contains(Comm);
     }
 
     public boolean makeItPrivate(){

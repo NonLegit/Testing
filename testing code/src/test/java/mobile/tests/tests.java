@@ -1,7 +1,10 @@
+
 package Mobile.tests;
 
 import mobile.Pages.*;
 import Mobile.testComponents.BaseTest;
+
+
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -41,7 +44,8 @@ public class tests extends BaseTest {
 //        } else {
 //            Assert.fail();
 //        }
-    }
+
+   // }
 
     /**
      * this is a test method to Search For An Existing Community And See If It Takes Me To The Right Community And Another Search For Non Existing Comm
@@ -95,7 +99,9 @@ public class tests extends BaseTest {
     @Test(description = "Create sub-reddit",dataProvider = "createSubRedditExcel")
     public void createCommTest(String CommName, String Type, String NSFW, String expectedResult) {
         //in home
+
         if(Home.gotoCreateCommunity()) {
+
             if(expectedResult.equalsIgnoreCase("fail")&& !CrCM.createComm(CommName,Type,NSFW) ){
                 Assert.assertTrue(true);
 

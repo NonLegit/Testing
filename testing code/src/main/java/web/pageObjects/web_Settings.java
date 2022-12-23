@@ -1,6 +1,7 @@
 package web.pageObjects;
 
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -28,11 +29,13 @@ public class web_Settings extends AbstractComponent {
         waitForWebElementToAppear(UserSettingsPage, 1);
 
         if (UserSettingsPage.getText().equals("User settings")) {
+
             return true;
         }else {
             return false;
         }
     }
+
 
     public boolean setGender(){
         System.out.println(driver.findElement(By.xpath("/html/body/div[1]/section/div/div/div[3]/div[2]/div/button")).getText());
@@ -116,6 +119,7 @@ public class web_Settings extends AbstractComponent {
         threadSleep(1);
         HomeIconButton.click();
     }
+
 
 
 }

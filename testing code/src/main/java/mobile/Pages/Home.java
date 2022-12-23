@@ -1,9 +1,13 @@
 package mobile.Pages;
 
 import io.appium.java_client.android.AndroidDriver;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+
+
+import java.util.List;
 
 public class Home extends Pages{
 
@@ -18,7 +22,7 @@ public class Home extends Pages{
      *This Is Options Button In Home Pages
      */
 
-    @FindBy(id = "Options")
+    @FindBy(xpath = "(//android.widget.Button)[1]")
     WebElement HomeOptionsButton;
 
     /**
@@ -111,8 +115,20 @@ public class Home extends Pages{
      * to Create Your Own Communities
      */
 
-    @FindBy(id = "Create Community")
+    @FindBy(xpath = "//android.view.View[@content-desc=\"Create a community\"]")
     WebElement HomeCreateCommunityButton;
+
+    /**
+     * this is to check the state of the post when clicked on there is error message or not
+     */
+    @FindBy(xpath = "(//android.view.View)[6]")
+    WebElement errorScreen1;
+
+    /**
+     * these are the list of the posts
+     */
+    @FindBy(xpath = "//android.widget.ScrollView/android.view.View")
+    List<WebElement> posts;
 
     /**
      *This Is Home -> Options -> Your Communities -> First Community
@@ -140,8 +156,7 @@ public class Home extends Pages{
     /**
      *This Is Home Drop-Down In The Top Of The Home Page
      */
-
-    @FindBy(id = "First Home Button")
+    @FindBy(xpath = "(//android.widget.Button)[1]")
     WebElement HomeButtonUpper;
 
     /**
@@ -242,9 +257,15 @@ public class Home extends Pages{
     /**
      *This Is Settings Button In The Home Page
      */
-
     @FindBy(id = "Settings")
     WebElement HomeSettingButton;
+
+    /**
+
+     * this is the scroll bar
+     */
+    @FindBy(xpath = "//android.widget.ScrollView")
+    WebElement scrollBar;
 
     /**
      * this is the constructor of the class and it initializes all of its members using PageFactory class
@@ -288,14 +309,13 @@ public class Home extends Pages{
         return false;
     }
 
-    public boolean gotoCreateCommunity(){
-        try{
-            HomeOptionsButton.click();
-            HomeCreateCommunityButton.click();
-        }catch (Exception i){
-            return false;
-        }
-        return true;
+    public CreateCommunity gotoCreateCommunity(){
+        HomeOptionsButton.click();
+        threadSleep(1);
+        scrollToEndAction();
+        HomeCreateCommunityButton.click();
+        threadSleep(1);
+        return new CreateCommunity(driver);
     }
 
     public boolean gotoYourCommunities(){
@@ -308,6 +328,7 @@ public class Home extends Pages{
         }
         return true;
     }
+  
     public boolean gotoFollowing(String Name)
     {
         try{
@@ -354,8 +375,6 @@ public class Home extends Pages{
     }
 
 
-
-
     public void dummylogin(String Name,String Pass){
       //  waitForWebElementToAppear(driver.findElement(By.xpath("//android.widget.EditText[@text='Username']")),2);
         threadSleep(2);
@@ -379,4 +398,22 @@ public class Home extends Pages{
     public boolean checkNameDesc(String Name,String Desc){
         return false;
     }
+
+    /**
+     * this is the method used to go to the post details
+     */
+    public PostDetails checkPost(int postIndex){
+        try {
+            posts.get(postIndex).click();
+            threadSleep(1);
+            if (errorScreen1 != null && errorScreen1.isDisplayed())
+                return null;
+            else
+                return new PostDetails(driver);
+        }catch (Exception e){
+            return null;
+        }
+
+    }
+
 }

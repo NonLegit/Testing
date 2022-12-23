@@ -33,10 +33,12 @@ public class CommunityPage extends Pages {
     public void returnHome() throws Exception{
         CommunityHomeButton.click();
     }
+
+
     public String getCommunityName(){
-        ///////////////Labelllllllll
         return CommunityName.getText() ;
     }
+  
     public boolean checkForCommunityParameters(String CommName,String CommType,String CommNSFW){
         try{
             if(CommName==CommunityName.getText()&&CommNSFW==CommunityNSFW.getText()&&CommType==CommunityType.getText()){
@@ -48,6 +50,7 @@ public class CommunityPage extends Pages {
             return true;
         }
     }
+
     public boolean checkForName(String Name){
         try{
             if(Name==CommunityName.getText()){
@@ -59,6 +62,7 @@ public class CommunityPage extends Pages {
             return true;
         }
     }
+
     public  boolean joinCommunity(){
         try {
             JoinButton.click();
@@ -67,6 +71,7 @@ public class CommunityPage extends Pages {
         }
         return true;
     }
+
     public boolean isJoinEnable(){
         try {
             if(JoinButton.isEnabled()==true){

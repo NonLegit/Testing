@@ -271,6 +271,7 @@ public class web_Profile extends AbstractComponent {
 
     }
 
+
     /**
      * this function to navigate you from Profile to the community of the first post appears in your profile
      */
@@ -313,6 +314,5 @@ public class web_Profile extends AbstractComponent {
        }
        return false;
    }
-
 
 }

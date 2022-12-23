@@ -24,7 +24,7 @@ public class LandingPage extends AbstractComponent {
     /**
      * this is the username input text
      */
-    @FindBy(id = ":r5:")
+    @FindBy(xpath = "(//input)[1]")
     WebElement usernameInputText;
 
     /**
@@ -139,13 +139,14 @@ public class LandingPage extends AbstractComponent {
     /**
      * this is the user password input text
      */
-    @FindBy(id = ":r6:")
+    @FindBy(xpath = "(//input)[2]")
     WebElement passwordInputText;
 
     /**
      * this is the login into account button
      */
-    @FindBy(id = ":r7:")
+
+    @FindBy(id = ":r2:")
     WebElement loginIntoAccButton;
 
     /**
@@ -171,6 +172,19 @@ public class LandingPage extends AbstractComponent {
      */
     @FindBy(xpath = "//button[.='Sign up']")
     WebElement completeSignUp;
+
+    /**
+
+     * this is the my name in the bar button
+     */
+    @FindBy(xpath = "//div[@class='MuiBox-root css-qwtxio']")
+    WebElement myProfileIconInTheBar;
+
+    /**
+     * this is the log out button from the bar
+     */
+    @FindBy(xpath = "//span[.='log out']")
+    WebElement logOut;
 
     /**
      * error message 1
@@ -260,22 +274,24 @@ public class LandingPage extends AbstractComponent {
      * @return HomePage: object of the home page after login in
      */
     public HomePage NormalLogin(String username, String password){
-        loginButton.click();
-        waitForWebElementToAppear(usernameInputText, EXPLICIT_TIMEOUT_SECONDS);
         usernameInputText.sendKeys(username);
         passwordInputText.sendKeys(password);
         loginIntoAccButton.click();
 
         try {
-            waitForWebElementToAppear(loginErrorMessageLabel, EXPLICIT_TIMEOUT_SECONDS);
+
+            //waitForWebElementToAppear(loginErrorMessageLabel, EXPLICIT_TIMEOUT_SECONDS);
+            waitForWebElementToDisappear(loginIntoAccButton, EXPLICIT_TIMEOUT_SECONDS);
         }catch (Exception e){
-            return new HomePage(driver);
+            //return new HomePage(driver);
+            return null;
         }
 
-        if(loginErrorMessageLabel!= null && loginErrorMessageLabel.isDisplayed())
+        return new HomePage(driver);
+        /*if(loginErrorMessageLabel!= null && loginErrorMessageLabel.isDisplayed())
             return null;
         else
-            return new HomePage(driver);
+            return new HomePage(driver);*/
     }
 
     /**
@@ -313,6 +329,7 @@ public class LandingPage extends AbstractComponent {
             return new HomePage(driver);
         else
             return null;
+
     }
 
     /**
@@ -563,7 +580,6 @@ public class LandingPage extends AbstractComponent {
 
     }
 
-
     /**
      * this dummy login made temporary to be used in other tests
      * @param UserName
@@ -576,6 +592,16 @@ public class LandingPage extends AbstractComponent {
         driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/form/div[2]/div/input")).sendKeys(Password);
         threadSleep(1);
         driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/form/button")).click();
+
+    /**
+     * this function is used to logout
+     */
+    public void logout(){
+        myProfileIconInTheBar.click();
+        waitForWebElementToAppear(logOut, 2);
+        logOut.click();
+        threadSleep(1);
+        driver.navigate().to("https://web.nonlegit.click/login");
     }
 
 }

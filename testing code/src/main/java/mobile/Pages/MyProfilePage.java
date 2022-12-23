@@ -1,6 +1,7 @@
 package mobile.Pages;
 
 import io.appium.java_client.android.AndroidDriver;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,8 +20,13 @@ public class MyProfilePage extends Pages{
     /**
      * Post Button In My Profile
      */
+
    @FindBy(xpath ="//android.view.View[@content-desc='Posts\n" + "Tab 1 of 3']")
     WebElement PostsButton;
+
+   @FindBy(xpath ="//android.view.View[@content-desc='Posts Tab 1 of 3']")
+    WebElement MyProfilePostsButton;
+
 
     /**
      * this is the constructor of the class and it initializes all of its members using PageFactory class
@@ -32,6 +38,11 @@ public class MyProfilePage extends Pages{
     }
 
 
+    public void clickMyProfilePostsButton(){
+        MyProfilePostsButton.click();
+    }
+
+
     /**
      * NoNlegit App : Comments Button In My Profile
      */
@@ -39,11 +50,28 @@ public class MyProfilePage extends Pages{
     WebElement CommentsButton;
 
 
+    @FindBy(xpath ="//android.view.View[@content-desc='Comments Tab 2 of 3'")
+    WebElement MyProfileCommentsButton;
+
+    public void clickMyProfileCommentsButton(){
+        MyProfileCommentsButton.click();
+    }
+
+
     /**
      * NoNlegit App : About Button In My Profile
      */
+
     @FindBy(xpath =	"//android.view.View[@content-desc='About\n" + "Tab 3 of 3']")
     WebElement AboutButton;
+
+
+    @FindBy(xpath =	"//android.view.View[@content-desc='About Tab 3 of 3']")
+    WebElement MyProfileAboutButton;
+
+    public void clickMyProfileAboutButton(){
+        MyProfileAboutButton.click();
+    }
 
 
     /**
@@ -51,6 +79,13 @@ public class MyProfilePage extends Pages{
      */
     @FindBy(xpath ="//android.widget.Button[@content-desc='Edit']")
     WebElement EditButton;
+
+
+    WebElement MyProfileEditButton;
+
+    public void clickMyProfileEditButton(){
+        MyProfileCommentsButton.click();
+    }
 
 
 
@@ -65,6 +100,11 @@ public class MyProfilePage extends Pages{
      *
      * @return This Function Returns The User-Name Appears In My Profile
      */
+
+    public String readMyProfileUserName(){
+       return MyProfileCommentsButton.getText();
+    }
+
 
 
 
@@ -97,6 +137,15 @@ public class MyProfilePage extends Pages{
     WebElement SortBy;
 
 
+    WebElement MyProfileSortBy;
+
+    /**
+     * This Function Click The Drop-Down Menu Of the Sort By
+     */
+    public void clickMyProfileSortBy(){
+       MyProfileSortBy.click();
+    }
+
 
     /**
      * NoNlegit App : Sort By Window In My Profile
@@ -105,7 +154,18 @@ public class MyProfilePage extends Pages{
     WebElement SortByWindow;
 
 
+    WebElement MyProfileSortByWindow;
 
+
+
+    /**
+     *
+     * @return This Function Return The Name Of The Popped Window When Pressing The Sort By Tab
+     */
+
+    public String readMyProfileSortBy(){
+        return MyProfileSortByWindow.getText();
+    }
 
     /**
      * NoNlegit App : Sort By Window : Hot Tab In My Profile
@@ -224,6 +284,14 @@ public class MyProfilePage extends Pages{
         return true;
 
 
+    ///Make it general Post
+    public String clickPost(){
+        try{
+            MyProfileFirstPost.click();
+        }catch(Exception i){
+            return"fail";
+        }
+            return "success";
     }
 
 }

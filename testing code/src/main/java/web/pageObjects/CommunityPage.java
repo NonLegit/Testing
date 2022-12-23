@@ -36,7 +36,6 @@ public class CommunityPage extends AbstractComponent {
         return communityNameLabel.getText();
     }
 
-
     @FindBy(xpath = "/html/body/div[1]/div[3]/div/div[1]/div[3]/div/div[1]/div[2]/a/h3")
     WebElement FirstPostTitle;
 
@@ -70,4 +69,8 @@ public class CommunityPage extends AbstractComponent {
     }
 }
 
+
+
+
+}
 
