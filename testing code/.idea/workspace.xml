@@ -4,54 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62d21152-2a9b-46bb-92d6-dd3174e76d6f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/StartingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/CommunityPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/CommunityPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/CreateCommunity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/CreateCommunity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/CreatePost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/CreatePost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/EditScreenPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/EditScreenPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/MyProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/MyProfilePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/Pages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/Pages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/SearchPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/StaringPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/AbstractComponents/AbstractComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/AbstractComponents/AbstractComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/pageObjects/CommunityPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/CommunityPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/pageObjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/pageObjects/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/LandingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/pageObjects/PostDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/PostDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mobile/testComponents/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mobile/testComponents/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mobile/testComponents/Listeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mobile/testComponents/Listeners.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mobile/tests/tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mobile/tests/tests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/resources/app.apk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/resources/data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/web/constants/TestConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/constants/TestConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/web/testComponents/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/testComponents/BaseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/web/tests/PostsValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/tests/PostsValidation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/CommunityPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/CommunityPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/CreateCommunity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/CreateCommunity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/CreatePost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/CreatePost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/EditScreenPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/EditScreenPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/Home.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/MyProfilePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/MyProfilePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/Pages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/Pages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/Post.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/Post.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/SearchPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/SearchPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/StaringPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/AbstractComponents/AbstractComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/AbstractComponents/AbstractComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/pageObjects/CommunityPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/pageObjects/CommunityPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/pageObjects/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/pageObjects/HomePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/pageObjects/LandingPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/pageObjects/LandingPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/pageObjects/PostDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/pageObjects/PostDetails.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/mobile/testComponents/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/mobile/testComponents/BaseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/mobile/testComponents/Listeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/mobile/testComponents/Listeners.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/mobile/tests/tests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/mobile/tests/tests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/web/constants/TestConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/constants/TestConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/web/testComponents/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/testComponents/BaseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/web/tests/PostsValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/tests/PostsValidation.class" afterDir="false" />
-    </list>
+    <list default="true" id="62d21152-2a9b-46bb-92d6-dd3174e76d6f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
