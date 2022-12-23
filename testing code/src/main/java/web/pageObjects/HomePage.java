@@ -155,6 +155,8 @@ public class HomePage extends AbstractComponent {
      */
     public PostDetails checkPost(int postIndex){
         try {
+            scroll(300);
+            threadSleep(1);
             posts.get(postIndex).click();
             waitForWebElementToAppear(whatIsYourThoughtsBtn, 5);
             threadSleep(1);

@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62d21152-2a9b-46bb-92d6-dd3174e76d6f" name="Default Changelist" comment="" />
+    <list default="true" id="62d21152-2a9b-46bb-92d6-dd3174e76d6f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/pageObjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Mobile/testComponents/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Mobile/testComponents/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/tests/PostsValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/tests/PostsValidation.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +69,7 @@
       <recent name="mobile.tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.PostsValidation.makeRandomComment">
+  <component name="RunManager" selected="TestNG.PostsValidation.makeRandomComment (1)">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -94,24 +99,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostsValidation.downVotePostTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="nonLegit" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="web.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="web.tests" />
-      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
-      <option name="METHOD_NAME" value="downVotePostTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PostsValidation.insights" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nonLegit" />
       <extension name="coverage">
@@ -123,6 +110,24 @@
       <option name="PACKAGE_NAME" value="web.tests" />
       <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
       <option name="METHOD_NAME" value="insights" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostsValidation.makeRandomComment (1)" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="testing code" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="web.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="web.tests" />
+      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
+      <option name="METHOD_NAME" value="makeRandomComment" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -168,11 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.PostsValidation.makeRandomComment (1)" />
         <item itemvalue="TestNG.PostsValidation.makeRandomComment" />
         <item itemvalue="TestNG.PostsValidation.downVoteCommentTest" />
         <item itemvalue="TestNG.PostsValidation.upVoteCommentTest" />
         <item itemvalue="TestNG.PostsValidation.insights" />
-        <item itemvalue="TestNG.PostsValidation.downVotePostTest" />
       </list>
     </recent_temporary>
   </component>

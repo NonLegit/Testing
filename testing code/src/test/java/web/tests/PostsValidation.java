@@ -17,7 +17,7 @@ public class PostsValidation extends BaseTest {
     public void makeRandomComment() throws InterruptedException {
         HomePage homePage = landingPage.NormalLogin("Fawzy", "Aa123456*.");
         Assert.assertNotNull(homePage);
-        PostDetails postDetails = homePage.checkPost(2);
+        PostDetails postDetails = homePage.checkPost(1);
         String comment = getData.generateRandomString(15);
         postDetails.makeComment(comment);
         List<String> resultComments = postDetails.getCommentOfUser("Fawzy");
