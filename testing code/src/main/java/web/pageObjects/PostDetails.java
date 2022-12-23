@@ -256,7 +256,7 @@ public class PostDetails extends AbstractComponent {
      */
     public void makeComment(String comment){
         //waitForWebElementToAppear(commentButton,5);
-        threadSleep(2);
+        threadSleep(1);
         commentTextBox.sendKeys(comment);
         commentButton.click();
         threadSleep(2);

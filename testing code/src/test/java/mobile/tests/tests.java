@@ -45,7 +45,7 @@ public class tests extends BaseTest {
 //            Assert.fail();
 //        }
 
-   // }
+    }
 
     /**
      * this is a test method to Search For An Existing Community And See If It Takes Me To The Right Community And Another Search For Non Existing Comm
@@ -100,7 +100,7 @@ public class tests extends BaseTest {
     public void createCommTest(String CommName, String Type, String NSFW, String expectedResult) {
         //in home
 
-        if(Home.gotoCreateCommunity()) {
+        if(Home.gotoCreateCommunity() != null) {
 
             if(expectedResult.equalsIgnoreCase("fail")&& !CrCM.createComm(CommName,Type,NSFW) ){
                 Assert.assertTrue(true);

@@ -21,7 +21,7 @@ public class PostsValidation extends BaseTest {
     public void makeRandomComment() throws InterruptedException {
         HomePage homePage = landingPage.NormalLogin("Fawzy", "Aa123456*.");
         Assert.assertNotNull(homePage);
-        PostDetails postDetails = homePage.checkPost(2);
+        PostDetails postDetails = homePage.checkPost(1);
         String comment = getData.generateRandomString(15);
         postDetails.makeComment(comment);
         List<String> resultComments = postDetails.getCommentOfUser("Fawzy");
@@ -46,20 +46,6 @@ public class PostsValidation extends BaseTest {
     }
 
 
-    /**
-     * this test is used to test replying to comment by a randomized comment on some random post in the home page
-     */
-    @Test(description = "replying to a random comment on some random post")
-    public void replyRandomComment(){
-        HomePage homePage = landingPage.NormalLogin(VALID_USER_NAME, VALID_USER_PASS);
-        Assert.assertNotEquals(homePage, null);
-        PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(2);
-        String comment = getData.generateRandomString(15);
-        String userName = postDetails.getUserNameOfIndex(1);
-        postDetails.replyToComment(comment, userName);
-        String resultComment = postDetails.getCommentOfUser(userName);
-        Assert.assertEquals(resultComment, comment);
-    }
 
     /**
      * this test is used to test making a share a post and check if the original url is subset of the shared one

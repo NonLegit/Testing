@@ -1,8 +1,8 @@
-package mobile.tests;
+package Mobile.tests;
 
 import mobile.Pages.Home;
 import mobile.Pages.PostDetails;
-import mobile.testComponents.BaseTest;
+import Mobile.testComponents.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

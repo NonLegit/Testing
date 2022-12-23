@@ -1,5 +1,5 @@
 
-package mobile.testComponents;
+package Mobile.testComponents;
 
 import com.google.common.collect.ImmutableMap;
 import io.appium.java_client.android.AndroidDriver;
@@ -52,6 +52,25 @@ public class BaseTest {
 
         startingPage = new StartingPage(driver);
         getData = new GetData();
+
+       /* DesiredCapabilities cap=new DesiredCapabilities();
+        cap.setCapability("deviceName","EM_Fathi");
+        cap.setCapability("udid","emulator-5554");
+        cap.setCapability("platformName","Android");
+        cap.setCapability("platformVersion","13");
+
+
+
+        cap.setCapability("app","C:\\Users\\fathi\\Videos\\app_relase_version.apk");
+
+
+        URL url= null;
+        try {
+            url = new URL("http://127.0.0.1:4723/wd/hub");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        driver = new AndroidDriver(url,cap);*/
     }
 
 
