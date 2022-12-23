@@ -7,10 +7,6 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import javax.mail.Folder;
-import javax.mail.Message;
-import javax.mail.Session;
-import javax.mail.Store;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -73,62 +69,6 @@ public class GetData {
         FileInputStream fileInputStream = new FileInputStream(path);
         properties.load(fileInputStream);
         return System.getProperty(BROWSER) != null ? System.getProperty(BROWSER) : properties.getProperty(BROWSER);
-    }
-
-    /**
-     * this function gets the content a gmail inbox
-     * @param host
-     * @param storeType
-     * @param user: user email
-     * @param password: user password
-     */
-    public boolean checkEmails(String host, String storeType, String user, String password, String keyWord) {
-        try {
-
-            //create properties field
-            Properties properties = new Properties();
-
-            properties.put("mail.pop3.host", host);
-            properties.put("mail.pop3.port", "995");
-            properties.put("mail.pop3.starttls.enable", "true");
-            Session emailSession = Session.getDefaultInstance(properties);
-
-            //create the POP3 store object and connect with the pop server
-            Store store = emailSession.getStore("pop3s");
-
-            store.connect(host, user, password);
-
-            //create the folder object and open it
-            Folder emailFolder = store.getFolder("INBOX");
-            emailFolder.open(Folder.READ_ONLY);
-
-            // retrieve the messages from the folder in an array and print it
-            Message[] messages = emailFolder.getMessages();
-            System.out.println("messages.length---" + messages.length);
-
-            for (int i = 0, n = messages.length; i < n; i++) {
-                Message message = messages[i];
-//                System.out.println("---------------------------------");
-//                System.out.println("Email Number " + (i + 1));
-//                System.out.println("Subject: " + message.getSubject());
-//                System.out.println("From: " + message.getFrom()[0]);
-//                System.out.println("Text: " + message.getContent().toString());
-                if(message.getContent().toString().toLowerCase().contains(keyWord.toLowerCase()))
-                    return true;
-
-            }
-
-            //close the store and folder objects
-            emailFolder.close(false);
-            store.close();
-
-            return false;
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-
     }
 
     /**

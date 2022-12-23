@@ -2,17 +2,18 @@ package web.testComponents;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import resources.GetData;
 import web.pageObjects.LandingPage;
+import resources.GetData;
 
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
-import java.util.Collections;
 
 import static web.constants.TestConstants.*;
 
@@ -20,7 +21,6 @@ import static web.constants.TestConstants.*;
  * this class contains methods which are common among all methods and used by many of them
  */
 public class BaseTest {
-
 
     /**
      * this is the driver which is used to run test scripts
@@ -35,7 +35,7 @@ public class BaseTest {
     /**
      * this is the object through which we can extract data that will be input to the text
      */
-    protected GetData getData = new GetData();
+    GetData getData = new GetData();
 
     /**
      * this function is used to initialize and configure the driver for you
@@ -48,12 +48,8 @@ public class BaseTest {
 
         String browserName = getData.getBrowserName(path);
 
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("useAutomationExtension", false);
-        options.setExperimentalOption("excludeSwitches", Collections.singletonList("enable-automation"));
-
         if (browserName.equalsIgnoreCase(BROWSER_CHROME)){
-            driver = WebDriverManager.chromedriver().arch64().enableRecording().capabilities(options).create();
+            driver = WebDriverManager.chromedriver().arch64().enableRecording().create();
         }
         else if (browserName.equalsIgnoreCase(BROWSER_FIREFOX)){
             driver = WebDriverManager.firefoxdriver().arch64().enableRecording().create();
@@ -63,7 +59,7 @@ public class BaseTest {
         }
         else{
             /*default one is chrome*/
-            driver = WebDriverManager.chromedriver().arch64().enableRecording().capabilities(options).create();
+            driver = WebDriverManager.chromedriver().arch64().enableRecording().create();
         }
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitTimeOutInSeconds));
@@ -71,9 +67,6 @@ public class BaseTest {
 
         return driver;
     }
-
-
-
 
     /**
      * this method will launch the app and initialize the driver and do things that are required to do that
@@ -127,7 +120,5 @@ public class BaseTest {
     public String getAlertText(){
         return driver.switchTo().alert().getText();
     }
-
-
 
 }

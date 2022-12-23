@@ -8,7 +8,7 @@ public class TestConstants {
     /**
      * this is the url of home page of reddit
      */
-    public static final String HOME_URL = "https://web.nonlegit.click/";
+    public static final String HOME_URL = "https://www.reddit.com/";
 
     /**
      * constant which represents the path of reports to generated into
@@ -98,13 +98,4 @@ public class TestConstants {
      */
     public static final String EXPECTED_RES_TAG_EXCEL = "expectedResult";
 
-    /**
-     * this a valid username to sign in with to automate other tests
-     */
-    public static final String VALID_USER_NAME = "null";
-
-    /**
-     * this is a valid user password to sign in with to automate the other tests with
-     */
-    public static final String VALID_USER_PASS = "null";
 }
