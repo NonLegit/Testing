@@ -34,10 +34,11 @@ public class CommunityPage extends Pages {
         CommunityHomeButton.click();
     }
 
+
     public String getCommunityName(){
         return CommunityName.getText() ;
     }
-
+  
     public boolean checkForCommunityParameters(String CommName,String CommType,String CommNSFW){
         try{
             if(CommName==CommunityName.getText()&&CommNSFW==CommunityNSFW.getText()&&CommType==CommunityType.getText()){

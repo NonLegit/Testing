@@ -5,10 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62d21152-2a9b-46bb-92d6-dd3174e76d6f" name="Default Changelist" comment="">
+
+      <change afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/SettingPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/web_Community.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/web_CreateCommunity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/web_CreatePost.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/web_OtherUserProFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/web_Profile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/web_Settings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Mobile/tests/EditTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Mobile/tests/OtherUsers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Mobile/tests/ProfileTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/Mobile/tests/Settings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/web/tests/CreatePostTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/web/tests/OtherUserProfileTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/web/tests/ProfileTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/web/tests/SettingsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mobile/tests/PostsValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mobile/tests/PostsValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/generalReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/reports/generalReport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/spark/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/reports/spark/font-awesome.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/spark/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/reports/spark/fontawesome-webfont.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/spark/jsontree.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/spark/jsontree.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/spark/spark-script.js" beforeDir="false" afterPath="$PROJECT_DIR$/reports/spark/spark-script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/spark/spark-style.css" beforeDir="false" afterPath="$PROJECT_DIR$/reports/spark/spark-style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/loginTest.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/loginTest.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/signupTest.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/signupTest.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/AbstractComponents/AbstractComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/AbstractComponents/AbstractComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/constants/PageConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/constants/PageConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/web/pageObjects/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/LandingPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resources/ExtentReporterGen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/ExtentReporterGen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/resources/GetData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/GetData.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/resources/data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/constants/TestConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/constants/TestConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/testComponents/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/testComponents/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/web/tests/loginSignupValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/tests/loginSignupValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/constants/PageConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/AbstractComponents/AbstractComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/AbstractComponents/AbstractComponent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/web/pageObjects/LandingPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/pageObjects/LandingPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/constants/TestConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/resources/ExtentReporterGen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/resources/ExtentReporterGen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/resources/GetData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/resources/GetData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/web/testComponents/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/testComponents/BaseTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/web/testComponents/Listeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/testComponents/Listeners.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/web/tests/loginSignupValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/tests/loginSignupValidation.class" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,11 +108,15 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PROJECTS\third year\first term\software engineering\NonLegit-Code\Testing\testing code\src\test\java\resources" />
     </key>
+
+  </component>
+  <component name="RunManager" selected="TestNG.OtherUsers.followTest">
+
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="mobile.tests" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.PostsValidation.makeRandomComment">
+
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -81,7 +128,89 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostsValidation.downVoteCommentTest" type="TestNG" temporary="true" nameIsGenerated="true">
+
+    <configuration name="EditTests.editDisplayAndDescription" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="nonLegit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Mobile.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Mobile.tests" />
+      <option name="MAIN_CLASS_NAME" value="Mobile.tests.EditTests" />
+      <option name="METHOD_NAME" value="editDisplayAndDescription" />
+
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+
+    <configuration name="OtherUsers" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="nonLegit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Mobile.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Mobile.tests" />
+      <option name="MAIN_CLASS_NAME" value="Mobile.tests.OtherUsers" />
+      <option name="TEST_OBJECT" value="CLASS" />
+
+
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+
+    <configuration name="OtherUsers.followTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="nonLegit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Mobile.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Mobile.tests" />
+      <option name="MAIN_CLASS_NAME" value="Mobile.tests.OtherUsers" />
+      <option name="METHOD_NAME" value="followTest" />
+
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+
+    <configuration name="ProfileTest.testGoToEdit" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="nonLegit" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Mobile.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Mobile.tests" />
+      <option name="MAIN_CLASS_NAME" value="Mobile.tests.ProfileTest" />
+      <option name="METHOD_NAME" value="testGoToEdit" />
+
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+
+    <configuration name="SettingsTests.makeProfileNSFW" type="TestNG" temporary="true" nameIsGenerated="true">
+
       <module name="nonLegit" />
       <extension name="coverage">
         <pattern>
@@ -90,80 +219,10 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="web.tests" />
-      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
-      <option name="METHOD_NAME" value="downVoteCommentTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PostsValidation.downVotePostTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="nonLegit" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="web.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="web.tests" />
-      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
-      <option name="METHOD_NAME" value="downVotePostTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PostsValidation.insights" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="nonLegit" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="web.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="web.tests" />
-      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
-      <option name="METHOD_NAME" value="insights" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PostsValidation.makeRandomComment" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="nonLegit" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="mobile.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="mobile.tests" />
-      <option name="MAIN_CLASS_NAME" value="mobile.tests.PostsValidation" />
-      <option name="METHOD_NAME" value="makeRandomComment" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PostsValidation.upVoteCommentTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="nonLegit" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="web.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="web.tests" />
-      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
-      <option name="METHOD_NAME" value="upVoteCommentTest" />
+
+      <option name="MAIN_CLASS_NAME" value="web.tests.SettingsTests" />
+      <option name="METHOD_NAME" value="makeProfileNSFW" />
+
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -173,11 +232,13 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.PostsValidation.makeRandomComment" />
-        <item itemvalue="TestNG.PostsValidation.downVoteCommentTest" />
-        <item itemvalue="TestNG.PostsValidation.upVoteCommentTest" />
-        <item itemvalue="TestNG.PostsValidation.insights" />
-        <item itemvalue="TestNG.PostsValidation.downVotePostTest" />
+
+        <item itemvalue="TestNG.OtherUsers.followTest" />
+        <item itemvalue="TestNG.OtherUsers" />
+        <item itemvalue="TestNG.EditTests.editDisplayAndDescription" />
+        <item itemvalue="TestNG.ProfileTest.testGoToEdit" />
+        <item itemvalue="TestNG.SettingsTests.makeProfileNSFW" />
+
       </list>
     </recent_temporary>
   </component>
@@ -202,6 +263,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

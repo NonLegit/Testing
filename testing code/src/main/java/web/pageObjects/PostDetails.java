@@ -150,6 +150,7 @@ public class PostDetails extends AbstractComponent {
     @FindBy(xpath = "//span[@class='MuiTypography-root MuiTypography-caption css-sfqsx-MuiTypography-root']")
     WebElement numOfVotesText;
 
+
     /**
      * this is the text that holds the number of upvotes for a specific comment
      */
@@ -172,10 +173,12 @@ public class PostDetails extends AbstractComponent {
      */
     By replyButton = By.xpath(".//span[text()='Reply']");
 
+
     /**
      * this is the text input through which we will write our reply to someone
      */
     By replyTextInput = By.xpath(".//div[@class='ql-editor ql-blank']");
+
 
     /**
      * this is the button through which we will post our reply
@@ -205,6 +208,7 @@ public class PostDetails extends AbstractComponent {
      */
     @FindBy(xpath = "(//p[@class='MuiTypography-root MuiTypography-body1 css-1mvaz11-MuiTypography-root'])[3]")
     WebElement currentNumOfComments;
+
 
 
     /**
@@ -272,6 +276,19 @@ public class PostDetails extends AbstractComponent {
     }
 
     /**
+     * this method is used to reply to a random user on some random post
+     * @param comment: this is the comment that we will reply as a reply
+     * @param userName: this is the name of user whom we will reply to
+     */
+    public void replyToComment(String comment, String userName){
+        int index = commentPeople.indexOf(userName);
+        commentPeople.get(index).findElement(replyButton).click();
+        commentPeople.get(index).findElement(replyTextInput).sendKeys(comment);
+        commentPeople.get(index).findElement(replyTextButton).click();
+        driver.navigate().refresh();
+    }
+
+    /**
      * this method gets the comment made by a specific user
      * @param userName: this is the name of the user who made this comment
      * @return String: the comment made by the user given as input
@@ -299,6 +316,7 @@ public class PostDetails extends AbstractComponent {
                 repliesText.add(element.findElement(commentText).getText());
         }
         return repliesText;
+
     }
 
     /**
@@ -362,6 +380,7 @@ public class PostDetails extends AbstractComponent {
     /**
      * this function is used to downvote a comment
      */
+
     public void downVoteComment(int userIndex){
         commentPeople.get(userIndex).findElement(commentDownVote).click();
         driver.navigate().refresh();
@@ -405,5 +424,6 @@ public class PostDetails extends AbstractComponent {
     public void clickOnInSightsButton(){
         inSightsButton.click();
     }
+
 
 }

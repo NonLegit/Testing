@@ -31,10 +31,11 @@ public class CreateCommunity extends Pages{
      *
      */
     @FindBy(xpath="//android.view.View[@content-desc='Community type']")
+
     WebElement CreateCommunityTypeWindow;
 
-
-    /**
+//@FindBy(xpath="//android.view.View[@content-desc='Public Anyone can view,post,and comment to this community']")
+    /**  
      * this is the community type
      */
     @FindBy(xpath = "(//android.widget.Button)[3]")
@@ -46,16 +47,25 @@ public class CreateCommunity extends Pages{
     @FindBy(xpath="(//android.view.View)[8]")
     WebElement CreateCommunityTypePublic;
 
-
+ //@FindBy(xpath="(//android.view.View)[9]")
+  
     /**
      *
      */
-    @FindBy(xpath="(//android.view.View)[9]")
+    @FindBy(xpath="//android.view.View[@content-desc='Restricted Anyone can view this community,but only approved users can post']")
     WebElement CreateCommunityTypeRestricted;
 
     /**
      *
      */
+
+    @FindBy(xpath="//android.view.View[@content-desc='Private Only approved users can view and submit to this community']")
+    WebElement CreateCommunityTypePrivate;
+
+    @FindBy(id = "Create")
+    WebElement CreateCommunityButton;
+
+    /**
     @FindBy(xpath="(//android.view.View)[10]")
     WebElement CreateCommunityTypePrivate;
 
@@ -76,6 +86,34 @@ public class CreateCommunity extends Pages{
     public CreateCommunity(AndroidDriver driver) {
         super(driver);
     }
+
+/*
+    public boolean  createComm(String Comm,String Type,String NSFW) {
+        try {
+            CreateCommunityNameTextBox.sendKeys(Comm);
+            CreateCommunityTypeWindow.click();
+            if(Type=="private") {
+                CreateCommunityTypePrivate.click();
+            }else if(Type=="public"){
+                CreateCommunityTypePublic.click();
+            }else {
+                CreateCommunityTypeRestricted.click();
+            }
+            if(NSFW=="+18"){
+                CreateCommunityNSFWButton.click();
+            }else{
+
+            }
+            if(CreateCommunityButton.isDisplayed()){
+                CreateCommunityButton.click();
+            }
+            else{
+                return false;
+            }
+        } catch (Exception ex) {
+            return false;
+        }
+        return true;*/
 
     public boolean createComm(String Comm,String Type,String NSFW) {
 
@@ -107,8 +145,6 @@ public class CreateCommunity extends Pages{
         }
 
         return communityTitleText.getAttribute("content-desc").contains(Comm);
-
-
     }
 
     public boolean makeItPrivate(){

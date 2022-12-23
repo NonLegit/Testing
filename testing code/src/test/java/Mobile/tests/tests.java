@@ -1,15 +1,11 @@
-
 package Mobile.tests;
 
+import mobile.Pages.CreatePost;
 import mobile.Pages.*;
-import Mobile.testComponents.BaseTest;
-
-
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class tests extends BaseTest {
+public class tests {
 
     CreatePost CreatePost;
     MyProfilePage MyProfilePage;
@@ -31,21 +27,20 @@ public class tests extends BaseTest {
     @Test(description = "Create some Posts Post", dataProvider = "writePostExcelDataProvider")
     public void createPostTest(String Title, String Text, String Community, String expectedResult) {
 
-//        //make sure you are in home
-//        Home.clickCreatePost();
-//        if (expectedResult.equalsIgnoreCase("fail") && CreatePost.writePost(Title, Text, Community) == "fail") {
-//            Assert.assertTrue(true);
-//        } else if (expectedResult.equalsIgnoreCase("success") && CreatePost.writePost(Title, Text, Community) == "success") {
-//            if (Home.gotoMyProfile() == "success" && MyProfilePage.clickPost() == "success" && Post.seePost(Title, Text, Community) == "success") {
-//                Assert.assertTrue(true);
-//            } else {
-//                Assert.fail();
-//            }
-//        } else {
-//            Assert.fail();
-//        }
-
-   // }
+        //make sure you are in home
+        Home.clickCreatePost();
+        if (expectedResult.equalsIgnoreCase("fail") && CreatePost.writePost(Title, Text, Community) == "fail") {
+            Assert.assertTrue(true);
+        } else if (expectedResult.equalsIgnoreCase("success") && CreatePost.writePost(Title, Text, Community) == "success") {
+            if (Home.gotoMyProfile() == "success" && MyProfilePage.clickPost() == "success" && Post.seePost(Title, Text, Community) == "success") {
+                Assert.assertTrue(true);
+            } else {
+                Assert.fail();
+            }
+        } else {
+            Assert.fail();
+        }
+    }
 
     /**
      * this is a test method to Search For An Existing Community And See If It Takes Me To The Right Community And Another Search For Non Existing Comm
@@ -99,9 +94,7 @@ public class tests extends BaseTest {
     @Test(description = "Create sub-reddit",dataProvider = "createSubRedditExcel")
     public void createCommTest(String CommName, String Type, String NSFW, String expectedResult) {
         //in home
-
         if(Home.gotoCreateCommunity()) {
-
             if(expectedResult.equalsIgnoreCase("fail")&& !CrCM.createComm(CommName,Type,NSFW) ){
                 Assert.assertTrue(true);
 
@@ -174,18 +167,6 @@ public class tests extends BaseTest {
         }else{
             Assert.fail();
         }
-    }
-
-    @Test(description = "dummy test")
-    public void EnterUserNameAndPass() throws InterruptedException {
-        driver.findElement(By.xpath("//android.widget.EditText[1]")).click();
-        Thread.sleep(1000);
-        driver.findElement(By.xpath("//android.widget.EditText[1]")).sendKeys("test");
-        driver.hideKeyboard();
-        driver.findElement(By.xpath("//android.widget.EditText[2]")).click();
-        driver.findElement(By.xpath("//android.widget.EditText[2]")).sendKeys("test");
-        driver.hideKeyboard();
-        Thread.sleep(11000);
     }
 }
 

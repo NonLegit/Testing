@@ -10,10 +10,14 @@ import java.util.List;
 
 public class PostsValidation extends BaseTest {
 
+
+
+
     /**
      * this test is used to test making a randomized comment on some random post in the home page
      */
     @Test(description = "making a random comment on some random post")
+
     public void makeRandomComment() throws InterruptedException {
         HomePage homePage = landingPage.NormalLogin("Fawzy", "Aa123456*.");
         Assert.assertNotNull(homePage);
@@ -41,11 +45,28 @@ public class PostsValidation extends BaseTest {
         Assert.assertTrue(resultComment.contains(comment));
     }
 
+
+    /**
+     * this test is used to test replying to comment by a randomized comment on some random post in the home page
+     */
+    @Test(description = "replying to a random comment on some random post")
+    public void replyRandomComment(){
+        HomePage homePage = landingPage.NormalLogin(VALID_USER_NAME, VALID_USER_PASS);
+        Assert.assertNotEquals(homePage, null);
+        PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(2);
+        String comment = getData.generateRandomString(15);
+        String userName = postDetails.getUserNameOfIndex(1);
+        postDetails.replyToComment(comment, userName);
+        String resultComment = postDetails.getCommentOfUser(userName);
+        Assert.assertEquals(resultComment, comment);
+    }
+
     /**
      * this test is used to test making a share a post and check if the original url is subset of the shared one
      */
     @Test(description = "sharing some random post")
     public void sharePostTest(){
+
         HomePage homePage = landingPage.NormalLogin("3abkareem", "Aa_123456789_Aa");
         Assert.assertNotNull(homePage);
         PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(1);
@@ -109,11 +130,13 @@ public class PostsValidation extends BaseTest {
         Assert.assertTrue(numOfCommentsAfter > numOfCommentsBefore);
     }
 
+
     /**
      * this test is used to test making upvote to a post
      */
     @Test(description = "upvoting some random post")
     public void upVotePostTest(){
+
         HomePage homePage = landingPage.NormalLogin("Fawzy", "Aa123456*.");
         Assert.assertNotNull(homePage);
         PostDetails postDetails = homePage.checkPost(2);
@@ -123,6 +146,7 @@ public class PostsValidation extends BaseTest {
         //System.out.println("before = " + postUpVotesOld);
         //System.out.println("after = " + postUpVotesNew);
         Assert.assertTrue(postUpVotesNew > postUpVotesOld);
+
     }
 
     /**
@@ -130,6 +154,7 @@ public class PostsValidation extends BaseTest {
      */
     @Test(description = "downvoting some random post")
     public void downVotePostTest(){
+
         HomePage homePage = landingPage.NormalLogin("Fawzy", "Aa123456*.");
         Assert.assertNotNull(homePage);
         PostDetails postDetails = homePage.checkPost(2);
@@ -139,6 +164,7 @@ public class PostsValidation extends BaseTest {
         System.out.println("before = " + postUpVotesOld);
         System.out.println("after = " + postUpVotesNew);
         Assert.assertTrue(postUpVotesNew < postUpVotesOld);
+
     }
 
     /**
@@ -146,6 +172,7 @@ public class PostsValidation extends BaseTest {
      */
     @Test(description = "upvoting some random comment")
     public void upVoteCommentTest(){
+
         HomePage homePage = landingPage.NormalLogin("3abkareem", "Aa_123456789_Aa");
         Assert.assertNotNull(homePage);
         PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(2);
@@ -163,6 +190,7 @@ public class PostsValidation extends BaseTest {
      */
     @Test(description = "downvoting some random comment")
     public void downVoteCommentTest(){
+
         HomePage homePage = landingPage.NormalLogin("3abkareem", "Aa_123456789_Aa");
         Assert.assertNotNull(homePage);
         PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(2);
@@ -187,6 +215,7 @@ public class PostsValidation extends BaseTest {
         String newURL = driver.getCurrentUrl();
         Assert.assertNotEquals(newURL, currentURL);
     }
+
 
 
     /**
