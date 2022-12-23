@@ -95,7 +95,7 @@ public class tests extends BaseTest {
     @Test(description = "Create sub-reddit",dataProvider = "createSubRedditExcel")
     public void createCommTest(String CommName, String Type, String NSFW, String expectedResult) {
         //in home
-        if(Home.gotoCreateCommunity()) {
+        if(Home.gotoCreateCommunity() != null) {
             if(expectedResult.equalsIgnoreCase("fail")&& !CrCM.createComm(CommName,Type,NSFW) ){
                 Assert.assertTrue(true);
 
