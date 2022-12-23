@@ -2,6 +2,7 @@ package mobile.Pages;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -84,4 +85,14 @@ public class Pages {
 
     }
 
+    public void scrollToEndAction() {
+        boolean canScrollMore = true;
+        while(canScrollMore) {
+            canScrollMore =  (Boolean)((JavascriptExecutor)driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
+                    "left", 100, "top", 100, "width", 1000, "height", 2500,
+                    "direction", "down",
+                    "percent", 3.0
+            ));
+        }
+    }
 }

@@ -12,6 +12,9 @@ public class PageConstants {
     public static final String EXCEL_PATH = System.getProperty("user.dir") + "\\src\\test\\java\\resources\\data.xlsx";
 
 
+    public static final String NULL_LOCATOR = "";
+
+
     /**
      * this is the sheetName that contains login data
      */
@@ -109,7 +112,7 @@ public class PageConstants {
      * this is a locator for one of the elements of the common bar at the above, you can see that bar in all pages
      * it represents the <b>the sign up button if not signed in</b>
      */
-    public static final String SIGNUP_BUTTON_XPATH = "//a[@role='button'][text()='Sign Up']";
+    public static final String SIGNUP_BUTTON_XPATH = "//button[text()='sign up']";
 
 
     //*************************************************************************************************************/
@@ -154,22 +157,22 @@ public class PageConstants {
     /**
      * this is the user email input text through which he can make a new account
      */
-    public static final String USER_EMAIL_SIGNUP_ID = "regEmail";
+    public static final String USER_EMAIL_SIGNUP_ID = ":r5:";
 
     /**
      * this is the continue button in the sign up popup window
      */
-    public static final String CONTINUE_SIGNUP_XPATH = "//button[@data-step='email']";
+    public static final String CONTINUE_SIGNUP_XPATH = "//button[text()='continue']";
 
     /**
      * this is password input text in the sign up page
      */
-    public static final String PASSWORD_SIGNUP_ID = "regPassword";
+    public static final String PASSWORD_SIGNUP_ID = ":r9:";
 
     /**
      * this is the username input text in the sign up page
      */
-    public static final String USERNAME_SIGNUP_ID = "regUsername";
+    public static final String USERNAME_SIGNUP_ID = ":r8:";
 
     /**
      * this is the the Captcha (I am not a robot inside the sign up page

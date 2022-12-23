@@ -18,7 +18,7 @@ public class AbstractComponent {
     /**
      * this is the driver which is used in interacting with the browser
      */
-    private WebDriver driver;
+    protected WebDriver driver;
 
 
     /**
@@ -102,7 +102,7 @@ public class AbstractComponent {
     /**
      * this is the login in button through which you can login into your account
      */
-    @FindBy(xpath = LOGIN_BUTTON_XPATH)
+    @FindBy(xpath = "//button[text()='log in']")
     protected WebElement loginButton;
 
     /**
@@ -110,6 +110,8 @@ public class AbstractComponent {
      */
     @FindBy(xpath = SIGNUP_BUTTON_XPATH)
     protected WebElement signupButton;
+
+
 
 
     /**
@@ -193,6 +195,14 @@ public class AbstractComponent {
     public boolean isThereAnAlert(){
         Alert alert = ExpectedConditions.alertIsPresent().apply(driver);
         return alert != null;
+    }
+
+    /**
+     * this method is to scroll down inside a webElement where -ve values mean scroll up, positive values means scroll down
+     */
+    public void scroll(int scrollAmount){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0," + scrollAmount + ")", "");
     }
 
 }

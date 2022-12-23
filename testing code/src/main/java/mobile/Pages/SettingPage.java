@@ -15,7 +15,12 @@ public class SettingPage extends Pages{
 
     public void gotoSettings(){
         threadSleep(2);
-        driver.findElement(By.xpath("")).click();
-        
+        driver.findElement(By.xpath("(//android.widget.Button)[4]")).click();
+        threadSleep(1);
+        scrollToEndAction();
+        threadSleep(1);
+        driver.findElement(By.xpath("(//android.view.View)[16]")).click();
     }
+
+
 }
