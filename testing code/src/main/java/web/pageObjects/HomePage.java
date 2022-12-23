@@ -16,19 +16,24 @@ public class HomePage extends AbstractComponent {
     /**
      * this the driver that's used to to automate the tests
      */
-    //WebDriver driver;
+    WebDriver driver;
 
     /**
      * these are the list of posts that are showing the home page
      */
-    @FindBy(id = PageConstants.NULL_LOCATOR)
+    @FindBy(xpath = "/html/body/div/div/div/div[1]/div[3]/div/div")
     List<WebElement> posts;
 
     /**
+     * this is the "what is your thoughts input text"
+     */
+    @FindBy(xpath = "//div[@data-placeholder='What are your thought?']")
+    WebElement whatIsYourThoughtsBtn;
+    /**
      * this is the selector of comment button on a post
      */
-    @FindBy(id = PageConstants.NULL_LOCATOR)
-    By commentButton;
+    By commentButton = By.xpath(".//button[contains(.,'comments')]");
+
 
     /**
      * this is the create post input in the home page
@@ -74,7 +79,7 @@ public class HomePage extends AbstractComponent {
      */
     public HomePage(WebDriver driver) {
         super(driver);
-        //this.driver = driver;
+        this.driver = driver;
     }
 
     /**
@@ -119,6 +124,7 @@ public class HomePage extends AbstractComponent {
 
     }
 
+    /**
      * this function is used to create a community
      * for community type:  - 0:public
      *                      - 1:Restricted
@@ -150,6 +156,8 @@ public class HomePage extends AbstractComponent {
     public PostDetails checkPost(int postIndex){
         try {
             posts.get(postIndex).click();
+            waitForWebElementToAppear(whatIsYourThoughtsBtn, 5);
+            threadSleep(1);
             return new PostDetails(driver);
         }catch (Exception e){
             return null;
@@ -162,9 +170,11 @@ public class HomePage extends AbstractComponent {
      * @return PostDetails: which is the object of view of the post details
      */
     public PostDetails checkPostWithAtLeastNumOfComments(int commentsNum){
-        for (WebElement element : posts){
-            if(Integer.parseInt(element.findElement(commentButton).getText()) >= commentsNum){
+        threadSleep(2);
+        for (WebElement element : posts) {
+            if(Integer.parseInt(element.findElement(commentButton).getText().split(" ")[0]) >= commentsNum){
                 element.click();
+                threadSleep(2);
                 return new PostDetails(driver);
             }
         }

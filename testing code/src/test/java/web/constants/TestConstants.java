@@ -8,7 +8,7 @@ public class TestConstants {
     /**
      * this is the url of home page of reddit
      */
-    public static final String HOME_URL = "https://web.nonlegit.click/";
+    public static final String HOME_URL = "https://web.nonlegit.click/login";
 
     /**
      * constant which represents the path of reports to generated into

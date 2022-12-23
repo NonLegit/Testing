@@ -6,20 +6,26 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
+import mobile.Pages.StartingPage;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.remote.RemoteWebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import resources.GetData;
 
 import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
+
+import static web.constants.TestConstants.SCREENSHOT_PATH;
 
 public class BaseTest {
 
     public AppiumDriverLocalService server;
     public AndroidDriver driver;
-
+    public StartingPage startingPage;
+    public GetData getData;
 
     @BeforeMethod(alwaysRun = true)
     public void ConfigureAppium() {
@@ -43,6 +49,9 @@ public class BaseTest {
         driver = new AndroidDriver(server , options);
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+        startingPage = new StartingPage(driver);
+        getData = new GetData();
     }
 
 
@@ -50,16 +59,7 @@ public class BaseTest {
         ((JavascriptExecutor) driver).executeScript("mobile: longClickGesture", ImmutableMap.of("elementId", ((RemoteWebElement)ele).getId(), "duration", 2000));
     }
 
-    public void scrollToEndAction() {
-        boolean canScrollMore = true;
-        while(canScrollMore) {
-            canScrollMore =  (Boolean)((JavascriptExecutor)driver).executeScript("mobile: scrollGesture", ImmutableMap.of(
-                    "left", 100, "top", 100, "width", 200, "height", 200,
-                    "direction", "down",
-                    "percent", 3.0
-            ));
-        }
-    }
+
 
     public void swipeAction(WebElement ele, String direction) {
         ((JavascriptExecutor) driver).executeScript("mobile: swipeGesture", ImmutableMap.of(
@@ -68,6 +68,21 @@ public class BaseTest {
                 "percent", 0.75
         ));
 
+    }
+
+    /**
+     * this is a function that takes a screenshot and stores it and returns the path of the stored screenshot
+     * @param testCaseName: this is the name of current test that requires this screenshot
+     * @param driver: this is the driver through which we run the tests
+     * @return String: this is the path of the taken image
+     * @throws IOException: this exception is thrown if the file isn't found
+     */
+    public String getScreenShot(String testCaseName, WebDriver driver) throws IOException {
+        TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
+        File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        File file = new File(SCREENSHOT_PATH + testCaseName + ".png");
+        FileUtils.copyFile(source, file);
+        return SCREENSHOT_PATH + testCaseName + ".png";
     }
 
     @AfterMethod(alwaysRun = true)

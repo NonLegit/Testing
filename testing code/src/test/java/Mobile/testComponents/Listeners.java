@@ -4,17 +4,15 @@ package mobile.testComponents;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
-import org.openqa.selenium.WebDriver;
+import io.appium.java_client.android.AndroidDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import resources.ExtentReporterGen;
-import web.testComponents.BaseTest;
 
 import java.io.IOException;
 import java.util.Arrays;
 
-import static web.constants.TestConstants.REPORT_PATH;
 
 /**
  * this class is for TestNG which is used to listen on the
@@ -25,7 +23,7 @@ public class Listeners extends BaseTest implements ITestListener {
     /**
      * extent report variable which is used to make reports of tests which succeeded and that which failed
      */
-    ExtentReports reports = ExtentReporterGen.getReporterObject(REPORT_PATH);
+    ExtentReports reports = ExtentReporterGen.getReporterObject(System.getProperty("user.dir")+ "\\reports\\MobileGeneralReport.html");
 
     /**
      * this is a variable that defines a single test
@@ -66,7 +64,7 @@ public class Listeners extends BaseTest implements ITestListener {
         extentTestThreadLocal.get().fail(result.getThrowable());
         extentTestThreadLocal.get().fail(result.getMethod().getDescription() +" with parameter = " + Arrays.toString(Arrays.stream(result.getMethod().getAttributes()).toArray()) + " failed");
         try {
-            driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
+            driver = (AndroidDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
             String filepath = getScreenShot(result.getMethod().getMethodName(), driver);
             extentTestThreadLocal.get().addScreenCaptureFromPath(filepath, result.getMethod().getMethodName());
         } catch (IOException | NoSuchFieldException | IllegalAccessException e) {

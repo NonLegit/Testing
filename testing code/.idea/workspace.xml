@@ -4,52 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="62d21152-2a9b-46bb-92d6-dd3174e76d6f" name="Default Changelist" comment="">
-
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/CommunityPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/CommunityPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/CreateCommunity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/CreateCommunity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/CreatePost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/CreatePost.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/MyProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/MyProfilePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/OtherUsersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/OtherUsersPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/Pages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/Pages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/Post.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/SearchPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/SearchPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mobile/Pages/StaringPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/mobile/Pages/StaringPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/AbstractComponents/AbstractComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/AbstractComponents/AbstractComponent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/constants/PageConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/constants/PageConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/pageObjects/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/web/pageObjects/LandingPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/web/pageObjects/LandingPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/mobile/tests/tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/mobile/tests/tests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/resources/data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/resources/data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/web/tests/CommunityValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/tests/CommunityValidation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/web/tests/PostsValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/tests/PostsValidation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/web/tests/loginSignupValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/web/tests/loginSignupValidation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/constants/PageConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/CreateCommunity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/CreateCommunity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/CreatePost.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/CreatePost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/EditScreenPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/EditScreenPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/Home.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/Home.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/MyProfilePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/MyProfilePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/Pages.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/Pages.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mobile/Pages/StaringPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mobile/Pages/StaringPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/AbstractComponents/AbstractComponent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/AbstractComponents/AbstractComponent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/constants/PageConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/constants/PageConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/pageObjects/HomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/pageObjects/HomePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/web/pageObjects/LandingPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/web/pageObjects/LandingPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/constants/TestConstants.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/resources/ExtentReporterGen.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/resources/ExtentReporterGen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/resources/GetData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/resources/GetData.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/web/constants/TestConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/constants/TestConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/web/testComponents/BaseTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/testComponents/BaseTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/web/testComponents/Listeners.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/testComponents/Listeners.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/web/tests/CommunityValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/tests/CommunityValidation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/web/tests/PostsValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/tests/PostsValidation.class" afterDir="false" />
-
-      <change beforePath="$PROJECT_DIR$/target/test-classes/web/tests/loginSignupValidation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/web/tests/loginSignupValidation.class" afterDir="false" />
-    </list>
+    <list default="true" id="62d21152-2a9b-46bb-92d6-dd3174e76d6f" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -91,7 +46,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/resources" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -99,15 +54,17 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\PROJECTS\third year\first term\software engineering\NonLegit-Code\Testing\testing code\src\test\java\resources" />
       <recent name="D:\PROJECTS\third year\first term\software engineering\NonLegit-Code\Testing\testing code" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\PROJECTS\third year\first term\software engineering\NonLegit-Code\Testing\testing code\src\test\java\resources" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="mobile.tests" />
+    </key>
   </component>
-
-  <component name="RunManager" selected="TestNG.tests.EnterUserNameAndPass">
-
+  <component name="RunManager" selected="TestNG.PostsValidation.makeRandomComment">
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,19 +76,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-
-    <configuration name="tests.EnterUserNameAndPass" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="PostsValidation.downVoteCommentTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nonLegit" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="mobile.tests.*" />
+          <option name="PATTERN" value="web.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="mobile.tests" />
-      <option name="MAIN_CLASS_NAME" value="mobile.tests.tests" />
-      <option name="METHOD_NAME" value="EnterUserNameAndPass" />
-
+      <option name="PACKAGE_NAME" value="web.tests" />
+      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
+      <option name="METHOD_NAME" value="downVoteCommentTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -139,18 +94,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tests.addToFavourite" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="PostsValidation.downVotePostTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nonLegit" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="mobile.tests.*" />
+          <option name="PATTERN" value="web.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="mobile.tests" />
-      <option name="MAIN_CLASS_NAME" value="mobile.tests.tests" />
-      <option name="METHOD_NAME" value="addToFavourite" />
-
+      <option name="PACKAGE_NAME" value="web.tests" />
+      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
+      <option name="METHOD_NAME" value="downVotePostTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -158,18 +112,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tests.createPostTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="PostsValidation.insights" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nonLegit" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="mobile.tests.*" />
+          <option name="PATTERN" value="web.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="mobile.tests" />
-      <option name="MAIN_CLASS_NAME" value="mobile.tests.tests" />
-      <option name="METHOD_NAME" value="createPostTest" />
-
+      <option name="PACKAGE_NAME" value="web.tests" />
+      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
+      <option name="METHOD_NAME" value="insights" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -177,7 +130,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tests.visitCommunityTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="PostsValidation.makeRandomComment" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nonLegit" />
       <extension name="coverage">
         <pattern>
@@ -186,9 +139,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="mobile.tests" />
-      <option name="MAIN_CLASS_NAME" value="mobile.tests.tests" />
-      <option name="METHOD_NAME" value="visitCommunityTest" />
-
+      <option name="MAIN_CLASS_NAME" value="mobile.tests.PostsValidation" />
+      <option name="METHOD_NAME" value="makeRandomComment" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -196,20 +148,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-
-    <configuration name="tests.visitFromRecentlyVisited" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="PostsValidation.upVoteCommentTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="nonLegit" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="mobile.tests.*" />
+          <option name="PATTERN" value="web.tests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="mobile.tests" />
-      <option name="MAIN_CLASS_NAME" value="mobile.tests.tests" />
-      <option name="METHOD_NAME" value="visitFromRecentlyVisited" />
+      <option name="PACKAGE_NAME" value="web.tests" />
+      <option name="MAIN_CLASS_NAME" value="web.tests.PostsValidation" />
+      <option name="METHOD_NAME" value="upVoteCommentTest" />
       <option name="TEST_OBJECT" value="METHOD" />
-
       <properties />
       <listeners />
       <method v="2">
@@ -218,12 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.tests.EnterUserNameAndPass" />
-        <item itemvalue="TestNG.tests.visitFromRecentlyVisited" />
-        <item itemvalue="TestNG.tests.visitCommunityTest" />
-        <item itemvalue="TestNG.tests.createPostTest" />
-        <item itemvalue="TestNG.tests.addToFavourite" />
-
+        <item itemvalue="TestNG.PostsValidation.makeRandomComment" />
+        <item itemvalue="TestNG.PostsValidation.downVoteCommentTest" />
+        <item itemvalue="TestNG.PostsValidation.upVoteCommentTest" />
+        <item itemvalue="TestNG.PostsValidation.insights" />
+        <item itemvalue="TestNG.PostsValidation.downVotePostTest" />
       </list>
     </recent_temporary>
   </component>
@@ -248,5 +197,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
