@@ -376,12 +376,17 @@ public class Home extends Pages{
      * this is the method used to go to the post details
      */
     public PostDetails checkPost(int postIndex){
-        posts.get(postIndex).click();
-        threadSleep(1);
-        if (errorScreen1 != null && errorScreen1.isDisplayed())
+        try {
+            posts.get(postIndex).click();
+            threadSleep(1);
+            if (errorScreen1 != null && errorScreen1.isDisplayed())
+                return null;
+            else
+                return new PostDetails(driver);
+        }catch (Exception e){
             return null;
-        else
-            return new PostDetails(driver);
+        }
+
     }
 
 

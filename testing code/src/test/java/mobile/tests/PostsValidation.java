@@ -15,7 +15,7 @@ public class PostsValidation extends BaseTest {
     public void makeRandomComment() {
         Home home = startingPage.NormalLogin("Fawzy", "Aa123456*.");
         Assert.assertNotNull(home);
-        PostDetails postDetails = home.checkPost(1);
+        PostDetails postDetails = home.checkPost(0);
         Assert.assertNotNull(postDetails);
     }
 
