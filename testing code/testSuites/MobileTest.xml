@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="WebTest">
+    <listeners>
+        <listener class-name="Mobile.testComponents.Listeners"/>
+    </listeners>
+
+    <test name="Mobile tests">
+        <classes>
+            <class name="Mobile.tests.CommunityValidation"/>
+            <class name="Mobile.tests.PostsValidation"/>
+            <class name="Mobile.tests.EditTests"/>
+            <class name="Mobile.tests.loginSignupValidation"/>
+            <class name="Mobile.tests.OtherUsers"/>
+            <class name="Mobile.tests.ProfileTest"/>
+            <class name="Mobile.tests.Settings"/>
+            <class name="Mobile.tests.tests"/>
+        </classes>
+    </test>
+
+</suite>

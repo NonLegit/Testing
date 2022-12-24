@@ -15,7 +15,7 @@ public class PostsValidation extends BaseTest {
     public void makeRandomComment() {
         Home home = startingPage.NormalLogin("Fawzy", "Aa123456*.");
         Assert.assertNotNull(home);
-        PostDetails postDetails = home.checkPost(0);
+        PostDetails postDetails = home.checkFirstPost();
         Assert.assertNotNull(postDetails);
     }
 
@@ -25,14 +25,10 @@ public class PostsValidation extends BaseTest {
      */
     @Test(description = "replying to a random comment on some random post")
     public void replyRandomComment(){
-        /*HomePage homePage = landingPage.NormalLogin("3abkareem", "Aa_123456789_Aa");
-        Assert.assertNotNull(homePage);
-        PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(2);
-        String comment = getData.generateRandomString(15);
-        postDetails.replyToComment(comment, 1);
-        List<String> resultComment = postDetails.getRepliesToAComment("3abkareem", 1);
-        //System.out.println(resultComment);
-        Assert.assertTrue(resultComment.contains(comment));*/
+        Home home = startingPage.NormalLogin("Fawzy", "Aa123456*.");
+        Assert.assertNotNull(home);
+        PostDetails postDetails = home.checkFirstPost();
+        Assert.assertNotNull(postDetails);
     }
 
     /**
@@ -67,41 +63,7 @@ public class PostsValidation extends BaseTest {
         //Assert.assertEquals(currentPostNumOfSharedBefore + 1, currentPostNumOfSharedAfter);
     }
 
-    /**
-     * this test is used to test viewing a post and check if the number of views increased or not
-     */
-    @Test(description = "viewing some random post")
-    public void totalNumViewsPostTest(){
-        /*HomePage homePage = landingPage.NormalLogin("3abkareem", "Aa_123456789_Aa");
-        Assert.assertNotNull(homePage);
-        PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(1);
-        int currentNumOfViewsBefore = postDetails.getCurrentNumberOfView();
-        String currentUrl = driver.getCurrentUrl();
-        landingPage.logout();
-        HomePage homePage2 = landingPage.NormalLogin("zuksh", "Aa_123456789_Aa");
-        Assert.assertNotNull(homePage2);
-        driver.navigate().to(currentUrl);
-        int currentNumOfViewsAfter = postDetails.getCurrentNumberOfView();
-        Assert.assertTrue(currentNumOfViewsAfter > currentNumOfViewsBefore);*/
-    }
 
-    /**
-     * this test is used to test making a comment and check if the number of comments increased or not
-     */
-    @Test(description = "viewing some random post")
-    public void totalNumCommentsPostTest(){
-        /*HomePage homePage = landingPage.NormalLogin("Fawzy", "Aa123456*.");
-        Assert.assertNotNull(homePage);
-        PostDetails postDetails = homePage.checkPost(2);
-        int numOfCommentsBefore = postDetails.getCurrentNumberOfComments();
-        String comment = getData.generateRandomString(15);
-        postDetails.makeComment(comment);
-        driver.navigate().refresh();
-        int numOfCommentsAfter = postDetails.getCurrentNumberOfComments();
-        System.out.println("before = " + numOfCommentsBefore);
-        System.out.println("after = " + numOfCommentsAfter);
-        Assert.assertTrue(numOfCommentsAfter > numOfCommentsBefore);*/
-    }
 
     /**
      * this test is used to test making upvote to a post
@@ -140,15 +102,10 @@ public class PostsValidation extends BaseTest {
      */
     @Test(description = "upvoting some random comment")
     public void upVoteCommentTest(){
-        /*HomePage homePage = landingPage.NormalLogin("3abkareem", "Aa_123456789_Aa");
-        Assert.assertNotNull(homePage);
-        PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(2);
-        int commentUpVotesOld = postDetails.getNumOfVotesComment(1);
-        postDetails.upVoteComment(1);
-        int commentUpVotesNew = postDetails.getNumOfVotesComment(1);
-        /*System.out.println("before = " + commentUpVotesOld);
-        System.out.println("after = " + commentUpVotesNew);*/
-        //Assert.assertTrue(commentUpVotesOld < commentUpVotesNew);
+        Home home = startingPage.NormalLogin("Fawzy", "Aa123456*.");
+        Assert.assertNotNull(home);
+        PostDetails postDetails = home.checkFirstPost();
+        Assert.assertNotNull(postDetails);
     }
 
 
@@ -157,28 +114,9 @@ public class PostsValidation extends BaseTest {
      */
     @Test(description = "downvoting some random comment")
     public void downVoteCommentTest(){
-        /*HomePage homePage = landingPage.NormalLogin("3abkareem", "Aa_123456789_Aa");
-        Assert.assertNotNull(homePage);
-        PostDetails postDetails = homePage.checkPostWithAtLeastNumOfComments(2);
-        int commentUpVotesOld = postDetails.getNumOfVotesComment(1);
-        postDetails.downVoteComment(1);
-        int commentUpVotesNew = postDetails.getNumOfVotesComment(1);
-        /*System.out.println("before = " + commentUpVotesOld);
-        System.out.println("after = " + commentUpVotesNew);*/
-        //Assert.assertTrue(commentUpVotesOld < commentUpVotesNew);
-    }
-
-    /**
-     * this is the insight test
-     */
-    @Test(description = "insights tests case inside the post")
-    public void insights(){
-        /*HomePage homePage = landingPage.NormalLogin("Fawzy", "Aa123456*.");
-        Assert.assertNotNull(homePage);
-        PostDetails postDetails = homePage.checkPost(1);
-        String currentURL = driver.getCurrentUrl();
-        postDetails.clickOnInSightsButton();
-        String newURL = driver.getCurrentUrl();
-        Assert.assertNotEquals(newURL, currentURL);*/
+        Home home = startingPage.NormalLogin("Fawzy", "Aa123456*.");
+        Assert.assertNotNull(home);
+        PostDetails postDetails = home.checkFirstPost();
+        Assert.assertNotNull(postDetails);
     }
 }

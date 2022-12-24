@@ -84,7 +84,7 @@ public class ForgetPage extends Pages {
             return false;
         else{
             continueBtn.click();
-            threadSleep(1);
+            threadSleep(3);
             return true;
         }
     }

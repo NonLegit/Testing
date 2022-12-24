@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="WebTest">
+    <listeners>
+        <listener class-name="web.testComponents.Listeners"/>
+    </listeners>
+
+    <test name="loginTest">
+        <classes>
+            <class name="web.tests.loginSignupValidation"/>
+            <class name="web.tests.CommunityValidation"/>
+            <class name="web.tests.CreateCommunityTests"/>
+            <class name="web.tests.CreatePostTests"/>
+            <class name="web.tests.MessageValidation"/>
+            <class name="web.tests.OtherUserProfileTest"/>
+            <class name="web.tests.PostsValidation"/>
+            <class name="web.tests.ProfileTests"/>
+            <class name="web.tests.PostsValidation"/>
+            <class name="web.tests.SettingsTests"/>
+        </classes>
+    </test>
+
+</suite>

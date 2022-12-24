@@ -19,7 +19,7 @@ public class CreatePostTests extends BaseTest {
     public void createPostTest(String Title ,String CommunityName,String ExpectedResults){
         HomePage home =new HomePage(driver);
 
-        landingPage.dummyLogIn("bola","Aa_123456789_Aa");
+        landingPage.dummyLogIn("3abkareem","Aa_123456789_Aa");
         web_CreatePost CrPost=new web_CreatePost(driver);
         web_Profile Prof=new web_Profile(driver);
         web_Community Community=new web_Community(driver);
@@ -54,17 +54,15 @@ public class CreatePostTests extends BaseTest {
         web_Profile Prof=new web_Profile(driver);
         CommunityPage comm=new CommunityPage(driver);
 
-
-
-        landingPage.dummyLogIn("bola","Aa_123456789_Aa");
+        landingPage.dummyLogIn("3abkareem","Aa_123456789_Aa");
         home.gotoCreatePost();
 
-        if(CrPost.CreatePost("Testing", "HELLO FROM TEsTING TEAM", "argentina")){
+        if(CrPost.CreatePost("Testing", "HELLO FROM TEsTING TEAM", "Tryy1223")){
             home.gotoMyProfile();
-            if(Prof.checkPostText("Testing","HELLO FROM TEsTING TEAM","r/argentina .")){
+            if(Prof.checkPostText("Testing","HELLO FROM TEsTING TEAM","r/Tryy1223 .")){
                // Prof.gotoFirstPostCommunity();
-                Prof.gotoNFSW();
-                if(comm.checkPostText("Testing","HELLO FROM TEsTING TEAM","r/argentina")){
+                //Prof.gotoNFSW();
+                if(comm.checkPostText("Testing","HELLO FROM TEsTING TEAM","r/Tryy1223")){
                     Assert.assertTrue(true);
                 }else{
                     Assert.fail();
@@ -79,15 +77,15 @@ public class CreatePostTests extends BaseTest {
 
     }
     @Test
-    public void testTest(){
+    public void checkPost(){
         HomePage home=new HomePage(driver);
-        landingPage.dummyLogIn("bola","Aa_123456789_Aa");
+        landingPage.dummyLogIn("3abkareem","Aa_123456789_Aa");
         web_Profile Prof=new web_Profile(driver);
 
 
         home.gotoMyProfile();
 
-        if(Prof.checkPostText("Testing","HELLO FROM TEsTING TEAM","r/argentina .")){
+        if(Prof.checkPostText("Testing","HELLO FROM TEsTING TEAM","r/Tryy1223 .")){
             Assert.assertTrue(true);
             
         }else{
@@ -102,10 +100,10 @@ public class CreatePostTests extends BaseTest {
         web_CreatePost CrPost=new web_CreatePost(driver);
         web_Profile Prof=new web_Profile(driver);
         CommunityPage comm=new CommunityPage(driver);
-        landingPage.dummyLogIn("bola","Aa_123456789_Aa");
+        landingPage.dummyLogIn("3abkareem","Aa_123456789_Aa");
         home.gotoCreatePost();
         CrPost.spoilerPost();
-        if(CrPost.CreatePost("SPOIlER", "SPOILER TEST", "argentina")) {
+        if(CrPost.CreatePost("SPOIlER", "SPOILER TEST", "Tryy1223")) {
             home.gotoMyProfile();
             if(Prof.checkForSpoiler()){
                 Assert.assertTrue(true);
@@ -124,12 +122,12 @@ public class CreatePostTests extends BaseTest {
         web_CreatePost CrPost=new web_CreatePost(driver);
         web_Profile Prof=new web_Profile(driver);
         CommunityPage comm=new CommunityPage(driver);
-        landingPage.dummyLogIn("bola","Aa_123456789_Aa");
+        landingPage.dummyLogIn("3abkareem","Aa_123456789_Aa");
         home.gotoCreatePost();
         CrPost.NSFWPost();
-        if(CrPost.CreatePost("NSFW", "NSFW TESTING", "argentina")) {
+        if(CrPost.CreatePost("NSFW", "NSFW TESTING", "Tryy1223")) {
             home.gotoMyProfile();
-            if(Prof.checkForSpoiler()){
+            if(Prof.checkForNSFW()){
                 Assert.assertTrue(true);
             }else{
                 Assert.fail();

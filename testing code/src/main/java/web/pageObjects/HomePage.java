@@ -116,7 +116,7 @@ public class HomePage extends AbstractComponent {
     @FindBy(xpath = "")
     WebElement FirstPost;
 
-    @FindBy(xpath = "/html/body/div/div/div/div[1]/div[3]/div[2]/div[1]/div[2]/a")
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div/div[1]/div[3]/div/div[1]/div[2]/div[1]/div[2]/a")
     WebElement FirstPostOwner;
 
     @FindBy(xpath = "/html/body/div/header/div/div[2]/ul/div[2]/div/div/div/div[5]/a/div/span")

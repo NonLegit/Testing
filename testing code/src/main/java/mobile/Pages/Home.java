@@ -1,13 +1,9 @@
 package mobile.Pages;
 
 import io.appium.java_client.android.AndroidDriver;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-
-
-import java.util.List;
 
 public class Home extends Pages{
 
@@ -127,8 +123,8 @@ public class Home extends Pages{
     /**
      * these are the list of the posts
      */
-    @FindBy(xpath = "//android.widget.ScrollView/android.view.View")
-    List<WebElement> posts;
+    @FindBy(xpath = "(//android.view.View)[9]")
+    WebElement firstPost;
 
     /**
      *This Is Home -> Options -> Your Communities -> First Community
@@ -402,9 +398,9 @@ public class Home extends Pages{
     /**
      * this is the method used to go to the post details
      */
-    public PostDetails checkPost(int postIndex){
+    public PostDetails checkFirstPost(){
         try {
-            posts.get(postIndex).click();
+            firstPost.click();
             threadSleep(1);
             if (errorScreen1 != null && errorScreen1.isDisplayed())
                 return null;

@@ -108,11 +108,8 @@ public class AbstractComponent {
     /**
      * this is the signup button through which you can create email
      */
-    @FindBy(xpath = SIGNUP_BUTTON_XPATH)
+    @FindBy(xpath = "//a[.='sign up']")
     protected WebElement signupButton;
-
-
-
 
     /**
      * this is the constructor of the class and it initializes all of its members using PageFactory class

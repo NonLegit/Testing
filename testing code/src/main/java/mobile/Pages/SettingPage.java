@@ -14,12 +14,77 @@ public class SettingPage extends Pages{
     }
 
     public void gotoSettings(){
-        threadSleep(2);
+        threadSleep(8);
         driver.findElement(By.xpath("(//android.widget.Button)[4]")).click();
-        threadSleep(1);
+        threadSleep(5);
         scrollToEndAction();
-        threadSleep(1);
+        threadSleep(3);
         driver.findElement(By.xpath("(//android.view.View)[16]")).click();
+    }
+    public void changePassword(String OldPass,String NewPass){
+        threadSleep(2);
+        driver.findElement(By.xpath("(//android.view.View)[9]")).click();
+        threadSleep(3);
+        driver.findElement(By.xpath("(//android.view.View)[10]")).click();
+        threadSleep(5);
+        driver.findElement(By.xpath("(//android.widget.EditText)[1]")).click();
+        driver.findElement(By.xpath("(//android.widget.EditText)[1]")).sendKeys(OldPass);
+        threadSleep(1);
+        driver.findElement(By.xpath("(//android.widget.EditText)[2]")).click();
+        driver.findElement(By.xpath("(//android.widget.EditText)[2]")).sendKeys(NewPass);
+        threadSleep(1);
+        driver.findElement(By.xpath("(//android.widget.EditText)[3]")).click();
+        driver.findElement(By.xpath("(//android.widget.EditText)[3]")).sendKeys(NewPass);
+        threadSleep(3);
+        driver.findElement(By.xpath("(//android.widget.Button)[7]")).click();
+        threadSleep(2);
+        driver.findElement(By.xpath("(//android.widget.EditText)[1]")).click();
+        threadSleep(3);
+        driver.findElement(By.xpath("(//android.widget.EditText)[1]")).click();
+        threadSleep(2);
+        driver.findElement(By.xpath("(//android.widget.EditText)[1]")).click();
+        threadSleep(5);
+        driver.findElement(By.xpath("(//android.widget.EditText)[15]")).click();
+        threadSleep(4);
+    }
+
+    public void changeCounty(){
+        threadSleep(2);
+        driver.findElement(By.xpath("(//android.view.View)[9]")).click();
+        threadSleep(3);
+        driver.findElement(By.xpath("(//android.view.View)[11]")).click();
+        threadSleep(5);
+        driver.findElement(By.xpath("(//android.view.View)[10]")).click();
+        threadSleep(5);
+    }
+
+    public void changeGender(){
+        threadSleep(3);
+        driver.findElement(By.xpath("(//android.view.View)[9]")).click();
+        threadSleep(3);
+        driver.findElement(By.xpath("(//android.view.View)[12]")).click();
+        threadSleep(5);
+        driver.findElement(By.xpath("(//android.view.View)[7]")).click();
+        threadSleep(5);
+    }
+
+    public void unblock(){
+        threadSleep(3);
+        driver.findElement(By.xpath("(//android.view.View)[9]")).click();
+        threadSleep(3);
+        driver.findElement(By.xpath("(//android.view.View)[14]")).click();
+        threadSleep(5);
+        driver.findElement(By.xpath("(//android.widget.Button)[2]")).click();
+        threadSleep(5);
+    }
+
+    public void allowFollow(){
+        threadSleep(3);
+        driver.findElement(By.xpath("(//android.view.View)[9]")).click();
+        threadSleep(3);
+        driver.findElement(By.xpath("//android.widget.Switch")).click();
+        threadSleep(5);
+
     }
 
 

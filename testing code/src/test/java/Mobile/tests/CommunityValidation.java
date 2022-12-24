@@ -13,7 +13,7 @@ public class CommunityValidation extends BaseTest {
      */
     @Test(description = "this is a test used to create a community")
     public void createCommunity(){
-        Home home = startingPage.NormalLogin("Immediate_Rhubarb_75", "Abdo@1357");
+        Home home = startingPage.NormalLogin("3abkareem", "Aa_123456789_Aa");
         Assert.assertNotNull(home);
         String communityRandomName = getData.generateRandomString(10);
         CreateCommunity communityPage = home.gotoCreateCommunity();

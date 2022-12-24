@@ -42,19 +42,19 @@ public class LandingPage extends AbstractComponent {
     /**
      * this is a button to click on forget username
      */
-    @FindBy(xpath = "//a[@data-testid='login-forgetuser']")
+    @FindBy(xpath = "//a[@href='/username']")
     WebElement forgetUserNameBtn;
 
     /**
      * this is the input text through which we will enter the email address
      */
-    @FindBy(id = ":r8:")
+    @FindBy(id = ":r0:")
     WebElement  EmailAddrForget;
 
     /**
      * this is the input text through which we will enter user email in forget user pass
      */
-    @FindBy(id = ":r9:")
+    @FindBy(id = ":r1:")
     WebElement emailAddrForget;
 
     /**
@@ -84,7 +84,7 @@ public class LandingPage extends AbstractComponent {
     /**
      * this is a button to click on forget userpassword
      */
-    @FindBy(xpath = "//a[@data-testid='login-forgetpass']")
+    @FindBy(xpath = "//a[@href='/password']")
     WebElement forgetUserPasswordBtn;
 
 
@@ -231,14 +231,22 @@ public class LandingPage extends AbstractComponent {
     /**
      * this is the user password input text in the sign up page
      */
-    @FindBy(xpath = "(//input[@type='password'])")
+    //@FindBy(xpath = "(//input[@type='password'])")
+    @FindBy(id = ":r3:")
     WebElement passwordSignUpInputText;
 
     /**
      * this is the username input text in the sign up page
      */
-    @FindBy(xpath = "(//input[@type='text'])[2]")
+    //@FindBy(xpath = "(//input[@type='text'])[2]")
+    @FindBy(id = ":r2:")
     WebElement usernameSignupInputText;
+
+    /**
+     * these are the suggested usernames
+     */
+    @FindBy(xpath = "(//a[@href='#'])[1]")
+    WebElement suggestedName;
 
     /**
      * this is the I am not a robot box
@@ -298,12 +306,9 @@ public class LandingPage extends AbstractComponent {
      * this is a function used to login using google and return the next page if success
      * @return HomePage: the home page in case of success
      */
-    public HomePage googleLogin(String email, String password) throws InterruptedException {
-        loginButton.click();
-        waitForWebElementToAppear(continueWithGoogleBtn, EXPLICIT_TIMEOUT_SECONDS);
-        Thread.sleep(3000);
+    public HomePage googleLogin(String email, String password) {
+        threadSleep(2);
         continueWithGoogleBtn.click();
-
         Set<String>windows = driver.getWindowHandles();
         Iterator<String> it = windows.iterator();
         String parent = it.next();
@@ -373,10 +378,8 @@ public class LandingPage extends AbstractComponent {
      * this is a function used to login using facebook and return the next page if success
      * @return HomePage: the home page in case of success
      */
-    public HomePage facebookLogin(String email, String password) throws InterruptedException {
-        loginButton.click();
-        waitForWebElementToAppear(continueWithFacebookBtn, EXPLICIT_TIMEOUT_SECONDS);
-        Thread.sleep(3000);
+    public HomePage facebookLogin(String email, String password){
+        threadSleep(3);
         continueWithFacebookBtn.click();
 
         Set<String>windows = driver.getWindowHandles();
@@ -390,8 +393,9 @@ public class LandingPage extends AbstractComponent {
         facebookLoginPassword.sendKeys(password);
         facebookLoginBtn.click();
 
-        waitForWebElementToAppear(facebookContinueAs, EXPLICIT_TIMEOUT_SECONDS);
-        facebookContinueAs.click();
+        threadSleep(4);
+        //waitForWebElementToAppear(facebookContinueAs, EXPLICIT_TIMEOUT_SECONDS);
+        //facebookContinueAs.click();
 
         driver.switchTo().window(parent);
 
@@ -429,8 +433,10 @@ public class LandingPage extends AbstractComponent {
         facebookLoginPassword.sendKeys(password);
         facebookLoginBtn.click();
 
-        waitForWebElementToAppear(facebookContinueAs, EXPLICIT_TIMEOUT_SECONDS);
-        facebookContinueAs.click();
+        threadSleep(4);
+
+        /*waitForWebElementToAppear(facebookContinueAs, EXPLICIT_TIMEOUT_SECONDS);
+        facebookContinueAs.click();*/
 
         driver.switchTo().window(parent);
 
@@ -449,8 +455,7 @@ public class LandingPage extends AbstractComponent {
     /**
      * this is a function used to forget the username
      */
-    public void forgetUserName(String email) throws InterruptedException {
-        loginButton.click();
+    public void forgetUserName(String email) {
 
         waitForWebElementToAppear(forgetUserNameBtn, EXPLICIT_TIMEOUT_SECONDS);
         forgetUserNameBtn.click();
@@ -459,18 +464,18 @@ public class LandingPage extends AbstractComponent {
         EmailAddrForget.sendKeys(email);
 
         waitForFrameToBeAvailable(RecaptchaIframe, 5);
-
         forgetUsernameCaptcha.click();
+        threadSleep(2);
         driver.switchTo().parentFrame();
         emailMeBtn.click();
-        waitForWebElementToDisappear(emailInputText, 6);
+        threadSleep(6);
+        //waitForWebElementToDisappear(emailInputText, 6);
     }
 
     /**
      * this is a function used to forget the user password
      */
     public void forgetUserPassword(String email, String username) throws InterruptedException {
-        loginButton.click();
 
         waitForWebElementToAppear(forgetUserPasswordBtn, EXPLICIT_TIMEOUT_SECONDS);
         forgetUserPasswordBtn.click();
@@ -494,13 +499,13 @@ public class LandingPage extends AbstractComponent {
         continueSignupButton.click();
         threadSleep(1);
         waitForWebElementToAppear(usernameSignupInputText, EXPLICIT_TIMEOUT_SECONDS);
-        usernameSignupInputText.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
+        //usernameSignupInputText.sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
         usernameSignupInputText.sendKeys(username);
         threadSleep(1);
         passwordSignUpInputText.sendKeys(password);
         threadSleep(1);
         waitForFrameToBeAvailable(RecaptchaIframe, EXPLICIT_TIMEOUT_SECONDS);
-        threadSleep(1);
+        threadSleep(2);
         captchaCheckBox.click();
         driver.switchTo().parentFrame();
         threadSleep(1);
@@ -524,12 +529,13 @@ public class LandingPage extends AbstractComponent {
         threadSleep(1);
         continueSignupButton.click();
         threadSleep(1);
-        waitForWebElementToAppear(usernameSignupInputText, EXPLICIT_TIMEOUT_SECONDS);
-        refreshSuggestedName.click();
+        //waitForWebElementToAppear(usernameSignupInputText, EXPLICIT_TIMEOUT_SECONDS);
+        //refreshSuggestedName.click();
         threadSleep(1);
-        suggestedUserName = usernameSignupInputText.getAttribute("value");
+        suggestedUserName = suggestedName.getText();//getAttribute("value");
         System.out.println(suggestedUserName);
         threadSleep(1);
+        usernameSignupInputText.sendKeys(suggestedUserName);
         passwordSignUpInputText.sendKeys(password);
         threadSleep(2);
         waitForFrameToBeAvailable(RecaptchaIframe, EXPLICIT_TIMEOUT_SECONDS);

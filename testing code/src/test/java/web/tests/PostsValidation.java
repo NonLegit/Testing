@@ -105,7 +105,8 @@ public class PostsValidation extends BaseTest {
     public void totalNumCommentsPostTest(){
         HomePage homePage = landingPage.NormalLogin("Fawzy", "Aa123456*.");
         Assert.assertNotNull(homePage);
-        PostDetails postDetails = homePage.checkPost(2);
+        PostDetails postDetails = homePage.checkPost(1);
+        Assert.assertNotNull(postDetails);
         int numOfCommentsBefore = postDetails.getCurrentNumberOfComments();
         String comment = getData.generateRandomString(15);
         postDetails.makeComment(comment);
@@ -125,7 +126,7 @@ public class PostsValidation extends BaseTest {
 
         HomePage homePage = landingPage.NormalLogin("Fawzy", "Aa123456*.");
         Assert.assertNotNull(homePage);
-        PostDetails postDetails = homePage.checkPost(2);
+        PostDetails postDetails = homePage.checkPost(1);
         int postUpVotesOld = postDetails.getNumOfVotesPostBefore();
         postDetails.upVotePost();
         int postUpVotesNew = postDetails.getNumOfVotesPostAfter();
@@ -143,7 +144,7 @@ public class PostsValidation extends BaseTest {
 
         HomePage homePage = landingPage.NormalLogin("Fawzy", "Aa123456*.");
         Assert.assertNotNull(homePage);
-        PostDetails postDetails = homePage.checkPost(2);
+        PostDetails postDetails = homePage.checkPost(1);
         int postUpVotesOld = postDetails.getNumOfVotesPostBefore();
         postDetails.downVotePost();
         int postUpVotesNew = postDetails.getNumOfVotesPostAfter();

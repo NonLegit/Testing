@@ -57,7 +57,7 @@ public class TestConstants {
      * this is the place where screenshots will be taken
      */
     // System.getProperty("user.dir") +
-    public static final String SCREENSHOT_PATH ="screenshots/";
+    public static final String SCREENSHOT_PATH =".\\screenshots\\";
 
     /**
      * this is the place where recorded videos will be stored

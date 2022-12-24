@@ -8,7 +8,7 @@ import web.AbstractComponents.AbstractComponent;
 
 public class web_Profile extends AbstractComponent {
 
-    @FindBy(xpath = "/html/body/div[1]/div[2]/div/div[2]/div[1]/div[2]/span")
+    @FindBy(xpath = "//*[@id=\"root\"]/div[2]/div/div[2]/div[1]/div/span[2]")
     WebElement Name;
 
     @FindBy(xpath = "//*[@id=\"root\"]/div[2]/div/div[2]/div[1]/div[2]/div[2]/div[3]/div/span")
@@ -96,7 +96,8 @@ public class web_Profile extends AbstractComponent {
     }
 
     public boolean checkName(String LoggedInName) {
-        waitForWebElementToAppear(Name,1);
+        //waitForWebElementToAppear(Name,1);
+        threadSleep(2);
         return Name.getText() .equals(LoggedInName);
     }
 
@@ -127,7 +128,7 @@ public class web_Profile extends AbstractComponent {
         if (CommentsButton.isDisplayed()) {
             CommentsButton.click();
             threadSleep(1);
-            if (driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[5]/p")).getText().equals( "hmm... u/Immediate_Rhubarb_77 hasn't commented on anything")&&
+            if (driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[5]/p")).getText().equals( "hmm... u/lawfulenvelope hasn't commented on anything")&&
                     CommentsButton.getCssValue("color").equals("rgba(0, 121, 211, 1)")) {
                 return true;
             } else {
@@ -143,7 +144,7 @@ public class web_Profile extends AbstractComponent {
         if (HistoryButton.isDisplayed()) {
             HistoryButton.click();
             threadSleep(1);
-            if (driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div[1]/div[5]/p")).getText().equals( "hmm... looks like you haven't recently viewed anything yet")&&
+            if (driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div[1]/div[4]/p")).getText().equals( "hmm... looks like you haven't recently viewed anything yet")&&
                     HistoryButton.getCssValue("color").equals("rgba(0, 121, 211, 1)")) {
                 return true;
             } else {
@@ -160,7 +161,7 @@ public class web_Profile extends AbstractComponent {
             PostsButton.click();
             threadSleep(1);
 
-            if (driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[5]/p")).getText().equals( "hmm... u/Immediate_Rhubarb_77 hasn't posted recently")&&
+            if (driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[5]/p")).getText().equals( "hmm... u/lawfulenvelope hasn't posted recently")&&
                     PostsButton.getCssValue("color").equals("rgba(0, 121, 211, 1)")) {
                 return true;
             } else {
@@ -246,7 +247,7 @@ public class web_Profile extends AbstractComponent {
         if (OverViewButton.isDisplayed()) {
             OverViewButton.click();
             threadSleep(1);
-            if (driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[5]/p")).getText().equals( "hmm... u/Immediate_Rhubarb_77 hasn't posted recently")&&
+            if (driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[5]/p")).getText().equals( "hmm... u/lawfulenvelope hasn't posted recently")&&
             OverViewButton.getCssValue("color").equals("rgba(0, 121, 211, 1)")) {
                 return true;
             } else {
@@ -293,16 +294,33 @@ public class web_Profile extends AbstractComponent {
    public boolean checkForSpoiler(){
        //make sure that you just posted spoiler poster
        threadSleep(2);
-       if(driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div[1]/div[3]/div[2]/div/div[2]/span")).getText().equals("NSFW")){
+       if(driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div[1]/div[3]/div[2]/div/div[2]/span")).getText().equals("spoiler")){
            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[3]/div[2]/div/div[2]")).click();
 
            if(driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[2]/div/div[3]")).getCssValue("filter").equals("blur(3px)")){
-               return false;
+               return true;
            }
            return true;
        }
        return false;
    }
+
+    public boolean checkForNSFW(){
+        //make sure that you just posted spoiler poster
+        threadSleep(2);
+        if(driver.findElements(By.xpath("//*[@id=\"root\"]/div[2]/div/div[1]/div[3]/div[2]/div/div[2]/span")).size() == 0){
+            return false;
+        }
+        else if(driver.findElement(By.xpath("//*[@id=\"root\"]/div[2]/div/div[1]/div[3]/div[2]/div/div[2]/span")).getText().equals("NSFW")){
+            driver.findElement(By.xpath("/html/body/div[1]/div[2]/div/div[1]/div[3]/div[2]/div/div[2]")).click();
+
+            if(driver.findElement(By.xpath("/html/body/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div/div[2]/div/div[3]")).getCssValue("filter").equals("blur(3px)")){
+                return true;
+            }
+            return true;
+        }
+        return false;
+    }
 
 
    public boolean checkNameAbout(String Name,String About){
