@@ -157,7 +157,7 @@ public class PageConstants {
     /**
      * this is the user email input text through which he can make a new account
      */
-    public static final String USER_EMAIL_SIGNUP_ID = ":r5:";
+    public static final String USER_EMAIL_SIGNUP_ID = ":r0:";
 
     /**
      * this is the continue button in the sign up popup window

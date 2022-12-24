@@ -7,10 +7,7 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import javax.mail.Folder;
-import javax.mail.Message;
-import javax.mail.Session;
-import javax.mail.Store;
+import javax.mail.*;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -106,14 +103,18 @@ public class GetData {
             Message[] messages = emailFolder.getMessages();
             System.out.println("messages.length---" + messages.length);
 
-            for (int i = 0, n = messages.length; i < n; i++) {
-                Message message = messages[i];
-//                System.out.println("---------------------------------");
-//                System.out.println("Email Number " + (i + 1));
-//                System.out.println("Subject: " + message.getSubject());
-//                System.out.println("From: " + message.getFrom()[0]);
-//                System.out.println("Text: " + message.getContent().toString());
-                if(message.getContent().toString().toLowerCase().contains(keyWord.toLowerCase()))
+            for (Message message : messages) {
+                /*System.out.println("---------------------------------");
+                System.out.println("Email Number " + (i + 1));
+                System.out.println("Subject: " + message.getSubject());
+                System.out.println("From: " + message.getFrom()[0]);
+                System.out.println("message = " + getText(message));
+                System.out.println("Text: " + message.getContent().toString());*/
+
+                //if(message.getContent().toString().toLowerCase().contains(keyWord.toLowerCase()))
+                // return true;
+                System.out.println("message = " + getText(message));
+                if (Objects.requireNonNull(getText(message)).contains(keyWord))
                     return true;
 
             }
@@ -130,6 +131,50 @@ public class GetData {
         return false;
 
     }
+
+    private boolean textIsHtml = false;
+    /**
+     * Return the primary text content of the message.
+     */
+    private String getText(Part p) throws
+            MessagingException, IOException {
+        if (p.isMimeType("text/*")) {
+            String s = (String)p.getContent();
+            textIsHtml = p.isMimeType("text/html");
+            return s;
+        }
+
+        if (p.isMimeType("multipart/alternative")) {
+            // prefer html text over plain text
+            Multipart mp = (Multipart)p.getContent();
+            String text = null;
+            for (int i = 0; i < mp.getCount(); i++) {
+                Part bp = mp.getBodyPart(i);
+                if (bp.isMimeType("text/plain")) {
+                    if (text == null)
+                        text = getText(bp);
+                    continue;
+                } else if (bp.isMimeType("text/html")) {
+                    String s = getText(bp);
+                    if (s != null)
+                        return s;
+                } else {
+                    return getText(bp);
+                }
+            }
+            return text;
+        } else if (p.isMimeType("multipart/*")) {
+            Multipart mp = (Multipart)p.getContent();
+            for (int i = 0; i < mp.getCount(); i++) {
+                String s = getText(mp.getBodyPart(i));
+                if (s != null)
+                    return s;
+            }
+        }
+
+        return null;
+    }
+
 
     /**
      * this function is used to insert a new row in the excel sheet which is used in tests

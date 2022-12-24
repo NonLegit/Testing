@@ -10,19 +10,22 @@ import web.testComponents.BaseTest;
 
 public class ProfileTests extends BaseTest {
 
-
+    String username = "lawfulenvelope";
+    String pass = "Aa_123456789_Aa";
 
     @Test
     public void ownMyProfile() {
 
+        String username = "lawfulenvelope";
+        String pass = "Aa_123456789_Aa";
+
         web_Profile Prof=new web_Profile(driver);
-        web_OtherUserProFile O_Prof=new web_OtherUserProFile(driver);
+        web_OtherUserProFile O_Prof = new web_OtherUserProFile(driver);
         HomePage home=new HomePage(driver);
 
-
-        home = landingPage.NormalLogin("Immediate_Rhubarb_77", "Abdo@1357");
+        home = landingPage.NormalLogin(username, pass);
         home.gotoMyProfile();
-        if (Prof.checkName("u/Immediate_Rhubarb_77")) {
+        if (Prof.checkName("u/" + username)) {
             Assert.assertTrue(true);
         } else {
             Assert.fail();
@@ -36,17 +39,17 @@ public class ProfileTests extends BaseTest {
         web_OtherUserProFile O_Prof=new web_OtherUserProFile(driver);
         HomePage home=new HomePage(driver);
 
-        HomePage Home = landingPage.NormalLogin("Immediate_Rhubarb_75", "Abdo@1357");
+        HomePage Home = landingPage.NormalLogin(username, pass);
         Home.gotoMyProfile();
         String NoFollowers = Prof.getFollowers();
         //log out and login with different account
-        Home = landingPage.NormalLogin("Immediate_Rhubarb_75", "Abdo@1357");
+        Home = landingPage.NormalLogin(username, pass);
         String FollowingName = Home.gotoFirstPostOwner();
         if (Prof.checkName(FollowingName)) {
             if(O_Prof.toggleFollowButton()) {
                 //Home.logout;
                 //should be the use u just followed
-                Home = landingPage.NormalLogin("Immediate_Rhubarb_75", "Abdo@1357");
+                Home = landingPage.NormalLogin(username, pass);
                 Home.gotoMyProfile();
                 if (Prof.checkFollowers(FollowingName)) {
                     /*if(Prof.getFollowers()==NoFollowers+1){
@@ -71,7 +74,7 @@ public class ProfileTests extends BaseTest {
         HomePage home=new HomePage(driver);
 
 
-        HomePage Home = landingPage.NormalLogin("Immediate_Rhubarb_77", "Abdo@1357");
+        HomePage Home = landingPage.NormalLogin(username, pass);
         Home.gotoMyProfile();
         if( Prof.checkOverViewButton()) {
             Assert.assertTrue(true);
@@ -88,7 +91,7 @@ public class ProfileTests extends BaseTest {
         HomePage home=new HomePage(driver);
 
 
-        home = landingPage.NormalLogin("Immediate_Rhubarb_77", "Abdo@1357");
+        home = landingPage.NormalLogin(username, pass);
         home.gotoMyProfile();
        if( Prof.checkPostsButton()) {
            Assert.assertTrue(true);
@@ -103,7 +106,7 @@ public class ProfileTests extends BaseTest {
         web_OtherUserProFile O_Prof=new web_OtherUserProFile(driver);
         HomePage home=new HomePage(driver);
         //signup
-        HomePage Home = landingPage.NormalLogin("Immediate_Rhubarb_77", "Abdo@1357");
+        HomePage Home = landingPage.NormalLogin(username, pass);
 
         home.gotoMyProfile();
        if(Prof.checkCommentsButton()){
@@ -119,7 +122,7 @@ public class ProfileTests extends BaseTest {
         web_OtherUserProFile O_Prof=new web_OtherUserProFile(driver);
         HomePage home=new HomePage(driver);
         //signup
-        HomePage Home = landingPage.NormalLogin("Immediate_Rhubarb_77", "Abdo@1357");
+        HomePage Home = landingPage.NormalLogin(username, pass);
         home.gotoMyProfile();
         if(Prof.checkHistoryButton()){
             Assert.assertTrue(true);
@@ -134,7 +137,7 @@ public class ProfileTests extends BaseTest {
         web_OtherUserProFile O_Prof=new web_OtherUserProFile(driver);
         HomePage home=new HomePage(driver);
         //signup
-        HomePage Home = landingPage.NormalLogin("Immediate_Rhubarb_77", "Abdo@1357");
+        HomePage Home = landingPage.NormalLogin(username, pass);
 
         home.gotoMyProfile();
         if(Prof.checkSavedButton()){
@@ -150,7 +153,7 @@ public class ProfileTests extends BaseTest {
         web_OtherUserProFile O_Prof=new web_OtherUserProFile(driver);
         HomePage home=new HomePage(driver);
         //signup
-        HomePage Home = landingPage.NormalLogin("Immediate_Rhubarb_77", "Abdo@1357");
+        HomePage Home = landingPage.NormalLogin(username, pass);
 
         home.gotoMyProfile();
         if(Prof.checkHiddenButton()){
@@ -166,7 +169,7 @@ public class ProfileTests extends BaseTest {
         web_OtherUserProFile O_Prof=new web_OtherUserProFile(driver);
         HomePage home=new HomePage(driver);
         //signup
-        HomePage Home = landingPage.NormalLogin("Immediate_Rhubarb_77", "Abdo@1357");
+        HomePage Home = landingPage.NormalLogin(username, pass);
 
         home.gotoMyProfile();
         if(Prof.checkUpVotedButton()){
@@ -181,7 +184,7 @@ public class ProfileTests extends BaseTest {
         web_Profile Prof=new web_Profile(driver);
         web_OtherUserProFile O_Prof=new web_OtherUserProFile(driver);
         HomePage home=new HomePage(driver);
-        home = landingPage.NormalLogin("Immediate_Rhubarb_77", "Abdo@1357");
+        home = landingPage.NormalLogin(username, pass);
 
         home.gotoMyProfile();
         if(Prof.checkDownVotedButton()){
@@ -197,7 +200,7 @@ public class ProfileTests extends BaseTest {
         web_Profile Prof=new web_Profile(driver);
         HomePage home=new HomePage(driver);
         web_Settings Settings=new web_Settings(driver);
-        HomePage Home = landingPage.NormalLogin("Immediate_Rhubarb_77", "Abdo@1357");
+        HomePage Home = landingPage.NormalLogin(username, pass);
 
         Prof.gotoSettings();
         if(Settings.checkForSettingsPage()){
@@ -218,10 +221,10 @@ public class ProfileTests extends BaseTest {
         web_Profile Prof=new web_Profile(driver);
         HomePage home=new HomePage(driver);
         web_Settings Settings=new web_Settings(driver);
-        home = landingPage.NormalLogin("Immediate_Rhubarb_77", "Abdo@1357");
+        home = landingPage.NormalLogin(username, pass);
 
         home.gotoSettings();
 
-
+        Assert.assertTrue(true);
     }
 }

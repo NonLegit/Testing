@@ -1,12 +1,13 @@
 package web.pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class web_OtherUserProFile extends web_Profile {
 
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//*[@id=\"root\"]/div[2]/div/div[2]/div[1]/div/div[4]/button[1]")
     WebElement FollowButton;
 
     /**
@@ -19,15 +20,18 @@ public class web_OtherUserProFile extends web_Profile {
     }
 
     public boolean toggleFollowButton(){
+        driver.findElement(By.xpath("//*[@id=\"root\"]/div/div/button[2]")).click();
+        threadSleep(2);
         waitForWebElementToAppear(FollowButton,1);
         FollowButton.click();
         threadSleep(1);
-        if(FollowButton.getText()=="Following"){
+        if(FollowButton.getText().equals("Unfollow")){
             //pop p message
             threadSleep(1);
             FollowButton.click();
+            System.out.println("test");
             threadSleep(1);
-            if(FollowButton.getText()=="Follow") {
+            if(FollowButton.getText().equals("Follow")) {
                 FollowButton.click();
                 return true;
             }else{

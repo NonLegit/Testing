@@ -1,9 +1,9 @@
 package Mobile.tests;
 
+import Mobile.testComponents.BaseTest;
 import mobile.Pages.ForgetPage;
 import mobile.Pages.Home;
 import mobile.Pages.SignUpPage;
-import Mobile.testComponents.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -40,35 +40,37 @@ public class loginSignupValidation extends BaseTest{
      */
     @Test(description = "login in using google account", dataProvider = "loginSignUpGoogleExcelDataProvider")
     public void loginUpWithGoogle(String email, String password) throws InterruptedException {
-/*        HomePage homePage = landingPage.googleLogin(email, password);
-        Assert.assertNotNull(homePage);*/
+        Home homePage = startingPage.googleLogin(email, password);
+        Assert.assertNotNull(homePage);
     }
 
-    /**
-     * tis function is used to test the signup functionality using google
-     */
-    @Test(description = "sign up with some suggested username and random password", dataProvider = "loginSignUpGoogleExcelDataProvider")
-    public void googleSignupUsingSuggestedNameTest(String email, String password) throws InterruptedException {
-/*        HomePage homePage = landingPage.googleSignUp(email, password);
-        Assert.assertNotNull(homePage);*/
-    }
 
     /**
      * login in with facebook
      */
     @Test(description = "login in using facebook account", dataProvider = "loginSignUpGoogleExcelDataProvider")
     public void loginUpWithFacebook(String email, String password) throws InterruptedException{
-/*        HomePage homePage = landingPage.facebookLogin(email, password);
-        Assert.assertNotNull(homePage);*/
+        Home homePage = startingPage.facebookLogin(email, password);
+        Assert.assertNotNull(homePage);
+    }
+
+
+    /**
+     * tis function is used to test the signup functionality using google
+     */
+    @Test(description = "sign up with some suggested username and random password", dataProvider = "loginSignUpGoogleExcelDataProvider")
+    public void googleSignup(String email, String password) throws InterruptedException {
+        Home homePage = startingPage.googleSignUp(email, password);
+        Assert.assertNotNull(homePage);
     }
 
     /**
      * tis function is used to test the signup functionality using facebook
      */
     @Test(description = "sign up with some suggested username and random password", dataProvider = "loginSignUpGoogleExcelDataProvider")
-    public void facebookSignupUsingSuggestedNameTest(String email, String password) throws InterruptedException {
-/*        HomePage homePage = landingPage.facebookSignUp(email, password);
-        Assert.assertNotNull(homePage);*/
+    public void facebookSignup(String email, String password) throws InterruptedException {
+        Home homePage = startingPage.facebookSignup(email, password);
+        Assert.assertNotNull(homePage);
     }
 
     /**
@@ -86,11 +88,11 @@ public class loginSignupValidation extends BaseTest{
      * forget username test
      */
     @Test(description = "forget user password", dataProvider = "forgetUserNamePassword")
-    public void forgetUserPassword(String email, String password, String username) throws InterruptedException{
+    public void forgetUserPassword(String email, String password, String username){
         ForgetPage homePage = startingPage.gotoForgetUserNamePassPage();
         boolean isClicked = homePage.forgetUserPass(email, username);
         Assert.assertTrue(isClicked);
-        Assert.assertTrue(getData.checkEmails("pop.gmail.com", "pop3", email, password, "reset password"));
+        Assert.assertTrue(getData.checkEmails("pop.gmail.com", "pop3", email, password, "Reset Password"));
     }
 
 

@@ -37,7 +37,7 @@ public class loginSignupValidation extends BaseTest{
      * login in with google
      */
     @Test(description = "login in using google account", dataProvider = "loginSignUpGoogleExcelDataProvider")
-    public void loginUpWithGoogle(String email, String password) throws InterruptedException {
+    public void loginUpWithGoogle(String email, String password) {
         HomePage homePage = landingPage.googleLogin(email, password);
         Assert.assertNotNull(homePage);
     }
@@ -46,7 +46,7 @@ public class loginSignupValidation extends BaseTest{
      * tis function is used to test the signup functionality using google
      */
     @Test(description = "sign up with some suggested username and random password", dataProvider = "loginSignUpGoogleExcelDataProvider")
-    public void googleSignupUsingSuggestedNameTest(String email, String password) throws InterruptedException {
+    public void googleSignup(String email, String password) throws InterruptedException {
         HomePage homePage = landingPage.googleSignUp(email, password);
         Assert.assertNotNull(homePage);
     }
@@ -84,7 +84,7 @@ public class loginSignupValidation extends BaseTest{
     @Test(description = "forget user password", dataProvider = "forgetUserNamePassword")
     public void forgetUserPassword(String email, String password, String username) throws InterruptedException{
         landingPage.forgetUserPassword(email, username);
-        Assert.assertTrue(getData.checkEmails("pop.gmail.com", "pop3", email, password, "reset password"));
+        Assert.assertTrue(getData.checkEmails("pop.gmail.com", "pop3", email, password, "Reset Password"));
 
     }
 
@@ -170,7 +170,7 @@ public class loginSignupValidation extends BaseTest{
 
         Assert.assertNotNull(homePage);
 
-        getData.insertRecordIntoExcelSheet(data, EXCEL_PATH, LOGIN_TEST_DATA);
+        //getData.insertRecordIntoExcelSheet(data, EXCEL_PATH, LOGIN_TEST_DATA);
     }
 
     /**

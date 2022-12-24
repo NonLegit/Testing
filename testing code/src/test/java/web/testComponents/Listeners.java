@@ -53,6 +53,13 @@ public class Listeners extends BaseTest implements ITestListener {
     @Override
     public void onTestSuccess(ITestResult result) {
         extentTestThreadLocal.get().pass(result.getMethod().getDescription() +" with parameter = " + Arrays.toString(result.getParameters()) + " passed successfully");
+        try {
+            driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
+            String filepath = getScreenShot(result.getMethod().getMethodName(), driver);
+            extentTestThreadLocal.get().addScreenCaptureFromPath(filepath, result.getMethod().getMethodName());
+        } catch (IOException | NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

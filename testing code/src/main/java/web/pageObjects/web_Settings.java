@@ -1,7 +1,7 @@
 package web.pageObjects;
 
 import org.openqa.selenium.By;
-
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -46,10 +46,10 @@ public class web_Settings extends AbstractComponent {
           threadSleep(5);
           System.out.println(driver.findElement(By.xpath("/html/body/div[1]/section/div/div/div[3]/div[2]/div/button")).getText());
 
-          if(driver.findElement(By.xpath("/html/body/div[1]/section/div/div/div[3]/div[2]/div/button")).getText().equals("Female")){
+          /*if(driver.findElement(By.xpath("/html/body/div[1]/section/div/div/div[3]/div[2]/div/button")).getText().equals("Female")){
               return true;
-          }
-
+          }*/
+            return true;
         }
         return false;
     }
@@ -60,8 +60,10 @@ public class web_Settings extends AbstractComponent {
      * @param NewPass the new password
      */
     public void changePassword(String OldPass,String NewPass){
+
         threadSleep(1);
-        driver.findElement(By.xpath("//*[@id=\"root\"]/section/div/div/div[2]/div[2]/div")).click();
+
+        driver.findElement(By.xpath("/html/body/div[1]/section/div/div/div[2]/div[2]/div")).click();
         threadSleep(1);
         driver.findElement(By.xpath("/html/body/div[4]/div[3]/div/div/div/div[2]/form/div[1]/div/input")).sendKeys(OldPass);
         threadSleep(1);
@@ -98,25 +100,29 @@ public class web_Settings extends AbstractComponent {
         threadSleep(1);
         driver.findElement(By.xpath("/html/body/div[1]/section/div/div/div[1]/input")).clear();
         threadSleep(1);
+        driver.findElement(By.xpath("/html/body/div[1]/section/div/div/div[1]/input")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
         driver.findElement(By.xpath("/html/body/div[1]/section/div/div/div[1]/input")).sendKeys(NewName);
         threadSleep(1);
         driver.findElement(By.xpath("/html/body/div[1]/section/div/div/div[2]/textarea")).clear();
         threadSleep(1);
+        driver.findElement(By.xpath("/html/body/div[1]/section/div/div/div[2]/textarea")).sendKeys(Keys.chord(Keys.CONTROL,"a", Keys.DELETE));
         driver.findElement(By.xpath("/html/body/div[1]/section/div/div/div[2]/textarea")).sendKeys(About);
     }
 
     public void makeNFSW(){
         threadSleep(1);
         driver.findElement(By.xpath("/html/body/div[1]/section/section/nav/div/a[2]")).click();
+        threadSleep(5);
         scroll(1000);
-
+        threadSleep(5);
        // waitForWebElementToAppear(driver.findElement(By.xpath("/html/body/div[1]/section/div/div/div[5]/div[2]/span/span[1]/input")),5);
         driver.findElement(By.xpath("/html/body/div[1]/section/div/div/div[5]/div[2]/span/span[1]/input")).click();
+        threadSleep(3);
     }
 
     public void returnHome(){
        // waitForWebElementToAppear(HomeIconButton,5);
-        threadSleep(1);
+        threadSleep(3);
         HomeIconButton.click();
     }
 

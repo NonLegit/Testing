@@ -98,7 +98,9 @@ public class web_CreatePost extends AbstractComponent {
 
         if(PostButton.isEnabled()){
             PostButton.click();
-            threadSleep(5);
+            threadSleep(2);
+            driver.switchTo().alert().accept();
+            threadSleep(3);
             return true;
 
         }else{

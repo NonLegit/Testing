@@ -33,12 +33,14 @@ public class SettingsTests extends BaseTest {
         HomePage home = new HomePage(driver);
         web_Settings Settings = new web_Settings(driver);
 
-        landingPage.dummyLogIn("bola", "Aa_12345678_Aa");
+        landingPage.dummyLogIn("3abkareem", "Aa_123456789_Aa");
         home.gotoSettings();
         if (Settings.setGender()) {
             Assert.assertTrue(true);
+        }else{
+            Assert.fail();
         }
-        Assert.fail();
+
 
     }
 
@@ -48,14 +50,12 @@ public class SettingsTests extends BaseTest {
         HomePage home = new HomePage(driver);
         web_Settings Settings = new web_Settings(driver);
 
-
         landingPage.dummyLogIn("bola", "Aa_12345678_Aa");
         home.gotoSettings();
         Settings.changePassword("Aa_12345678_Aa", "Aa_123456789_Aa");
         home.reLogin("bola", "Aa_12345678_Aa");
         home.gotoMyProfile();
         Prof.checkName("u/bola");
-
 
     }
 
@@ -64,7 +64,6 @@ public class SettingsTests extends BaseTest {
         web_Profile Prof = new web_Profile(driver);
         HomePage home = new HomePage(driver);
         web_Settings Settings = new web_Settings(driver);
-
 
         landingPage.dummyLogIn("bola", "Aa_12345678_Aa");
         home.gotoSettings();

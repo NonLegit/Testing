@@ -99,6 +99,7 @@ public class BaseTest {
     public String getScreenShot(String testCaseName, WebDriver driver) throws IOException {
         TakesScreenshot takesScreenshot = (TakesScreenshot) driver;
         File source = takesScreenshot.getScreenshotAs(OutputType.FILE);
+        System.out.println(SCREENSHOT_PATH + testCaseName + ".png");
         File file = new File(SCREENSHOT_PATH + testCaseName + ".png");
         FileUtils.copyFile(source, file);
         return SCREENSHOT_PATH + testCaseName + ".png";
